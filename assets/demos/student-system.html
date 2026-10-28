@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Management Portal — Live Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #09090b;
+      --surface: #141417;
+      --surface-light: #1f1f23;
+      --surface-elevated: #28282e;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.18);
+      --text: #F4F4F6;
+      --text-muted: #9CA3AF;
+      --text-dim: #6B7280;
+      --accent: #FFFFFF;
+      --green: #10B981;
+      --yellow: #F59E0B;
+      --blue: #3B82F6;
+      --font-main: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      padding: 1.25rem;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input, select { font-family: inherit; }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .header__brand {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .badge-icon {
+      background: #FFFFFF;
+      color: #000000;
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+    .header__title { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; }
+    .header__sub { font-size: 0.72rem; color: var(--text-muted); font-family: var(--font-mono); }
+    .header__user {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .user-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.78rem;
+    }
+    .user-avatar {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #3B82F6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: bold;
+    }
+
+    /* Stats Grid */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .stat-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      position: relative;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .stat-val {
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-family: var(--font-mono);
+      color: #FFFFFF;
+    }
+    .stat-change {
+      font-size: 0.7rem;
+      color: var(--green);
+      font-weight: 600;
+      margin-top: 0.25rem;
+    }
+
+    /* Controls Bar */
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 200px;
+    }
+    .search-input {
+      width: 100%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem 0.5rem 2rem;
+      color: #FFFFFF;
+      font-size: 0.8rem;
+      outline: none;
+    }
+    .search-input:focus { border-color: rgba(255, 255, 255, 0.4); }
+    .search-icon {
+      position: absolute;
+      left: 0.65rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+    .filter-select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      outline: none;
+      cursor: pointer;
+    }
+    .add-student-btn {
+      background: #FFFFFF;
+      color: #000000;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.5rem 0.9rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .add-student-btn:hover { background: #E4E4E7; }
+
+    /* Table */
+    .table-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+    }
+    table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.82rem;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.02);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1rem;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+    }
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+    .student-cell {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .avatar-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #FFFFFF;
+    }
+    .student-id { font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-dim); }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      font-family: var(--font-mono);
+    }
+    .status-badge.active { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+    .status-badge.honor { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+    .status-badge.leave { background: rgba(156, 163, 175, 0.15); color: #9CA3AF; }
+
+    .action-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      cursor: pointer;
+    }
+    .action-btn:hover { color: #FFFFFF; border-color: rgba(255, 255, 255, 0.3); }
+
+    /* Upcoming Schedule */
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+    }
+    .panel__title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .schedule-item {
+      display: flex;
+      gap: 0.75rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8rem;
+    }
+    .schedule-item:last-child { border-bottom: none; }
+    .schedule-time {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      min-width: 65px;
+    }
+    .schedule-course { font-weight: 600; color: #FFFFFF; }
+    .schedule-room { font-size: 0.72rem; color: var(--text-muted); }
+
+    /* Modal */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      z-index: 100;
+    }
+    .modal-backdrop.open { display: flex; }
+    .modal-content {
+      background: var(--surface);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      width: 100%;
+      max-width: 420px;
+      padding: 1.5rem;
+    }
+    .modal-content h3 { font-size: 1.1rem; margin-bottom: 1rem; }
+    .form-group { margin-bottom: 0.85rem; }
+    .form-group label { display: block; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .form-group input, .form-group select {
+      width: 100%;
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      color: #FFFFFF;
+      font-size: 0.82rem;
+    }
+    .modal-actions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1.25rem; }
+    .btn-secondary { background: var(--surface-light); border: 1px solid var(--border); color: #fff; padding: 0.45rem 0.85rem; border-radius: 6px; cursor: pointer; }
+    .btn-primary { background: #fff; color: #000; font-weight: 600; padding: 0.45rem 0.85rem; border-radius: 6px; border: none; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__brand">
+      <div class="badge-icon">ED</div>
+      <div>
+        <div class="header__title">EduPortal Admin</div>
+        <div class="header__sub">STUDENT INFORMATION SYSTEM v2.4</div>
+      </div>
+    </div>
+    <div class="header__user">
+      <div class="user-pill">
+        <div class="user-avatar">R</div>
+        <span>Rizqi (Faculty Admin)</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="stat-box">
+      <div class="stat-label">Total Enrolled <span>🎓</span></div>
+      <div class="stat-val" id="totalCount">1,428</div>
+      <div class="stat-change">+12% vs last term</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Average GPA <span>⭐</span></div>
+      <div class="stat-val">3.68</div>
+      <div class="stat-change" style="color: var(--yellow);">Top 5% Faculty</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Active Courses <span>📚</span></div>
+      <div class="stat-val">42</div>
+      <div class="stat-change">98% attendance</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-label">Graduation Rate <span>🏆</span></div>
+      <div class="stat-val">94.2%</div>
+      <div class="stat-change">+3.1% YoY</div>
+    </div>
+  </section>
+
+  <div class="controls">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="searchInput" class="search-input" placeholder="Search student name or ID...">
+    </div>
+    <select id="deptFilter" class="filter-select">
+      <option value="all">All Majors</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Information Systems">Information Systems</option>
+      <option value="Software Eng">Software Eng</option>
+    </select>
+    <button class="add-student-btn" id="openAddModalBtn">+ Add Student</button>
+  </div>
+
+  <div class="table-card">
+    <table id="studentsTable">
+      <thead>
+        <tr>
+          <th>Student</th>
+          <th>Major</th>
+          <th>Semester</th>
+          <th>GPA</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <tr data-major="Computer Science">
+          <td>
+            <div class="student-cell">
+              <div class="avatar-dot">AK</div>
+              <div>
+                <strong>Ahmad Kurniawan</strong>
+                <div class="student-id">CS-2023-0142</div>
+              </div>
+            </div>
+          </td>
+          <td>Computer Science</td>
+          <td>Semester 6</td>
+          <td style="font-family: var(--font-mono); font-weight: 600;">3.89</td>
+          <td><span class="status-badge honor">Honor Roll</span></td>
+          <td><button class="action-btn delete-btn">Remove</button></td>
+        </tr>
+        <tr data-major="Information Systems">
+          <td>
+            <div class="student-cell">
+              <div class="avatar-dot">SN</div>
+              <div>
+                <strong>Siti Nurhaliza</strong>
+                <div class="student-id">IS-2024-0089</div>
+              </div>
+            </div>
+          </td>
+          <td>Information Systems</td>
+          <td>Semester 4</td>
+          <td style="font-family: var(--font-mono); font-weight: 600;">3.74</td>
+          <td><span class="status-badge active">Active</span></td>
+          <td><button class="action-btn delete-btn">Remove</button></td>
+        </tr>
+        <tr data-major="Software Eng">
+          <td>
+            <div class="student-cell">
+              <div class="avatar-dot">BP</div>
+              <div>
+                <strong>Budi Pratama</strong>
+                <div class="student-id">SE-2022-0311</div>
+              </div>
+            </div>
+          </td>
+          <td>Software Eng</td>
+          <td>Semester 8</td>
+          <td style="font-family: var(--font-mono); font-weight: 600;">3.62</td>
+          <td><span class="status-badge active">Active</span></td>
+          <td><button class="action-btn delete-btn">Remove</button></td>
+        </tr>
+        <tr data-major="Computer Science">
+          <td>
+            <div class="student-cell">
+              <div class="avatar-dot">DR</div>
+              <div>
+                <strong>Dewi Rahmawati</strong>
+                <div class="student-id">CS-2024-0205</div>
+              </div>
+            </div>
+          </td>
+          <td>Computer Science</td>
+          <td>Semester 4</td>
+          <td style="font-family: var(--font-mono); font-weight: 600;">3.95</td>
+          <td><span class="status-badge honor">Honor Roll</span></td>
+          <td><button class="action-btn delete-btn">Remove</button></td>
+        </tr>
+        <tr data-major="Information Systems">
+          <td>
+            <div class="student-cell">
+              <div class="avatar-dot">FS</div>
+              <div>
+                <strong>Fajar Setiawan</strong>
+                <div class="student-id">IS-2023-0199</div>
+              </div>
+            </div>
+          </td>
+          <td>Information Systems</td>
+          <td>Semester 6</td>
+          <td style="font-family: var(--font-mono); font-weight: 600;">3.40</td>
+          <td><span class="status-badge leave">On Leave</span></td>
+          <td><button class="action-btn delete-btn">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="schedule-grid">
+    <div class="panel">
+      <div class="panel__title">
+        <span>Today's Classes</span>
+        <span style="font-size: 0.7rem; color: var(--text-dim); font-family: var(--font-mono);">OCT 28, 2026</span>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">08:00 AM</div>
+        <div>
+          <div class="schedule-course">Distributed Systems & Cloud Computing</div>
+          <div class="schedule-room">Room Lab-302 · Prof. Hendra</div>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">10:30 AM</div>
+        <div>
+          <div class="schedule-course">Relational Database Architecture</div>
+          <div class="schedule-room">Auditorium B · Dr. Maya</div>
+        </div>
+      </div>
+      <div class="schedule-item">
+        <div class="schedule-time">01:15 PM</div>
+        <div>
+          <div class="schedule-course">Fullstack Web Engineering Seminar</div>
+          <div class="schedule-room">Innovation Center · Rizqi</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel__title">
+        <span>Campus Bulletin</span>
+        <span style="font-size: 0.7rem; color: var(--green);">● Live</span>
+      </div>
+      <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+        Final term project submission portal is now open until Friday, Nov 15th at 23:59 WIB.
+      </p>
+      <p style="font-size: 0.8rem; color: var(--text-muted);">
+        Hackathon registration closes this weekend with over 60 teams participating.
+      </p>
+    </div>
+  </div>
+
+  <!-- Add Student Modal -->
+  <div class="modal-backdrop" id="addModal">
+    <div class="modal-content">
+      <h3>Register New Student</h3>
+      <form id="addStudentForm">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="newStudentName" required placeholder="e.g. Maria Kusuma">
+        </div>
+        <div class="form-group">
+          <label>Major</label>
+          <select id="newStudentMajor">
+            <option value="Computer Science">Computer Science</option>
+            <option value="Information Systems">Information Systems</option>
+            <option value="Software Eng">Software Eng</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>GPA</label>
+          <input type="number" id="newStudentGPA" step="0.01" min="1.0" max="4.0" required value="3.75">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" id="closeAddModalBtn">Cancel</button>
+          <button type="submit" class="btn-primary">Save Student</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var searchInput = document.getElementById('searchInput');
+      var deptFilter = document.getElementById('deptFilter');
+      var tableBody = document.getElementById('tableBody');
+      var addModal = document.getElementById('addModal');
+      var openAddModalBtn = document.getElementById('openAddModalBtn');
+      var closeAddModalBtn = document.getElementById('closeAddModalBtn');
+      var addStudentForm = document.getElementById('addStudentForm');
+
+      function filterTable() {
+        var query = searchInput.value.toLowerCase();
+        var dept = deptFilter.value;
+        var rows = tableBody.querySelectorAll('tr');
+
+        rows.forEach(function(row) {
+          var text = row.textContent.toLowerCase();
+          var major = row.getAttribute('data-major');
+          var matchesText = text.indexOf(query) !== -1;
+          var matchesDept = (dept === 'all' || major === dept);
+          row.style.display = (matchesText && matchesDept) ? '' : 'none';
+        });
+      }
+
+      searchInput.addEventListener('input', filterTable);
+      deptFilter.addEventListener('change', filterTable);
+
+      tableBody.addEventListener('click', function(e) {
+        if (e.target.classList.contains('delete-btn')) {
+          var row = e.target.closest('tr');
+          if (confirm('Are you sure you want to remove this record?')) {
+            row.style.opacity = '0';
+            setTimeout(function() { row.remove(); }, 200);
+          }
+        }
+      });
+
+      openAddModalBtn.addEventListener('click', function() { addModal.classList.add('open'); });
+      closeAddModalBtn.addEventListener('click', function() { addModal.classList.remove('open'); });
+
+      addStudentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = document.getElementById('newStudentName').value;
+        var major = document.getElementById('newStudentMajor').value;
+        var gpa = parseFloat(document.getElementById('newStudentGPA').value).toFixed(2);
+        var initials = name.split(' ').map(function(w){return w[0];}).join('').toUpperCase().slice(0, 2);
+
+        var tr = document.createElement('tr');
+        tr.setAttribute('data-major', major);
+        tr.innerHTML = '<td><div class="student-cell"><div class="avatar-dot">' + initials + '</div><div><strong>' + name + '</strong><div class="student-id">NEW-2026-999</div></div></div></td><td>' + major + '</td><td>Semester 1</td><td style="font-family: var(--font-mono); font-weight: 600;">' + gpa + '</td><td><span class="status-badge active">Active</span></td><td><button class="action-btn delete-btn">Remove</button></td>';
+
+        tableBody.prepend(tr);
+        addModal.classList.remove('open');
+        addStudentForm.reset();
+      });
+
+      // Auto-scroll message bridge
+      var autoScrollAnim = null;
+      var isAutoScrolling = false;
+      var isPausedAtEdge = false;
+
+      function stopAutoScrollLocal() {
+        isAutoScrolling = false;
+        if (autoScrollAnim) {
+          cancelAnimationFrame(autoScrollAnim);
+          autoScrollAnim = null;
+        }
+      }
+
+      function startAutoScrollLocal(speed) {
+        stopAutoScrollLocal();
+        isAutoScrolling = true;
+        isPausedAtEdge = false;
+        var scrollStep = speed || 1.2;
+
+        function step() {
+          if (!isAutoScrolling) return;
+          if (!isPausedAtEdge) {
+            var scrollEl = document.scrollingElement || document.documentElement || document.body;
+            var maxScroll = scrollEl.scrollHeight - window.innerHeight;
+            var currentScroll = window.pageYOffset || scrollEl.scrollTop || 0;
+
+            if (maxScroll > 10 && currentScroll >= maxScroll - 4) {
+              isPausedAtEdge = true;
+              setTimeout(function() {
+                if (!isAutoScrolling) return;
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setTimeout(function() {
+                  isPausedAtEdge = false;
+                  if (isAutoScrolling) {
+                    autoScrollAnim = requestAnimationFrame(step);
+                  }
+                }, 900);
+              }, 1200);
+              return;
+            } else {
+              var before = window.pageYOffset || scrollEl.scrollTop || 0;
+              window.scrollBy(0, scrollStep);
+              var after = window.pageYOffset || scrollEl.scrollTop || 0;
+              if (after === before && maxScroll > 0) {
+                scrollEl.scrollTop = before + Math.max(1, Math.round(scrollStep));
+              }
+            }
+          }
+          autoScrollAnim = requestAnimationFrame(step);
+        }
+
+        autoScrollAnim = requestAnimationFrame(step);
+      }
+
+      window.addEventListener('message', function(e) {
+        if (!e.data) return;
+        if (e.data.type === 'START_AUTO_SCROLL') {
+          try {
+            if (window.parent && window.parent !== window) {
+              window.parent.postMessage({ type: 'AUTO_SCROLL_ACK' }, '*');
+            }
+          } catch(err) {}
+          startAutoScrollLocal(e.data.speed || 1.2);
+        } else if (e.data.type === 'STOP_AUTO_SCROLL') {
+          stopAutoScrollLocal();
+        } else if (e.data.type === 'RESET_SCROLL') {
+          stopAutoScrollLocal();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
+

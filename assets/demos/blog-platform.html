@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Insights — Live Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #09090b;
+      --surface: #141417;
+      --surface-light: #1f1f23;
+      --surface-elevated: #28282e;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-strong: rgba(255, 255, 255, 0.18);
+      --text: #F4F4F6;
+      --text-muted: #9CA3AF;
+      --text-dim: #6B7280;
+      --accent: #FFFFFF;
+      --green: #10B981;
+      --font-main: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding-bottom: 3rem;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font-family: inherit; }
+
+    /* Header */
+    .header {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(9, 9, 11, 0.9);
+      backdrop-filter: blur(12px);
+      z-index: 50;
+    }
+    .header__brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: #FFFFFF; }
+    .header__nav {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .header__nav a:hover { color: #FFFFFF; }
+
+    /* Container */
+    .container {
+      max-width: 780px;
+      margin-inline: auto;
+      padding: 2rem 1.25rem;
+    }
+
+    /* Hero Article */
+    .article-hero {
+      margin-bottom: 3rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .badge-pill {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--green);
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+    .article-title {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      color: #FFFFFF;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-mono);
+    }
+    .meta-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.7rem;
+    }
+    .hero-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+    }
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .article-lead {
+      font-size: 1.05rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .article-p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Clap / Like Bar */
+    .clap-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      margin-top: 1.75rem;
+    }
+    .clap-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.2s;
+    }
+    .clap-btn:hover { background: var(--surface-elevated); transform: scale(1.05); }
+    .clap-btn:active { transform: scale(0.92); }
+    .clap-icon { font-size: 1.1rem; }
+
+    /* Feed Grid */
+    .feed-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+    .feed-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+    .feed-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .feed-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    .feed-card__meta {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      margin-bottom: 0.35rem;
+    }
+    .feed-card__title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 0.4rem;
+    }
+    .feed-card__desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Comment Section */
+    .comments-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .comments-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.25rem; }
+    .comment-item {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .comment-item:last-child { border-bottom: none; }
+    .comment-author {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .comment-text { font-size: 0.82rem; color: var(--text-muted); }
+    .comment-form {
+      margin-top: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .comment-input {
+      background: var(--surface-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.65rem 0.85rem;
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      outline: none;
+      resize: vertical;
+    }
+    .comment-input:focus { border-color: rgba(255, 255, 255, 0.4); }
+    .btn-submit-comment {
+      align-self: flex-end;
+      background: #FFFFFF;
+      color: #000;
+      font-weight: 600;
+      font-size: 0.8rem;
+      padding: 0.45rem 1rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__brand">
+      <div class="logo-dot"></div>
+      <span>STACKLY INSIGHTS</span>
+    </div>
+    <nav class="header__nav">
+      <a href="#">Articles</a>
+      <a href="#">Guides</a>
+      <a href="#">Newsletter</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <article class="article-hero">
+      <span class="badge-pill">ARCHITECTURE & WEB STANDARDS</span>
+      <h1 class="article-title">Building Resilient UI Components with Modern Vanilla JavaScript.</h1>
+      <div class="article-meta">
+        <div class="meta-avatar">R</div>
+        <span>Rizqi</span>
+        <span>·</span>
+        <span>October 28, 2026</span>
+        <span>·</span>
+        <span>6 min read</span>
+      </div>
+
+      <div class="hero-img">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1000&q=80&auto=format&fit=crop" alt="Code editor on screen" loading="lazy">
+      </div>
+
+      <p class="article-lead">
+        In an era dominated by sprawling JavaScript frameworks and hundreds of megabytes in dependencies, there is an unmatched elegance in crafting blazing fast, zero-dependency interfaces using modern native web standards.
+      </p>
+
+      <p class="article-p">
+        With the maturity of native CSS custom properties, container queries, modern fetch APIs, and MutationObservers, developers can deliver lightweight, accessible, and bulletproof user interfaces with zero build-step overhead.
+      </p>
+
+      <div class="clap-bar">
+        <button class="clap-btn" id="clapBtn">
+          <span class="clap-icon">👏</span>
+          <span>Clap</span>
+          <span style="font-family: var(--font-mono); font-weight: 700;" id="clapCount">428</span>
+        </button>
+        <span style="font-size: 0.75rem; color: var(--text-dim); font-family: var(--font-mono);">Share on X / GitHub</span>
+      </div>
+    </article>
+
+    <section>
+      <h2 class="feed-title">Latest Articles</h2>
+      <div class="feed-list">
+        <div class="feed-card">
+          <div class="feed-card__meta">PERFORMANCE · 4 MIN READ</div>
+          <h3 class="feed-card__title">Demystifying Browser Rendering Pipelines & Repaints</h3>
+          <p class="feed-card__desc">How compositor layers and will-change optimize 60fps animations on lower-end devices.</p>
+        </div>
+
+        <div class="feed-card">
+          <div class="feed-card__meta">DESIGN SYSTEMS · 5 MIN READ</div>
+          <h3 class="feed-card__title">The 50/40/10 Rule for Dark Aesthetic User Interfaces</h3>
+          <p class="feed-card__desc">Structuring deep canvas blacks, structural grays, and crisp 10% white accents.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="comments-section">
+      <h3 class="comments-title">Discussion (<span id="commentCount">2</span>)</h3>
+      <div id="commentsList">
+        <div class="comment-item">
+          <div class="comment-author">
+            <span>Marcus Vance</span>
+            <span style="font-size: 0.7rem; color: var(--text-dim); font-family: var(--font-mono);">2 hours ago</span>
+          </div>
+          <p class="comment-text">Inspiring read! The simplicity of vanilla solutions really shines in performance benchmarks.</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-author">
+            <span>Elena Rostova</span>
+            <span style="font-size: 0.7rem; color: var(--text-dim); font-family: var(--font-mono);">5 hours ago</span>
+          </div>
+          <p class="comment-text">The section on container queries was spot on. Thanks for sharing the examples!</p>
+        </div>
+      </div>
+
+      <form class="comment-form" id="commentForm">
+        <textarea class="comment-input" id="commentText" rows="3" placeholder="Join the discussion..." required></textarea>
+        <button type="submit" class="btn-submit-comment">Post Comment</button>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    (function() {
+      var claps = 428;
+      var clapBtn = document.getElementById('clapBtn');
+      var clapCountEl = document.getElementById('clapCount');
+      var commentForm = document.getElementById('commentForm');
+      var commentText = document.getElementById('commentText');
+      var commentsList = document.getElementById('commentsList');
+      var commentCountEl = document.getElementById('commentCount');
+      var commentTotal = 2;
+
+      clapBtn.addEventListener('click', function() {
+        claps++;
+        clapCountEl.textContent = claps;
+        clapBtn.style.transform = 'scale(1.15)';
+        setTimeout(function() { clapBtn.style.transform = ''; }, 180);
+      });
+
+      commentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var val = commentText.value.trim();
+        if (!val) return;
+
+        commentTotal++;
+        commentCountEl.textContent = commentTotal;
+
+        var div = document.createElement('div');
+        div.className = 'comment-item';
+        div.innerHTML = '<div class="comment-author"><span>You (Visitor)</span><span style="font-size: 0.7rem; color: var(--green); font-family: var(--font-mono);">Just now</span></div><p class="comment-text">' + val + '</p>';
+
+        commentsList.appendChild(div);
+        commentText.value = '';
+      });
+
+      // Auto-scroll message bridge
+      var autoScrollAnim = null;
+      var isAutoScrolling = false;
+      var isPausedAtEdge = false;
+
+      function stopAutoScrollLocal() {
+        isAutoScrolling = false;
+        if (autoScrollAnim) {
+          cancelAnimationFrame(autoScrollAnim);
+          autoScrollAnim = null;
+        }
+      }
+
+      function startAutoScrollLocal(speed) {
+        stopAutoScrollLocal();
+        isAutoScrolling = true;
+        isPausedAtEdge = false;
+        var scrollStep = speed || 1.2;
+
+        function step() {
+          if (!isAutoScrolling) return;
+          if (!isPausedAtEdge) {
+            var scrollEl = document.scrollingElement || document.documentElement || document.body;
+            var maxScroll = scrollEl.scrollHeight - window.innerHeight;
+            var currentScroll = window.pageYOffset || scrollEl.scrollTop || 0;
+
+            if (maxScroll > 10 && currentScroll >= maxScroll - 4) {
+              isPausedAtEdge = true;
+              setTimeout(function() {
+                if (!isAutoScrolling) return;
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                setTimeout(function() {
+                  isPausedAtEdge = false;
+                  if (isAutoScrolling) {
+                    autoScrollAnim = requestAnimationFrame(step);
+                  }
+                }, 900);
+              }, 1200);
+              return;
+            } else {
+              var before = window.pageYOffset || scrollEl.scrollTop || 0;
+              window.scrollBy(0, scrollStep);
+              var after = window.pageYOffset || scrollEl.scrollTop || 0;
+              if (after === before && maxScroll > 0) {
+                scrollEl.scrollTop = before + Math.max(1, Math.round(scrollStep));
+              }
+            }
+          }
+          autoScrollAnim = requestAnimationFrame(step);
+        }
+
+        autoScrollAnim = requestAnimationFrame(step);
+      }
+
+      window.addEventListener('message', function(e) {
+        if (!e.data) return;
+        if (e.data.type === 'START_AUTO_SCROLL') {
+          try {
+            if (window.parent && window.parent !== window) {
+              window.parent.postMessage({ type: 'AUTO_SCROLL_ACK' }, '*');
+            }
+          } catch(err) {}
+          startAutoScrollLocal(e.data.speed || 1.2);
+        } else if (e.data.type === 'STOP_AUTO_SCROLL') {
+          stopAutoScrollLocal();
+        } else if (e.data.type === 'RESET_SCROLL') {
+          stopAutoScrollLocal();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
+

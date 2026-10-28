@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STACKLY</title>
+  <meta name="description" content="Portfolio of Rizqi, a Fullstack Developer building modern web applications.">
+  <meta name="theme-color" content="#09090B">
+
+  <!-- Bootstrap Icons (icons only) -->
+  <link rel="stylesheet" href="assets/icons/bootstrap-icons/bootstrap-icons.min.css">
+  <!-- Devicon (tech stack icons) -->
+  <link rel="stylesheet" href="assets/icons/devicon/devicon.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ===== SKIP LINK ===== -->
+  <a href="#main-content" class="skip-link" data-i18n="a11y.skip">Skip to main content</a>
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="#home" class="navbar__logo">
+        <span>ST</span>
+        <div class="a">A</div>
+        <div>CK</div>
+        <div class="logGreen logo-accent">LY</div>
+      </a>
+
+      <div class="navbar__right">
+        <div class="lang-switch" role="group" aria-label="Language switcher">
+          <button type="button" class="lang-switch__btn is-active" data-lang="en" aria-pressed="true">EN</button>
+          <span class="lang-switch__divider" aria-hidden="true">|</span>
+          <button type="button" class="lang-switch__btn" data-lang="id" aria-pressed="false">ID</button>
+        </div>
+
+        <button type="button" class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"
+          aria-controls="navMenu">
+          <i class="bi bi-list" id="burgerIcon" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== NAV MENU (overlay panel, all breakpoints) ===== -->
+  <div class="nav-overlay" id="navOverlay"></div>
+  <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+    <ul class="nav-menu__list">
+      <li><a href="#home" class="nav-menu__link is-active" data-i18n="nav.home">Home</a></li>
+      <li><a href="#about" class="nav-menu__link" data-i18n="nav.about">About</a></li>
+      <li><a href="#tech-stack" class="nav-menu__link" data-i18n="nav.techstack">Tech Stack</a></li>
+      <li><a href="#projects" class="nav-menu__link" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#preview" class="nav-menu__link" data-i18n="nav.preview">Live Preview</a></li>
+      <li><a href="#experience" class="nav-menu__link" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#contact" class="nav-menu__link" data-i18n="nav.contact">Contact</a></li>
+    </ul>
+    <div class="nav-menu__footer">
+      <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"
+          aria-hidden="true"></i></a>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"
+          aria-hidden="true"></i></a>
+      <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"
+          aria-hidden="true"></i></a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grid"></div>
+        <div class="hero__glow"></div>
+      </div>
+
+      <div class="hero__inner">
+        <div class="hero__content reveal">
+          <p class="eyebrow">
+            <span class="eyebrow__dot" aria-hidden="true"></span>
+            <span data-i18n="hero.label">HELLO, I'M RIZQI</span>
+          </p>
+
+          <h1 class="hero__title">
+            <span data-i18n="hero.title1">Fullstack Developer</span>
+            <span class="hero__title-accent" data-i18n="hero.title2">building modern web experiences.</span>
+          </h1>
+
+          <p class="hero__desc" data-i18n="hero.desc">I build modern, responsive, and scalable web applications from
+            frontend interfaces to backend systems.</p>
+
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">
+              <span data-i18n="hero.cta1">View Projects</span>
+              <i class="bi bi-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="#contact" class="btn btn--outline">
+              <span data-i18n="hero.cta2">Contact Me</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="hero__panel reveal" aria-hidden="true">
+          <div class="code-card">
+            <div class="code-card__head">
+              <span class="code-dot code-dot--red"></span>
+              <span class="code-dot code-dot--yellow"></span>
+              <span class="code-dot code-dot--green"></span>
+              <span class="code-card__filename">developer.js</span>
+            </div>
+            <pre class="code-card__body"><code><span class="tok-key">const</span> <span class="tok-var">developer</span> = {
+  <span class="tok-prop">identity</span>: <span class="tok-str">'Stackly'</span>,
+  <span class="tok-prop">type</span>: <span class="tok-str">'Digital Developer Brand'</span>,
+  <span class="tok-prop">stack</span>: <span class="tok-str">['JavaScript', 'React', 'Node.js', 'MySQL']</span>,
+  <span class="tok-prop">interests</span>: <span class="tok-str">['Web Development', 'AI', 'Robotics']</span>,
+  <span class="tok-prop">availability</span>: <span class="tok-str">'Open to Freelance Projects'</span>,
+  <span class="tok-prop">philosophy</span>: <span class="tok-str">'Turning ideas into digital experiences.'</span>
+};</code></pre>
+            <div class="code-card__status">
+              <span class="status-indicator" aria-hidden="true"></span>
+              <span data-i18n="hero.status">Open to opportunities</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+        <span class="scroll-cue__line"></span>
+      </a>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="section about">
+      <div class="section__inner about__grid">
+        <div class="about__text reveal">
+          <p class="section-eyebrow" data-i18n="about.eyebrow">About Me</p>
+          <h2 class="section-title" data-i18n="about.title">Turning ideas into working software.</h2>
+          <p class="about__desc" data-i18n="about.p1">I'm a Fullstack Developer based in Indonesia, focused on building
+            web applications that are fast, reliable, and easy to use. I enjoy working across the entire stack — from
+            crafting clean interfaces to designing the systems that power them.</p>
+          <p class="about__desc" data-i18n="about.p2">My interests sit at the intersection of web development, problem
+            solving, and clean architecture — writing code that's not just functional, but maintainable.</p>
+
+          <ul class="about__tags" aria-label="Areas of interest">
+            <li data-i18n="about.tag1">Web Development</li>
+            <li data-i18n="about.tag2">Frontend</li>
+            <li data-i18n="about.tag3">Backend</li>
+            <li data-i18n="about.tag4">Database</li>
+            <li data-i18n="about.tag5">Problem Solving</li>
+          </ul>
+        </div>
+
+        <div class="about__stats reveal">
+          <div class="stat-card">
+            <span class="stat-card__number">05<span class="stat-card__plus">+</span></span>
+            <span class="stat-card__label" data-i18n="about.stat1">Projects</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number">01<span class="stat-card__plus">+</span></span>
+            <span class="stat-card__label" data-i18n="about.stat2">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-card__number">03<span class="stat-card__plus">+</span></span>
+            <span class="stat-card__label" data-i18n="about.stat3">Technologies</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TECH STACK ===== -->
+    <section id="tech-stack" class="section tech">
+      <div class="section__inner">
+        <div class="section-head reveal">
+          <p class="section-eyebrow" data-i18n="tech.eyebrow">Tech Stack</p>
+          <h2 class="section-title" data-i18n="tech.title">Tools and technologies I use to build web applications.</h2>
+        </div>
+
+        <ul class="tech-grid reveal" aria-label="Technology list">
+          <li class="tech-item">
+            <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+            <span>HTML5</span>
+          </li>
+          <li class="tech-item">
+            <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+            <span>CSS3</span>
+          </li>
+          <li class="tech-item">
+            <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+            <span>JavaScript</span>
+          </li>
+          <li class="tech-item">
+            <i class="devicon-nodejs-plain colored" aria-hidden="true"></i>
+            <span>Node.js</span>
+          </li>
+          <li class="tech-item">
+            <i class="devicon-express-original" aria-hidden="true"></i>
+            <span>Express.js</span>
+          </li>
+          <li class="tech-item">
+            <i class="devicon-mysql-plain colored" aria-hidden="true"></i>
+            <span>MySQL</span>
+          </li>
+          <li class="tech-item">
+            <i class="devicon-git-plain colored" aria-hidden="true"></i>
+            <span>Git</span>
+          </li>
+          <li class="tech-item">
+            <i class="devicon-github-original" aria-hidden="true"></i>
+            <span>GitHub</span>
+          </li>
+          <li class="tech-item">
+            <i class="devicon-vscode-plain colored" aria-hidden="true"></i>
+            <span>VS Code</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section projects">
+      <div class="section__inner">
+        <div class="section-head reveal">
+          <p class="section-eyebrow" data-i18n="projects.eyebrow">Featured Projects</p>
+          <h2 class="section-title" data-i18n="projects.title">A selection of things I've built.</h2>
+        </div>
+
+        <div class="project-grid">
+
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80&auto=format&fit=crop"
+                alt="Student Management System dashboard screenshot" loading="lazy">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title" data-i18n="proj1.title">Student Management System</h3>
+              <p class="project-card__desc" data-i18n="proj1.desc">A web-based system for managing student records,
+                grades, and class schedules with a clean administrative dashboard.</p>
+              <ul class="project-card__stack" aria-label="Technologies used">
+                <li><i class="devicon-html5-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-css3-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i></li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#preview" class="project-link js-preview-trigger" data-project="student"><span
+                    data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                <a href="#" class="project-link"><span data-i18n="proj.code">Source Code</span> <i
+                    class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80&auto=format&fit=crop"
+                alt="E-commerce storefront screenshot" loading="lazy">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title" data-i18n="proj2.title">E-Commerce Storefront</h3>
+              <p class="project-card__desc" data-i18n="proj2.desc">A responsive online store with product catalog, cart,
+                and a lightweight checkout flow built from scratch.</p>
+              <ul class="project-card__stack" aria-label="Technologies used">
+                <li><i class="devicon-html5-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-css3-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-express-original" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i></li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#preview" class="project-link js-preview-trigger" data-project="ecommerce"><span
+                    data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                <a href="#" class="project-link"><span data-i18n="proj.code">Source Code</span> <i
+                    class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=80&auto=format&fit=crop"
+                alt="Task management app screenshot" loading="lazy">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title" data-i18n="proj3.title">Task Management App</h3>
+              <p class="project-card__desc" data-i18n="proj3.desc">A kanban-style productivity app for organizing tasks
+                across projects, with drag-and-drop and real-time updates.</p>
+              <ul class="project-card__stack" aria-label="Technologies used">
+                <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-express-original" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i></li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#preview" class="project-link js-preview-trigger" data-project="task"><span
+                    data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                <a href="#" class="project-link"><span data-i18n="proj.code">Source Code</span> <i
+                    class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1200&q=80&auto=format&fit=crop"
+                alt="Personal blog platform screenshot" loading="lazy">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title" data-i18n="proj4.title">Blog Publishing Platform</h3>
+              <p class="project-card__desc" data-i18n="proj4.desc">A minimal blogging platform with markdown support,
+                tagging, and an admin panel for managing posts.</p>
+              <ul class="project-card__stack" aria-label="Technologies used">
+                <li><i class="devicon-html5-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-css3-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i></li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#preview" class="project-link js-preview-trigger" data-project="blog"><span
+                    data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                <a href="#" class="project-link"><span data-i18n="proj.code">Source Code</span> <i
+                    class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LIVE WEBSITE PREVIEW MOCKUP ===== -->
+    <section id="preview" class="section preview">
+      <div class="section__inner">
+        <div class="section-head reveal">
+          <p class="section-eyebrow" data-i18n="preview.eyebrow">Interactive Showcase</p>
+          <h2 class="section-title" data-i18n="preview.title">Live Website Preview Mockup.</h2>
+          <p class="section-desc" data-i18n="preview.desc">Experience real-time interactive previews of web applications
+            inside precision-crafted modern desktop and smartphone frames.</p>
+        </div>
+
+        <!-- Preview Controls Bar -->
+        <div class="preview-toolbar reveal">
+          <!-- Project Switcher Tabs -->
+          <div class="preview-tabs" role="tablist" aria-label="Select project demo">
+            <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-project="ecommerce"
+              data-url="https://storefront.stackly.dev">
+              <i class="bi bi-bag-check" aria-hidden="true"></i>
+              <span data-i18n="proj2.title">E-Commerce Storefront</span>
+            </button>
+            <button type="button" class="preview-tab" role="tab" aria-selected="false" data-project="student"
+              data-url="https://student-admin.stackly.dev">
+              <i class="bi bi-mortarboard" aria-hidden="true"></i>
+              <span data-i18n="proj1.title">Student Management System</span>
+            </button>
+            <button type="button" class="preview-tab" role="tab" aria-selected="false" data-project="task"
+              data-url="https://taskflow.stackly.dev">
+              <i class="bi bi-kanban" aria-hidden="true"></i>
+              <span data-i18n="proj3.title">Task Management App</span>
+            </button>
+            <button type="button" class="preview-tab" role="tab" aria-selected="false" data-project="blog"
+              data-url="https://insights.stackly.dev">
+              <i class="bi bi-journal-text" aria-hidden="true"></i>
+              <span data-i18n="proj4.title">Blog Publishing Platform</span>
+            </button>
+          </div>
+
+          <!-- Device Switcher & Action Controls -->
+          <div class="preview-actions">
+            <!-- Device Viewport Segmented Control -->
+            <div class="device-switcher" role="group" aria-label="Device viewport switcher">
+              <button type="button" class="device-btn is-active" id="desktopViewBtn" data-mode="desktop"
+                aria-pressed="true" title="Desktop View">
+                <i class="bi bi-display" aria-hidden="true"></i>
+                <span data-i18n="preview.desktop">Desktop</span>
+              </button>
+              <button type="button" class="device-btn" id="mobileViewBtn" data-mode="mobile" aria-pressed="false"
+                title="Smartphone View">
+                <i class="bi bi-phone" aria-hidden="true"></i>
+                <span data-i18n="preview.mobile">Mobile</span>
+              </button>
+            </div>
+
+            <!-- Scroll Controls -->
+            <div class="scroll-controls" role="group" aria-label="Scroll controls">
+              <button type="button" class="control-btn" id="autoScrollBtn" title="Auto scroll content"
+                aria-pressed="false">
+                <span class="control-btn__pulse" aria-hidden="true"></span>
+                <i class="bi bi-play-circle" id="autoScrollIcon" aria-hidden="true"></i>
+                <span id="autoScrollText" data-i18n="preview.autoscroll">Auto Scroll</span>
+              </button>
+              <button type="button" class="control-btn" id="resetScrollBtn" title="Reset scroll position to top">
+                <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
+                <span data-i18n="preview.resetscroll">Reset Scroll</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mockup Stage -->
+        <div class="mockup-stage reveal">
+          <!-- Ambient Glow behind device -->
+          <div class="mockup-glow" aria-hidden="true"></div>
+
+          <!-- The Modern Device Mockup Frame -->
+          <div class="mockup-frame is-desktop" id="mockupFrame">
+
+            <!-- Smartphone Physical Buttons (visible only in mobile mode) -->
+            <div class="phone-buttons phone-buttons--left" aria-hidden="true">
+              <span class="phone-btn phone-btn--silent"></span>
+              <span class="phone-btn phone-btn--volume-up"></span>
+              <span class="phone-btn phone-btn--volume-down"></span>
+            </div>
+            <div class="phone-buttons phone-buttons--right" aria-hidden="true">
+              <span class="phone-btn phone-btn--power"></span>
+            </div>
+
+            <!-- DESKTOP TOP BAR (Browser Chrome) -->
+            <div class="mockup-chrome mockup-chrome--desktop">
+              <div class="browser-dots" aria-hidden="true">
+                <span class="browser-dot browser-dot--close" title="Close"></span>
+                <span class="browser-dot browser-dot--min" title="Minimize"></span>
+                <span class="browser-dot browser-dot--zoom" title="Zoom"></span>
+              </div>
+
+              <div class="browser-nav-buttons" aria-hidden="true">
+                <button type="button" class="browser-nav-btn" disabled aria-label="Back"><i
+                    class="bi bi-chevron-left"></i></button>
+                <button type="button" class="browser-nav-btn" disabled aria-label="Forward"><i
+                    class="bi bi-chevron-right"></i></button>
+                <button type="button" class="browser-nav-btn" id="browserReloadBtn" title="Reload preview"
+                  aria-label="Reload"><i class="bi bi-arrow-clockwise"></i></button>
+              </div>
+
+              <div class="browser-omnibox">
+                <i class="bi bi-lock-fill omnibox-lock" aria-hidden="true"></i>
+                <span class="omnibox-url" id="browserUrlText">https://storefront.stackly.dev</span>
+                <span class="omnibox-badge">SSL Secure</span>
+              </div>
+
+              <div class="browser-actions">
+                <a href="assets/demos/ecommerce.html" target="_blank" rel="noopener" class="browser-action-btn"
+                  id="openExternalBtn" title="Open preview in new tab" aria-label="Open in new tab">
+                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- SMARTPHONE TOP BAR (Status Bar & Dynamic Island) -->
+            <div class="mockup-chrome mockup-chrome--mobile" aria-hidden="true">
+              <div class="status-time" id="statusTime">09:41</div>
+
+              <!-- Dynamic Island -->
+              <div class="dynamic-island">
+                <div class="island-camera"></div>
+                <div class="island-sensor"></div>
+              </div>
+
+              <div class="status-icons">
+                <i class="bi bi-reception-4 status-icon"></i>
+                <span class="status-network">5G</span>
+                <div class="status-battery">
+                  <span class="status-battery__fill"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SCREEN VIEWPORT -->
+            <div class="mockup-screen" id="mockupScreen">
+              <!-- Loading Overlay -->
+              <div class="mockup-loader" id="mockupLoader" aria-hidden="true">
+                <div class="mockup-spinner"></div>
+                <span data-i18n="preview.loading">Loading interactive preview...</span>
+              </div>
+
+              <!-- LIVE INTERACTIVE IFRAME -->
+              <iframe id="previewIframe" class="mockup-iframe" src="assets/demos/ecommerce.html"
+                title="Interactive Website Live Preview" loading="lazy" allow="fullscreen"></iframe>
+
+              <!-- SMARTPHONE BOTTOM HOME BAR -->
+              <div class="mockup-home-bar" aria-hidden="true">
+                <span class="home-indicator"></span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Interactive Helper Note -->
+          <div class="mockup-hint">
+            <span class="mockup-hint__dot"></span>
+            <span data-i18n="preview.hint">Interactive: Click, scroll, or test buttons inside the frame.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience" class="section experience">
+      <div class="section__inner">
+        <div class="section-head reveal">
+          <p class="section-eyebrow" data-i18n="exp.eyebrow">Experience</p>
+          <h2 class="section-title" data-i18n="exp.title">Where I've worked and contributed.</h2>
+        </div>
+
+        <ol class="timeline reveal">
+          <li class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__date" data-i18n="exp1.date">2025 — Present</span>
+              <h3 class="timeline__role" data-i18n="exp1.role">Web Developer</h3>
+              <p class="timeline__org" data-i18n="exp1.org">Student Organization · Probolinggo, Indonesia</p>
+              <p class="timeline__desc" data-i18n="exp1.desc">Developing and maintaining web-based projects and
+                contributing to digital initiatives for the organization.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__date" data-i18n="exp2.date">2024 — 2025</span>
+              <h3 class="timeline__role" data-i18n="exp2.role">Freelance Web Developer</h3>
+              <p class="timeline__org" data-i18n="exp2.org">Self-Employed · Indonesia</p>
+              <p class="timeline__desc" data-i18n="exp2.desc">Built small business websites and internal tools, handling
+                everything from UI to database design.</p>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <span class="timeline__date" data-i18n="exp3.date">2023 — 2024</span>
+              <h3 class="timeline__role" data-i18n="exp3.role">Web Development Learner</h3>
+              <p class="timeline__org" data-i18n="exp3.org">Self-Taught · Indonesia</p>
+              <p class="timeline__desc" data-i18n="exp3.desc">Studied core web technologies and built early projects to
+                strengthen fundamentals across the stack.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact">
+      <div class="contact__bg" aria-hidden="true">
+        <div class="contact__glow contact__glow--1"></div>
+        <div class="contact__glow contact__glow--2"></div>
+      </div>
+      <div class="section__inner">
+        <div class="section-head reveal">
+          <p class="section-eyebrow" data-i18n="contact.eyebrow">Get In Touch</p>
+          <h2 class="section-title" data-i18n="contact.title">Let's work together on your next project.</h2>
+        </div>
+
+        <div class="contact__grid">
+          <!-- Contact Info Cards -->
+          <div class="contact__info reveal">
+            <div class="contact-info-card">
+              <div class="contact-info-card__icon">
+                <i class="bi bi-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info-card__body">
+                <h3 data-i18n="contact.emailLabel">Email</h3>
+                <a href="mailto:rizqi@example.com" class="contact-info-card__value">rizqi@example.com</a>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-info-card__icon">
+                <i class="bi bi-geo-alt" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info-card__body">
+                <h3 data-i18n="contact.locationLabel">Location</h3>
+                <p class="contact-info-card__value" data-i18n="contact.locationValue">Probolinggo, Indonesia</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-info-card__icon">
+                <i class="bi bi-clock" aria-hidden="true"></i>
+              </div>
+              <div class="contact-info-card__body">
+                <h3 data-i18n="contact.availLabel">Availability</h3>
+                <p class="contact-info-card__value">
+                  <span class="contact-avail-dot" aria-hidden="true"></span>
+                  <span data-i18n="contact.availValue">Open for freelance</span>
+                </p>
+              </div>
+            </div>
+
+            <div class="contact__socials">
+              <h3 data-i18n="contact.socialLabel">Connect with me</h3>
+              <div class="contact__socials-list">
+                <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"
+                  class="contact-social-btn">
+                  <i class="bi bi-github" aria-hidden="true"></i>
+                </a>
+                <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"
+                  class="contact-social-btn">
+                  <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"
+                  class="contact-social-btn">
+                  <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="WhatsApp"
+                  class="contact-social-btn">
+                  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <form class="contact-form reveal" id="contactForm" novalidate>
+            <div class="contact-form__group">
+              <label for="contactName" data-i18n="contact.nameLabel">Your Name</label>
+              <input type="text" id="contactName" name="name" required autocomplete="name" placeholder="" />
+              <span class="contact-form__focus-line" aria-hidden="true"></span>
+            </div>
+
+            <div class="contact-form__group">
+              <label for="contactEmail" data-i18n="contact.emailInputLabel">Your Email</label>
+              <input type="email" id="contactEmail" name="email" required autocomplete="email" placeholder="" />
+              <span class="contact-form__focus-line" aria-hidden="true"></span>
+            </div>
+
+            <div class="contact-form__group">
+              <label for="contactSubject" data-i18n="contact.subjectLabel">Subject</label>
+              <input type="text" id="contactSubject" name="subject" required placeholder="" />
+              <span class="contact-form__focus-line" aria-hidden="true"></span>
+            </div>
+
+            <div class="contact-form__group">
+              <label for="contactMessage" data-i18n="contact.messageLabel">Message</label>
+              <textarea id="contactMessage" name="message" rows="5" required placeholder=""></textarea>
+              <span class="contact-form__focus-line" aria-hidden="true"></span>
+            </div>
+
+            <button type="submit" class="btn btn--primary contact-form__submit">
+              <span data-i18n="contact.send">Send Message</span>
+              <i class="bi bi-send" aria-hidden="true"></i>
+            </button>
+
+            <div class="contact-form__status" id="formStatus" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__col footer__col--brand">
+        <a href="#home" class="navbar__logo">
+          <span>ST</span>
+          <div class="a">A</div>
+          <div>CK</div>
+          <div class="logGreen logo-accent">LY</div>
+        </a>
+        <p class="footer__desc" data-i18n="footer.desc">Fullstack Developer building modern, responsive, and scalable
+          web applications.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading" data-i18n="footer.nav">Navigation</h4>
+        <ul class="footer__list">
+          <li><a href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a href="#about" data-i18n="nav.about">About</a></li>
+          <li><a href="#tech-stack" data-i18n="nav.techstack">Tech Stack</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading" data-i18n="footer.location">Location</h4>
+        <p class="footer__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> <span
+            data-i18n="footer.locationValue">Indonesia</span></p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading" data-i18n="footer.social">Social Media</h4>
+        <div class="footer__socials">
+          <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"
+              aria-hidden="true"></i></a>
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i
+              class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"
+              aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p data-i18n="footer.copyright">© 2026 Rizqi. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
