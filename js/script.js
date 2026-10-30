@@ -17,6 +17,7 @@
       'nav.about': 'About Us',
       'nav.techstack': 'Services & Stack',
       'nav.projects': 'Sample Tasks',
+      'nav.services': 'Services',
       'nav.preview': 'Live Preview',
       'nav.experience': 'Workflow',
       'nav.contact': 'Order Task',
@@ -58,6 +59,38 @@
       'proj3.desc': 'An advanced web programming assignment with interactive task management, status transitions, sprint tracking, and clean DOM manipulation.',
       'proj4.title': 'Academic Publishing & Journal Platform',
       'proj4.desc': 'A scholarly web platform assignment designed for research publication, citation formatting, reading metrics, and peer discussions.',
+
+      'services.eyebrow': 'SERVICES & EXPERTISE',
+      'services.title': 'Tailored Digital & Academic Solutions.',
+      'services.desc': 'High-standard coding assignments, academic papers, research, and coursework completed on time with quality guarantee.',
+      'services.featuredBadge': 'Featured Service',
+      'services.detailCta': 'View Details',
+
+      'service1.title': 'Website Development Service',
+      'service1.tagline': 'Modern web applications, custom features, fullstack architectures, and responsive UI.',
+      'service2.title': 'Scientific Papers',
+      'service2.tagline': 'Structured academic papers, credible scientific references, and anti-plagiarism guaranteed.',
+      'service3.title': 'Presentation & Slides (PPT)',
+      'service3.tagline': 'Elegant slide deck designs, clear infographics, and ready-to-present visuals.',
+      'service4.title': 'Course Material Resume',
+      'service4.tagline': 'Essential executive summaries from textbooks, lecture modules, and scholarly papers.',
+      'service5.title': 'Laboratory Reports',
+      'service5.tagline': 'Accurate data analysis, experimental test results, and compliant lab templates.',
+      'service6.title': 'Study Guide & Material Summary',
+      'service6.tagline': 'Targeted exam preparation, comprehensive cheatsheets, and concept mind maps.',
+      'service7.title': 'Individual Assignments',
+      'service7.tagline': 'Meticulous individual homework and essays adhering strictly to your professor\'s rubric.',
+      'service8.title': 'Group Projects',
+      'service8.tagline': 'Collaborative team coursework, balanced task distribution, and unified submission files.',
+
+      'modal.scopeTitle': 'Scope of Work',
+      'modal.requirementsTitle': 'Client Requirements & Details',
+      'modal.priceLabel': 'Pricing Info',
+      'modal.priceValue': 'Contact admin for pricing and quotation',
+      'modal.estimateLabel': 'Estimated Turnaround',
+      'modal.estimateValue': 'Consult your turnaround deadline with admin',
+      'modal.footerNote': 'Order form auto-fills and is ready to submit',
+      'modal.orderCta': 'Order Service',
 
       'exp.eyebrow': 'How to Order',
       'exp.title': 'Ordering tasks at Stackly: Simple, secure, and fast.',
@@ -123,6 +156,7 @@
       'nav.about': 'Tentang Kami',
       'nav.techstack': 'Layanan & Stack',
       'nav.projects': 'Contoh Tugas',
+      'nav.services': 'Daftar Layanan',
       'nav.preview': 'Live Preview',
       'nav.experience': 'Alur Order',
       'nav.contact': 'Order Tugas',
@@ -164,6 +198,38 @@
       'proj3.desc': 'Tugas pemrograman web lanjut berupa aplikasi manajemen tugas bergaya Kanban dengan checklist interaktif, kategori prioritas, dan progress sprint.',
       'proj4.title': 'Platform Publikasi Jurnal & Makalah Ilmiah',
       'proj4.desc': 'Tugas karya tulis dan web portal publikasi ilmiah dengan tata letak artikel berstandar akademik, sistem sitasi, dan fitur diskusi pembaca.',
+
+      'services.eyebrow': 'DAFTAR LAYANAN',
+      'services.title': 'Layanan Digital & Akademik Profesional.',
+      'services.desc': 'Solusi pengerjaan tugas coding dan akademik terstandar tinggi, transparan, cepat, dan bergaransi.',
+      'services.featuredBadge': 'Layanan Unggulan',
+      'services.detailCta': 'Lihat Detail',
+
+      'service1.title': 'Jasa Pembuatan Website',
+      'service1.tagline': 'Pengembangan aplikasi web modern, landing page, sistem informasi, dan tugas web responsif fullstack.',
+      'service2.title': 'Makalah',
+      'service2.tagline': 'Karya ilmiah terstruktur, referensi jurnal kredibel & bebas plagiasi.',
+      'service3.title': 'PPT / Presentasi',
+      'service3.tagline': 'Desain slide visual elegan, infografis komunikatif & siap sidang.',
+      'service4.title': 'Resume Materi',
+      'service4.tagline': 'Ringkasan esensial dari buku, bab materi, & artikel perkuliahan.',
+      'service5.title': 'Laporan Praktikum',
+      'service5.tagline': 'Analisis data percobaan akurat, grafik hasil uji, & template lab baku.',
+      'service6.title': 'Rangkuman Materi',
+      'service6.tagline': 'Intisari persiapan kuis, UTS/UAS, dan cheatsheet materi padat komprehensif.',
+      'service7.title': 'Tugas Individu',
+      'service7.tagline': 'Tugas mandiri harian/mingguan cermat, teliti & sesuai kriteria dosen.',
+      'service8.title': 'Tugas Kelompok',
+      'service8.tagline': 'Proyek tim kolaboratif, pembagian tugas merata & penyerahan terpadu.',
+
+      'modal.scopeTitle': 'Cakupan Layanan',
+      'modal.requirementsTitle': 'Informasi & Kebutuhan Pemesan',
+      'modal.priceLabel': 'Informasi Harga',
+      'modal.priceValue': 'Hubungi admin untuk informasi harga dan estimasi',
+      'modal.estimateLabel': 'Estimasi Pengerjaan',
+      'modal.estimateValue': 'Konsultasikan deadline pengerjaan bersama admin',
+      'modal.footerNote': 'Formulir otomatis terisi & siap dikirim',
+      'modal.orderCta': 'Pesan Layanan',
 
       'exp.eyebrow': 'Alur Pemesanan',
       'exp.title': 'Cara order tugas di Stackly: Mudah, transparan, dan bergaransi.',
@@ -257,6 +323,10 @@
     });
 
     document.documentElement.setAttribute('lang', lang);
+
+    if (typeof refreshServiceModalLanguage === 'function') {
+      refreshServiceModalLanguage(lang);
+    }
   }
 
   function updateLangButtons(lang) {
@@ -796,6 +866,524 @@
   }
 
   /* ---------------------------------------------------------
+     9. DAFTAR LAYANAN (SERVICES BENTO GRID & DETAIL MODAL)
+     --------------------------------------------------------- */
+  var servicesData = {
+    '01': {
+      num: '01',
+      icon: 'bi-laptop',
+      id: {
+        title: 'Jasa Pembuatan Website',
+        desc: 'Layanan rancang bangun website profesional dan tugas pemrograman web dari frontend interaktif hingga backend & database terintegrasi.',
+        scope: [
+          'Pengembangan Website Responsif (Desktop, Tablet, Mobile)',
+          'Arsitektur Frontend Modern & Bersih (HTML5, CSS3, JavaScript, React)',
+          'Pemrograman Backend & Integrasi Database (Node.js, Express, PHP, MySQL)',
+          'Fitur Lengkap: CRUD, Autentikasi Pengguna, Filter Pencarian & Dashboard Admin',
+          'Penyerahan Source Code Lengkap + Panduan Instalasi & Presentasi'
+        ],
+        requirements: [
+          { label: 'Jenis Website', desc: 'Landing page, web app, e-commerce, sistem informasi kampus, portfolio, dsb.' },
+          { label: 'Kebutuhan Fitur', desc: 'Autentikasi login/register, CRUD database, dashboard admin, simulasi checkout.' },
+          { label: 'Desain & Tampilan', desc: 'Tema modern dark/light mode, wireframe referensi, atau acuan desain khusus.' },
+          { label: 'Responsivitas', desc: 'Optimasi tampilan untuk smartphone, tablet, laptop, hingga monitor desktop.' },
+          { label: 'Teknologi yang Dibutuhkan', desc: 'Stack bahasa dan database yang diwajibkan oleh dosen atau kebutuhan proyek.' },
+          { label: 'Kebutuhan Tambahan', desc: 'Domain/hosting, dokumentasi kode, penjelasan alur program, atau persiapan presentasi.' }
+        ],
+        subject: 'Pemesanan Layanan Jasa Pembuatan Website',
+        messageTemplate: 'Halo STACKLY, saya tertarik memesan Jasa Pembuatan Website.\n\nJenis Website: (Landing Page / Web App / Toko Online / Tugas Kampus)\nFitur yang Dibutuhkan: \nDesain & Tampilan: \nTeknologi yang Dibutuhkan: \nDeadline Pengerjaan: \nKebutuhan Tambahan: '
+      },
+      en: {
+        title: 'Website Development Service',
+        desc: 'Professional end-to-end web development services for assignments and custom digital products from interactive UI to integrated databases.',
+        scope: [
+          'Fully Responsive Web Design (Desktop, Tablet, Smartphone)',
+          'Modern Frontend Architecture (HTML5, CSS3, JavaScript, React)',
+          'Backend Development & Database Integration (Node.js, Express, PHP, MySQL)',
+          'Core Features: CRUD operations, Auth, Search Filters & Admin Panel',
+          'Complete Source Code Handover + Setup & Presentation Guide'
+        ],
+        requirements: [
+          { label: 'Website Type', desc: 'Landing page, web application, e-commerce, student management portal, portfolio, etc.' },
+          { label: 'Required Features', desc: 'User authentication, database CRUD, admin dashboard, interactive forms.' },
+          { label: 'UI / UX Design', desc: 'Modern dark/light theme, wireframes, reference links, or brand guidelines.' },
+          { label: 'Responsiveness', desc: 'Optimization across mobile phones, tablets, laptops, and large monitors.' },
+          { label: 'Tech Stack', desc: 'Languages and database engines required by your professor or project brief.' },
+          { label: 'Extra Needs', desc: 'Hosting setup, codebase documentation, walkthrough coaching, or defense prep.' }
+        ],
+        subject: 'Order Service - Website Development Service',
+        messageTemplate: 'Hello STACKLY, I am interested in ordering the Website Development Service.\n\nWebsite Type: (Landing Page / Web App / Storefront / Coursework)\nRequired Features: \nDesign & Style Preference: \nRequired Tech Stack: \nTurnaround Deadline: \nAdditional Notes: '
+      }
+    },
+    '02': {
+      num: '02',
+      icon: 'bi-journal-text',
+      id: {
+        title: 'Makalah',
+        desc: 'Penulisan makalah akademik dan karya tulis ilmiah komprehensif dengan kaidah penulisan baku, analisis mendalam, dan sitasi valid.',
+        scope: [
+          'Penyusunan Makalah Lengkap (Cover, Kata Pengantar, Pendahuluan, Pembahasan, Penutup)',
+          'Referensi Ilmiah Terkini (Jurnal terakreditasi Sinta/Scopus, buku rujukan resmi)',
+          'Sitasi & Daftar Pustaka Standar (Format APA, IEEE, Harvard, atau Vancouver)',
+          'Format Dokumen Rapi Sesuai Template Kampus (Font, Margin 4-4-3-3, Spasi baku)',
+          'Garansi Lolos Turnitin / Bebas Plagiasi & Revisi Gratis'
+        ],
+        requirements: [
+          { label: 'Topik atau Judul', desc: 'Tema spesifik atau arahan silabus dari dosen pengampu.' },
+          { label: 'Struktur Makalah', desc: 'Sistematika bab khusus atau pedoman penulisan fakultas.' },
+          { label: 'Jumlah Halaman', desc: 'Target kuota halaman atau batas minimal/maksimal kata.' },
+          { label: 'Format Dokumen', desc: 'Ukuran kertas, margin (misal 4-4-3-3), jenis font, dan spasi dokumen.' },
+          { label: 'Referensi / Sumber Materi', desc: 'Batasan tahun terbit rujukan atau preferensi jurnal tertentu.' }
+        ],
+        subject: 'Pemesanan Layanan Makalah',
+        messageTemplate: 'Halo STACKLY, saya tertarik menggunakan layanan Makalah.\n\nTopik atau Judul: \nStruktur Makalah: \nJumlah Halaman: \nFormat Dokumen: (DOCX / PDF)\nReferensi / Sumber Materi: \nDeadline: \nKebutuhan Tambahan: '
+      },
+      en: {
+        title: 'Scientific Papers',
+        desc: 'Comprehensive scientific papers and academic essays written with strict scholarship, thorough analysis, and valid citations.',
+        scope: [
+          'Complete Academic Structure (Cover, Abstract, Introduction, Discussion, Conclusion)',
+          'Current Scholarly Sources (Peer-reviewed journals, textbooks, accredited papers)',
+          'Standardized Citations & Bibliography (APA, IEEE, Harvard, or Vancouver formats)',
+          'Clean Typography & Document Margins adhering to campus guidelines',
+          'Zero-Plagiarism Guarantee (Turnitin-safe) & Free Revisions'
+        ],
+        requirements: [
+          { label: 'Topic / Title', desc: 'Specific research topic, assignment question, or syllabus theme.' },
+          { label: 'Paper Structure', desc: 'Specific chapter outlines or departmental formatting guidelines.' },
+          { label: 'Page / Word Count', desc: 'Target page quota or minimum/maximum word limits.' },
+          { label: 'Document Format', desc: 'Paper size, margins, font face, spacing, and DOCX/PDF export.' },
+          { label: 'References & Sources', desc: 'Year publication limits, accredited journal tier, or provided materials.' }
+        ],
+        subject: 'Order Service - Scientific Paper',
+        messageTemplate: 'Hello STACKLY, I am interested in ordering the Scientific Paper service.\n\nTopic or Title: \nPaper Structure: \nPage Count: \nDocument Format: (DOCX / PDF)\nReferences / Materials: \nDeadline: \nAdditional Notes: '
+      }
+    },
+    '03': {
+      num: '03',
+      icon: 'bi-easel2',
+      id: {
+        title: 'PPT / Presentasi',
+        desc: 'Desain slide presentasi modern, persuasif, dan visual-driven untuk sidang, seminar, tugas kuliah, maupun pitching proyek.',
+        scope: [
+          'Desain Visual Futuristik & Elegan (Bukan template standar yang membosankan)',
+          'Visualisasi Data, Diagram Alur, & Infografis Konseptual yang Mudah Dipahami',
+          'Pemadatan Materi Menjadi Poin-poin Kunci (Key Takeaways) yang Tajam',
+          'Transisi & Animasi Halus Tanpa Mengurangi Formalitas',
+          'File Master Presentasi (.PPTX) yang Dapat Diedit Sepenuhnya + File PDF'
+        ],
+        requirements: [
+          { label: 'Topik Presentasi', desc: 'Tema materi kuliah, proposal proyek, atau hasil riset.' },
+          { label: 'Jumlah Slide', desc: 'Estimasi jumlah slide atau alokasi durasi waktu presentasi.' },
+          { label: 'Desain Presentasi', desc: 'Preferensi palet warna, gaya modern/minimalis, atau template institusi.' },
+          { label: 'Materi yang Dibutuhkan', desc: 'Dokumen materi dasar, draft makalah, atau pointer materi.' },
+          { label: 'Format File', desc: 'PPTX, PDF, Google Slides, serta rasio layar (16:9 widescreen).' }
+        ],
+        subject: 'Pemesanan Layanan PPT / Presentasi',
+        messageTemplate: 'Halo STACKLY, saya tertarik memesan layanan PPT / Presentasi.\n\nTopik Presentasi: \nJumlah Slide: \nDesain Presentasi: \nMateri yang Dibutuhkan: \nFormat File: (PPTX / PDF / Google Slides)\nDeadline: \nKebutuhan Tambahan: '
+      },
+      en: {
+        title: 'Presentation & Slides (PPT)',
+        desc: 'Compelling, modern slide decks crafted for academic defenses, seminar presentations, team pitches, and coursework.',
+        scope: [
+          'Sleek Futuristic & Clean Presentation Layouts (Tailor-made, never generic)',
+          'Data Visualizations, Workflow Diagrams & Intuitive Concept Infographics',
+          'Sharp Content Condensation with high-impact key takeaways',
+          'Subtle Professional Motion & Transitions',
+          'Fully Editable Master PowerPoint File (.PPTX) + PDF Version'
+        ],
+        requirements: [
+          { label: 'Presentation Topic', desc: 'Course subject, thesis defense topic, project pitch, or case study.' },
+          { label: 'Slide Count', desc: 'Expected slide count or presentation duration limit in minutes.' },
+          { label: 'Visual Style', desc: 'Preferred color scheme, minimal high-tech look, or institutional template.' },
+          { label: 'Provided Materials', desc: 'Source paper, rough lecture notes, outlines, or bullet points.' },
+          { label: 'File Output', desc: 'PPTX, PDF, Google Slides, widescreen 16:9 aspect ratio.' }
+        ],
+        subject: 'Order Service - Presentation Slides (PPT)',
+        messageTemplate: 'Hello STACKLY, I am interested in ordering the Presentation Slides (PPT) service.\n\nPresentation Topic: \nSlide Count: \nDesign Preference: \nProvided Materials: \nFile Format: \nDeadline: \nAdditional Notes: '
+      }
+    },
+    '04': {
+      num: '04',
+      icon: 'bi-card-checklist',
+      id: {
+        title: 'Resume Materi',
+        desc: 'Penyusunan resume substansi materi dari literatur, modul, rekaman perkuliahan, atau artikel ilmiah secara sistematis dan padat.',
+        scope: [
+          'Ekstraksi Gagasan Pokok & Konsep Kunci secara Komprehensif',
+          'Penataan Informasi Hierarkis dengan Heading & Bullet Points Rapi',
+          'Penyusunan Glosarium Istilah Penting untuk Memudahkan Pemahaman',
+          'Format Dokumen Siap Kumpul (DOCX / PDF) sesuai Panduan Dosen'
+        ],
+        requirements: [
+          { label: 'Topik Materi', desc: 'Judul bab, materi kuliah, artikel ilmiah, atau modul referensi.' },
+          { label: 'File atau Sumber Materi', desc: 'Dokumen PDF modul, link materi, atau slide perkuliahan.' },
+          { label: 'Tingkat Detail Resume', desc: 'Intisari ringkas, poin pokok, atau resume komprehensif.' },
+          { label: 'Format Dokumen', desc: 'Ketentuan margin, font, format file (.docx / .pdf), dan kelengkapan cover.' }
+        ],
+        subject: 'Pemesanan Layanan Resume Materi',
+        messageTemplate: 'Halo STACKLY, saya tertarik memesan layanan Resume Materi.\n\nTopik Materi: \nFile atau Sumber Materi: \nTingkat Detail Resume: (Ringkas / Poin Pokok / Lengkap)\nFormat Dokumen: (DOCX / PDF)\nDeadline: \nKebutuhan Tambahan: '
+      },
+      en: {
+        title: 'Course Material Resume',
+        desc: 'Systematic and dense summaries extracting core concepts and thesis arguments from textbooks, lecture recordings, and scholarly articles.',
+        scope: [
+          'Comprehensive Extraction of Key Theorems, Concepts & Case Studies',
+          'Structured Information Architecture with clear headers and bullet points',
+          'Terminology Glossaries for swift memorization and review',
+          'Ready-to-Submit Academic Document (DOCX / PDF) aligned with coursework rules'
+        ],
+        requirements: [
+          { label: 'Material Topic', desc: 'Chapter title, syllabus unit, journal article, or lecture module.' },
+          { label: 'Source File', desc: 'PDF handouts, lecture slides, ebook chapters, or video links.' },
+          { label: 'Detail Level', desc: 'Brief executive summary, core key takeaways, or in-depth synthesis.' },
+          { label: 'Document Format', desc: 'Page margins, font face, cover page, and file format (DOCX/PDF).' }
+        ],
+        subject: 'Order Service - Course Material Resume',
+        messageTemplate: 'Hello STACKLY, I am interested in ordering the Material Resume service.\n\nTopic / Subject: \nSource Materials: \nDetail Level: \nDocument Format: \nDeadline: \nAdditional Notes: '
+      }
+    },
+    '05': {
+      num: '05',
+      icon: 'bi-journal-code',
+      id: {
+        title: 'Laporan Praktikum',
+        desc: 'Penulisan laporan praktikum laboratorium dengan analisis data akurat, pembahasan metodologis, dan interpretasi grafik/tabel yang valid.',
+        scope: [
+          'Sistematika Standar Laboratorium (Tujuan, Teori Dasar, Alat & Bahan, Prosedur)',
+          'Pengolahan Data Hasil Praktikum (Tabel, Perhitungan Formula, Grafik, & Screenshot Hasil)',
+          'Analisis & Pembahasan Mendalam Terhadap Fenomena Eksperimen',
+          'Kesimpulan, Saran, & Jawaban Tugas Pendahuluan / Pertanyaan Akhir'
+        ],
+        requirements: [
+          { label: 'Nama Mata Kuliah', desc: 'Pemrograman, basis data, jaringan, elektronika, IPA/teknik, dll.' },
+          { label: 'Topik Praktikum', desc: 'Judul modul percobaan mingguan atau praktikum akhir semester.' },
+          { label: 'Format Laporan', desc: 'Template dokumen wajib lab fakultas/program studi.' },
+          { label: 'Data Hasil Praktikum', desc: 'Angka pengukuran, log data, kode program, atau tangkapan layar uji.' },
+          { label: 'Ketentuan dari Dosen', desc: 'Rubrik khusus penilaian asistensi atau instruksi asisten lab.' }
+        ],
+        subject: 'Pemesanan Layanan Laporan Praktikum',
+        messageTemplate: 'Halo STACKLY, saya tertarik memesan layanan Laporan Praktikum.\n\nNama Mata Kuliah: \nTopik Praktikum: \nFormat Laporan: \nData Hasil Praktikum: \nKetentuan dari Dosen / Asisten Lab: \nDeadline: '
+      },
+      en: {
+        title: 'Laboratory Reports',
+        desc: 'Detailed laboratory practical reports with accurate empirical data analysis, methodical discussion, and verified calculation tables.',
+        scope: [
+          'Standard Lab Structure (Objectives, Theoretical Basis, Apparatus, Methodology)',
+          'Data Processing (Observation tables, formulas, charts, and screen captures)',
+          'Critical Discussion & Scientific Analysis of experimental results',
+          'Conclusions, Recommendations & Complete Pre/Post-Lab Questionnaire Answers'
+        ],
+        requirements: [
+          { label: 'Course Subject', desc: 'Web programming, computer networking, databases, circuit design, physics, etc.' },
+          { label: 'Practicum Topic', desc: 'Weekly module experiment title or final lab project.' },
+          { label: 'Report Template', desc: 'Standard lab manual formatting guidelines or Word template.' },
+          { label: 'Experimental Data', desc: 'Raw measurement logs, sample inputs/outputs, code terminal logs.' },
+          { label: 'Instructor Notes', desc: 'Specific grading rubrics from teaching assistants or professors.' }
+        ],
+        subject: 'Order Service - Laboratory Report',
+        messageTemplate: 'Hello STACKLY, I am interested in ordering the Laboratory Report service.\n\nCourse Subject: \nPracticum Topic: \nReport Format: \nLab Output Data: \nInstructor / TA Requirements: \nDeadline: '
+      }
+    },
+    '06': {
+      num: '06',
+      icon: 'bi-bookmark-star',
+      id: {
+        title: 'Rangkuman Materi',
+        desc: 'Rangkuman ringkas dan terarah untuk persiapan kuis, UTS, UAS, atau ujian sertifikasi dengan fokus pada inti konsep dan pemahaman cepat.',
+        scope: [
+          'Sintesis Materi Terfokus Berdasarkan Kisi-Kisi Ujian',
+          'Mind Map Konseptual & Poin Hafalan / Rumus Utama',
+          'Penyusunan Contoh Soal & Pembahasan Kunci',
+          'Format Baca Cepat (Quick Cheat-Sheet & Extended Study Guide)'
+        ],
+        requirements: [
+          { label: 'Topik Materi', desc: 'Bahan ajar satu semester, bab spesifik, atau kisi-kisi ujian tertentu.' },
+          { label: 'Sumber Materi', desc: 'Buku referensi, kumpulan slide perkuliahan, atau silabus dosen.' },
+          { label: 'Panjang Rangkuman', desc: 'Format cheat-sheet ringkas (1-3 halaman) atau panduan belajar lengkap.' },
+          { label: 'Format Dokumen', desc: 'File dokumen siap cetak/baca (.pdf / .docx) dengan layout nyaman dibaca.' }
+        ],
+        subject: 'Pemesanan Layanan Rangkuman Materi',
+        messageTemplate: 'Halo STACKLY, saya tertarik memesan layanan Rangkuman Materi.\n\nTopik Materi: \nSumber Materi: \nPanjang Rangkuman: \nFormat Dokumen: (DOCX / PDF)\nDeadline: \nCatatan Tambahan: '
+      },
+      en: {
+        title: 'Study Guide & Material Summary',
+        desc: 'Concentrated exam preparation guides, formula cheatsheets, and concept mappings designed for midterms, finals, and certification exams.',
+        scope: [
+          'Focused Material Synthesis prioritized around official exam rubrics',
+          'Conceptual Mind Maps & Core Formula Memorization aids',
+          'Sample Questions with detailed step-by-step problem-solving breakdown',
+          'Fast Reading Layouts (1-3 page quick reference cheatsheet or extended study book)'
+        ],
+        requirements: [
+          { label: 'Subject Matter', desc: 'Semester syllabus, specific chapters, or targeted exam questions.' },
+          { label: 'Source References', desc: 'Textbook titles, slide decks, professor lectures, or past exams.' },
+          { label: 'Length & Scope', desc: 'High-density cheatsheet (1-3 pages) or extensive revision booklet.' },
+          { label: 'Format Requirements', desc: 'Print-ready or mobile-friendly DOCX/PDF with scannable headings.' }
+        ],
+        subject: 'Order Service - Study Guide & Material Summary',
+        messageTemplate: 'Hello STACKLY, I am interested in ordering the Study Guide / Summary service.\n\nSubject Matter: \nSource References: \nLength & Scope: \nFormat Requirements: \nDeadline: \nAdditional Notes: '
+      }
+    },
+    '07': {
+      num: '07',
+      icon: 'bi-person-check',
+      id: {
+        title: 'Tugas Individu',
+        desc: 'Bantuan pengerjaan berbagai bentuk tugas mandiri harian/mingguan mahasiswa dengan ketelitian tinggi dan orisinalitas terjamin.',
+        scope: [
+          'Pengerjaan Tugas Mandiri Sesuai Ketentuan Dosen / Guru',
+          'Pengecekan Ketat Terhadap Kriteria & Bobot Rubrik Penilaian',
+          'Hasil Pengerjaan Orisinal, Rapi, dan Siap Kumpul',
+          'Penjelasan Logika Pengerjaan agar Membantu Pemahaman Mahasiswa'
+        ],
+        requirements: [
+          { label: 'Jenis Tugas', desc: 'Esai, studi kasus, review artikel, latihan soal pemrograman, dsb.' },
+          { label: 'Mata Kuliah', desc: 'Bidang studi dan nama mata kuliah terkait.' },
+          { label: 'Instruksi Pengerjaan', desc: 'Soal lengkap, lembar kerja, dan rubrik penilaian dosen.' },
+          { label: 'Deadline', desc: 'Batas waktu penyerahan (bisa konsultasi untuk pengerjaan kilat/urgent).' },
+          { label: 'File Pendukung', desc: 'Modul mata kuliah, materi acuan, atau template yang disyaratkan.' }
+        ],
+        subject: 'Pemesanan Layanan Tugas Individu',
+        messageTemplate: 'Halo STACKLY, saya tertarik memesan layanan Tugas Individu.\n\nJenis Tugas: \nMata Kuliah: \nInstruksi Pengerjaan: \nDeadline: \nFile Pendukung / Kebutuhan Tambahan: '
+      },
+      en: {
+        title: 'Individual Assignments',
+        desc: 'Assistance for coursework, problem sets, case study papers, and weekly homework delivered with high accuracy and originality.',
+        scope: [
+          'Tailored Assignment Execution following specific instructor guidelines',
+          'Strict Compliance with Course Rubrics and grading criteria',
+          'Clean, verified original output ready for immediate submission',
+          'Transparent Logic Explanations so you can confidently answer follow-up questions'
+        ],
+        requirements: [
+          { label: 'Assignment Type', desc: 'Analytical essay, case study, problem set, coding exercises, etc.' },
+          { label: 'Course Name', desc: 'Academic discipline, module code, and subject name.' },
+          { label: 'Brief & Instructions', desc: 'Assignment prompt sheet, grading rubric, and special lecturer notes.' },
+          { label: 'Deadline Date', desc: 'Submission cutoff date & time (express/urgent options available).' },
+          { label: 'Supporting Files', desc: 'Course slides, reading list, dataset files, or required format template.' }
+        ],
+        subject: 'Order Service - Individual Assignment',
+        messageTemplate: 'Hello STACKLY, I am interested in ordering the Individual Assignment service.\n\nAssignment Type: \nCourse Name: \nInstructions / Prompt: \nDeadline: \nSupporting Materials / Notes: '
+      }
+    },
+    '08': {
+      num: '08',
+      icon: 'bi-people',
+      id: {
+        title: 'Tugas Kelompok',
+        desc: 'Solusi pengerjaan proyek kelompok, tugas kolaboratif, maupun makalah tim terpadu dengan integrasi hasil yang rapi dan konsisten.',
+        scope: [
+          'Koordinasi Penyusunan Bagian-Bagian Proyek Kelompok secara Terpadu',
+          'Harmonisasi Gaya Penulisan & Format Seluruh Anggota Tim',
+          'Pengerjaan Bagian Tertentu Saja atau Keseluruhan Proyek Tim',
+          'Siap dengan Materi Presentasi & Pembagian Peran saat Ujian / Sidang'
+        ],
+        requirements: [
+          { label: 'Jenis Tugas', desc: 'Proyek semester, makalah kelompok, aplikasi tim, presentasi bersama.' },
+          { label: 'Mata Kuliah', desc: 'Nama mata kuliah dan institusi pengampu.' },
+          { label: 'Jumlah Anggota', desc: 'Pembagian sub-tugas antar anggota atau pengerjaan menyeluruh.' },
+          { label: 'Instruksi Pengerjaan', desc: 'Panduan tugas kelompok dan kriteria capaian luaran.' },
+          { label: 'Deadline', desc: 'Jadwal target pengumpulan progres tim dan penyerahan final.' },
+          { label: 'File Pendukung', desc: 'Draft awal kelompok, lembar acuan dosen, atau data pendukung.' }
+        ],
+        subject: 'Pemesanan Layanan Tugas Kelompok',
+        messageTemplate: 'Halo STACKLY, saya tertarik memesan layanan Tugas Kelompok.\n\nJenis Tugas: \nMata Kuliah: \nJumlah Anggota: \nInstruksi Pengerjaan: \nDeadline: \nFile Pendukung / Catatan Khusus: '
+      },
+      en: {
+        title: 'Group Projects',
+        desc: 'Comprehensive solutions for collaborative coursework, semester group papers, team software projects, and presentation preparations.',
+        scope: [
+          'Unified Synthesis of Multi-Part Group Deliverables',
+          'Tone, Style & Layout Harmonization across all project sections',
+          'Flexible Scope: specific chapters/features or end-to-end project completion',
+          'Presentation-Ready Deck & Q&A Role-Play Guidance for defense'
+        ],
+        requirements: [
+          { label: 'Project Type', desc: 'Semester term project, group paper, multi-component app, team pitch.' },
+          { label: 'Course Subject', desc: 'University department, subject name, and professor in charge.' },
+          { label: 'Team Size & Roles', desc: 'Number of members and assigned division of responsibilities.' },
+          { label: 'Project Guidelines', desc: 'Official project specification handbook and evaluation milestones.' },
+          { label: 'Deadline Schedule', desc: 'Milestone submission checkpoints and final project due date.' },
+          { label: 'Shared Files', desc: 'Group shared drive links, partial drafts, or datasets.' }
+        ],
+        subject: 'Order Service - Group Project',
+        messageTemplate: 'Hello STACKLY, I am interested in ordering the Group Project service.\n\nProject Type: \nCourse Subject: \nNumber of Group Members: \nProject Instructions: \nDeadline: \nShared Files / Notes: '
+      }
+    }
+  };
+
+  var activeServiceId = null;
+  var activeTriggerElement = null;
+
+  function refreshServiceModalLanguage(lang) {
+    var modalBackdrop = document.getElementById('serviceModalBackdrop');
+    if (!modalBackdrop || !modalBackdrop.classList.contains('is-open') || !activeServiceId) return;
+    populateServiceModal(activeServiceId, lang);
+  }
+
+  function populateServiceModal(serviceId, lang) {
+    var currentLang = lang || getStoredLang() || DEFAULT_LANG;
+    var rawItem = servicesData[serviceId];
+    if (!rawItem) return;
+
+    var item = rawItem[currentLang] || rawItem['id'];
+    var modalNum = document.getElementById('serviceModalNum');
+    var modalIcon = document.getElementById('serviceModalIcon');
+    var modalTitle = document.getElementById('serviceModalTitle');
+    var modalDesc = document.getElementById('serviceModalDesc');
+    var modalScopeList = document.getElementById('serviceModalScopeList');
+    var modalReqGrid = document.getElementById('serviceModalReqGrid');
+
+    if (modalNum) modalNum.textContent = rawItem.num;
+    if (modalIcon) modalIcon.className = 'bi ' + rawItem.icon;
+    if (modalTitle) modalTitle.textContent = item.title;
+    if (modalDesc) modalDesc.textContent = item.desc;
+
+    if (modalScopeList) {
+      modalScopeList.innerHTML = '';
+      item.scope.forEach(function (text) {
+        var li = document.createElement('li');
+        li.className = 'service-modal__item';
+        li.innerHTML = '<span class="service-modal__item-dot" aria-hidden="true"><i class="bi bi-check2-circle"></i></span><span>' + text + '</span>';
+        modalScopeList.appendChild(li);
+      });
+    }
+
+    if (modalReqGrid) {
+      modalReqGrid.innerHTML = '';
+      item.requirements.forEach(function (req) {
+        var card = document.createElement('div');
+        card.className = 'service-modal__req-card';
+
+        var label = document.createElement('span');
+        label.className = 'service-modal__req-label';
+        label.textContent = req.label;
+
+        var desc = document.createElement('span');
+        desc.className = 'service-modal__req-desc';
+        desc.textContent = req.desc;
+
+        card.appendChild(label);
+        card.appendChild(desc);
+        modalReqGrid.appendChild(card);
+      });
+    }
+  }
+
+  function initServicesSection() {
+    var serviceCards = document.querySelectorAll('.service-card[data-service-id]');
+    var modalBackdrop = document.getElementById('serviceModalBackdrop');
+    var modalDialog = document.getElementById('serviceModalDialog');
+    var modalCloseBtn = document.getElementById('serviceModalCloseBtn');
+    var modalOrderBtn = document.getElementById('serviceModalOrderBtn');
+
+    if (!modalBackdrop || !serviceCards.length) return;
+
+    function openModal(serviceId, triggerEl) {
+      activeServiceId = serviceId;
+      activeTriggerElement = triggerEl;
+      populateServiceModal(serviceId);
+
+      modalBackdrop.classList.add('is-open');
+      modalBackdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      if (modalCloseBtn) {
+        modalCloseBtn.focus();
+      }
+    }
+
+    function closeModal() {
+      if (!modalBackdrop.classList.contains('is-open')) return;
+      modalBackdrop.classList.remove('is-open');
+      modalBackdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+
+      if (activeTriggerElement && typeof activeTriggerElement.focus === 'function') {
+        activeTriggerElement.focus();
+      }
+      activeServiceId = null;
+      activeTriggerElement = null;
+    }
+
+    function handleOrder(serviceId) {
+      if (!serviceId) return;
+      var currentLang = getStoredLang() || DEFAULT_LANG;
+      var rawItem = servicesData[serviceId];
+      if (!rawItem) return;
+
+      var item = rawItem[currentLang] || rawItem['id'];
+
+      closeModal();
+
+      var contactSection = document.getElementById('contact');
+      var subjectInput = document.getElementById('contactSubject');
+      var messageInput = document.getElementById('contactMessage');
+      var nameInput = document.getElementById('contactName');
+
+      if (subjectInput) {
+        subjectInput.value = item.subject;
+      }
+      if (messageInput) {
+        messageInput.value = item.messageTemplate;
+      }
+
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      setTimeout(function () {
+        if (nameInput) {
+          nameInput.focus();
+        }
+      }, 450);
+    }
+
+    /* Card event listeners */
+    serviceCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        var id = card.getAttribute('data-service-id');
+        openModal(id, card);
+      });
+
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          var id = card.getAttribute('data-service-id');
+          openModal(id, card);
+        }
+      });
+    });
+
+    /* Close button listener */
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', closeModal);
+    }
+
+    /* Backdrop click outside dialog */
+    modalBackdrop.addEventListener('click', function (e) {
+      if (modalDialog && !modalDialog.contains(e.target)) {
+        closeModal();
+      }
+    });
+
+    /* Escape key to close modal */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modalBackdrop.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+
+    /* Order Button listener */
+    if (modalOrderBtn) {
+      modalOrderBtn.addEventListener('click', function () {
+        handleOrder(activeServiceId);
+      });
+    }
+  }
+
+  /* ---------------------------------------------------------
      INIT
      --------------------------------------------------------- */
   function initAll() {
@@ -806,6 +1394,7 @@
     initScrollReveal();
     initContactForm();
     initLivePreviewMockup();
+    initServicesSection();
   }
 
   if (document.readyState === 'loading') {
@@ -814,3 +1403,4 @@
     initAll();
   }
 })();
+

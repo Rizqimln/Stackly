@@ -30,6 +30,13 @@
   --accent-subtle: rgba(255, 255, 255, 0.08);
   --border-accent: rgba(255, 255, 255, 0.4);
 
+  /* Neon Green Accent — Futuristic glow & interactive states */
+  --neon-green: #10f38e;
+  --neon-green-rgb: 16, 243, 142;
+  --neon-green-glow: rgba(16, 243, 142, 0.28);
+  --neon-green-subtle: rgba(16, 243, 142, 0.08);
+  --neon-green-border: rgba(16, 243, 142, 0.35);
+
   /* Typography */
   --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
@@ -323,10 +330,15 @@ h4 {
   position: relative;
 }
 
-.navbar__logo .logGreen,
+.navbar__logo .logGreen {
+  color: var(--neon-green);
+  text-shadow: 0 0 16px rgba(16, 243, 142, 0.5);
+  font-weight: 700;
+}
+
 .navbar__logo .logo-accent {
-  color: #FFFFFF;
-  text-shadow: 0 0 16px rgba(255, 255, 255, 0.45);
+  color: var(--neon-green);
+  text-shadow: 0 0 16px rgba(16, 243, 142, 0.5);
   font-weight: 700;
 }
 
@@ -2561,4 +2573,752 @@ a.contact-info-card__value:hover {
     height: 9px;
   }
 }
+
+/* =========================================================
+   SECTION: DAFTAR LAYANAN (SERVICES BENTO GRID)
+   Futuristic Premium Bento Grid + Minimal Neon Interaction
+   ========================================================= */
+
+.services {
+  position: relative;
+  overflow: hidden;
+}
+
+.services__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.services__glow {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 750px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(16, 243, 142, 0.05) 0%, rgba(16, 243, 142, 0.01) 45%, transparent 75%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+/* Bento Grid Container */
+.service-bento {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+/* Base Service Card */
+.service-card {
+  position: relative;
+  background: linear-gradient(155deg, rgba(22, 22, 27, 0.8) 0%, rgba(13, 13, 16, 0.92) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  transition: transform var(--duration-med) var(--ease),
+              border-color var(--duration-med) var(--ease),
+              box-shadow var(--duration-med) var(--ease),
+              background var(--duration-med) var(--ease);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Subtle Ambient Glow inside Card */
+.service-card__ambient {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 80% 0%, rgba(16, 243, 142, 0.12) 0%, transparent 65%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duration-med) var(--ease);
+}
+
+/* Top Meta Row (Number, Badges & Icon) */
+.service-card__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.service-card__header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.service-card__num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  transition: color var(--duration-fast) var(--ease);
+}
+
+.service-card__icon-box {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  color: var(--text-bright);
+  font-size: 1.25rem;
+  transition: transform var(--duration-med) var(--ease),
+              border-color var(--duration-med) var(--ease),
+              color var(--duration-med) var(--ease),
+              background var(--duration-med) var(--ease),
+              box-shadow var(--duration-med) var(--ease);
+}
+
+/* Card Body */
+.service-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.service-card__title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  line-height: 1.3;
+  margin-bottom: 0.45rem;
+  transition: color var(--duration-fast) var(--ease);
+}
+
+.service-card__tagline {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Featured Card Special Styling (01. Jasa Pembuatan Website) */
+.service-card--featured {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 460px;
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+  background: linear-gradient(155deg, rgba(18, 25, 21, 0.85) 0%, rgba(12, 16, 14, 0.95) 100%);
+  border-color: rgba(16, 243, 142, 0.22);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(16, 243, 142, 0.15);
+}
+
+.service-card--featured .service-card__ambient {
+  opacity: 0.6;
+  background: radial-gradient(circle at 10% 10%, rgba(16, 243, 142, 0.15) 0%, transparent 60%);
+}
+
+.service-card--featured .service-card__icon-box {
+  width: 56px;
+  height: 56px;
+  font-size: 1.6rem;
+  color: var(--neon-green);
+  background: rgba(16, 243, 142, 0.08);
+  border-color: rgba(16, 243, 142, 0.3);
+  box-shadow: 0 0 20px rgba(16, 243, 142, 0.12);
+}
+
+.service-card--featured .service-card__title {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+
+.service-card--featured .service-card__tagline {
+  font-size: 0.96rem;
+  max-width: 48ch;
+  margin-bottom: 1.5rem;
+}
+
+/* Featured Badge */
+.service-card__badge-featured {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.32rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(16, 243, 142, 0.1);
+  border: 1px solid rgba(16, 243, 142, 0.3);
+  color: var(--neon-green);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.service-card__pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--neon-green);
+  box-shadow: 0 0 8px var(--neon-green);
+  animation: neonPulse 2s infinite ease-in-out;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 6px var(--neon-green);
+  }
+  50% {
+    transform: scale(1.3);
+    box-shadow: 0 0 14px var(--neon-green);
+  }
+}
+
+/* Service Chips (Tech / Feature highlights) */
+.service-card__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.service-chip {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--text-bright);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.02em;
+}
+
+/* Wide Card Composition (06. Rangkuman Materi) */
+.service-card--wide {
+  grid-column: span 2;
+  min-height: 220px;
+}
+
+.service-card--wide .service-card__title {
+  font-size: 1.25rem;
+}
+
+/* Card Footer & Action CTA */
+.service-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.service-card__action {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  letter-spacing: 0.04em;
+  transition: color var(--duration-fast) var(--ease);
+}
+
+.service-card__action i {
+  font-size: 0.85rem;
+  transition: transform var(--duration-fast) var(--ease),
+              color var(--duration-fast) var(--ease);
+}
+
+/* --- Interactive States on Cards --- */
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(16, 243, 142, 0.38);
+  box-shadow: 0 18px 45px -12px rgba(0, 0, 0, 0.75),
+              0 0 30px -8px rgba(16, 243, 142, 0.16);
+}
+
+.service-card:hover .service-card__ambient {
+  opacity: 1;
+}
+
+.service-card:hover .service-card__num {
+  color: var(--neon-green);
+}
+
+.service-card:hover .service-card__icon-box {
+  color: var(--neon-green);
+  border-color: rgba(16, 243, 142, 0.5);
+  background: rgba(16, 243, 142, 0.08);
+  box-shadow: 0 0 18px rgba(16, 243, 142, 0.2);
+  transform: scale(1.06);
+}
+
+.service-card:hover .service-card__action {
+  color: var(--neon-green);
+}
+
+.service-card:hover .service-card__action i {
+  transform: translate(3px, -3px);
+  color: var(--neon-green);
+}
+
+.service-card--featured:hover {
+  box-shadow: 0 24px 60px -15px rgba(0, 0, 0, 0.85),
+              0 0 40px -5px rgba(16, 243, 142, 0.25);
+  border-color: rgba(16, 243, 142, 0.55);
+}
+
+.service-card:focus-visible {
+  outline: 2px solid var(--neon-green);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   DETAIL MODAL (FUTURISTIC PREMIUM POP-UP)
+   ========================================================= */
+
+.service-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(5, 5, 8, 0.84);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+}
+
+.service-modal-backdrop.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.service-modal {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  max-height: min(90vh, 760px);
+  background: linear-gradient(160deg, #16161b 0%, #0d0d10 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.9),
+              0 0 50px -10px rgba(16, 243, 142, 0.12),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.94) translateY(18px);
+  opacity: 0;
+  transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+}
+
+.service-modal-backdrop.is-open .service-modal {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.service-modal__glow {
+  position: absolute;
+  top: -120px;
+  right: -120px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(16, 243, 142, 0.15) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Close Button */
+.service-modal__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-strong);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease),
+              background var(--duration-fast) var(--ease),
+              color var(--duration-fast) var(--ease),
+              border-color var(--duration-fast) var(--ease);
+}
+
+.service-modal__close:hover {
+  color: #FFFFFF;
+  background: rgba(16, 243, 142, 0.15);
+  border-color: rgba(16, 243, 142, 0.5);
+  transform: rotate(90deg);
+}
+
+/* Modal Inner Container */
+.service-modal__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: inherit;
+  overflow: hidden;
+}
+
+/* Modal Head */
+.service-modal__head {
+  padding: 1.75rem 2rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(18, 18, 22, 0.7);
+}
+
+.service-modal__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.service-modal__num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--neon-green);
+  background: rgba(16, 243, 142, 0.1);
+  border: 1px solid rgba(16, 243, 142, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+.service-modal__icon-box {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-strong);
+  color: var(--neon-green);
+  font-size: 1.35rem;
+  box-shadow: 0 0 16px rgba(16, 243, 142, 0.12);
+}
+
+.service-modal__title {
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
+  color: var(--text-bright);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.service-modal__desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  max-width: 58ch;
+}
+
+/* Modal Scrollable Body */
+.service-modal__body {
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: #27272a transparent;
+}
+
+.service-modal__body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.service-modal__body::-webkit-scrollbar-thumb {
+  background: #2b2b30;
+  border-radius: 4px;
+}
+
+.service-modal__block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.service-modal__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-bright);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.service-modal__subtitle i {
+  color: var(--neon-green);
+  font-size: 1rem;
+}
+
+/* Scope of Work List */
+.service-modal__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.service-modal__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.45;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.service-modal__item-dot {
+  color: var(--neon-green);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+/* Requirements / Client Needs Grid */
+.service-modal__req-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.65rem;
+}
+
+.service-modal__req-card {
+  background: rgba(20, 20, 25, 0.65);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.service-modal__req-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--neon-green);
+  letter-spacing: 0.02em;
+}
+
+.service-modal__req-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Advisory Grid (Price & Time Estimates) */
+.service-modal__advisory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.service-modal__advisory-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(16, 243, 142, 0.04);
+  border: 1px solid rgba(16, 243, 142, 0.18);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+}
+
+.service-modal__advisory-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: rgba(16, 243, 142, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neon-green);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.service-modal__advisory-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.service-modal__advisory-label {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--text-bright);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.service-modal__advisory-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* Modal Footer */
+.service-modal__footer {
+  padding: 1.25rem 2rem;
+  border-top: 1px solid var(--border);
+  background: rgba(14, 14, 18, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.service-modal__footer-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.service-modal__footer-info i {
+  color: var(--neon-green);
+  font-size: 1rem;
+}
+
+.service-modal__order-btn {
+  background: var(--neon-green);
+  color: #050508;
+  border-color: var(--neon-green);
+  font-weight: 700;
+  padding: 0.85rem 1.6rem;
+  box-shadow: 0 4px 20px rgba(16, 243, 142, 0.35);
+}
+
+.service-modal__order-btn:hover {
+  background: #25fba0;
+  border-color: #25fba0;
+  color: #000000;
+  box-shadow: 0 8px 30px rgba(16, 243, 142, 0.55);
+  transform: translateY(-2px);
+}
+
+.service-modal__order-btn:hover i {
+  transform: translateX(4px);
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN (SERVICES & MODAL)
+   ========================================================= */
+
+@media (max-width: 991px) {
+  .service-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-card--featured {
+    grid-column: span 2;
+    grid-row: auto;
+    min-height: 380px;
+  }
+
+  .service-card--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 680px) {
+  .service-modal-backdrop {
+    padding: 0.75rem;
+    align-items: flex-end;
+  }
+
+  .service-modal {
+    max-height: 88vh;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .service-modal__head {
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .service-modal__body {
+    padding: 1.25rem;
+    gap: 1.25rem;
+  }
+
+  .service-modal__req-grid,
+  .service-modal__advisory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-modal__footer {
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .service-modal__order-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 540px) {
+  .service-bento {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card--featured,
+  .service-card--wide {
+    grid-column: span 1;
+    min-height: auto;
+  }
+
+  .service-card {
+    min-height: 190px;
+    padding: 1.25rem;
+  }
+}
+
 
