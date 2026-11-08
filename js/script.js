@@ -14,6 +14,7 @@
       'a11y.skip': 'Skip to main content',
 
       'nav.home': 'Home',
+      'nav.apps': 'Premium Apps',
       'nav.about': 'About Us',
       'nav.techstack': 'Services & Stack',
       'nav.projects': 'Sample Tasks',
@@ -21,6 +22,12 @@
       'nav.preview': 'Live Preview',
       'nav.experience': 'Workflow',
       'nav.contact': 'Order Task',
+
+      'apps.eyebrow': 'PREMIUM APPS & ACCOUNTS',
+      'apps.title': 'Software & Productivity Tool Subscriptions.',
+      'apps.desc': 'Get legal and private premium access to speed up coding tasks, journal research, thesis writing, and presentation slides at student-friendly prices.',
+      'apps.priceFrom': 'Starting from',
+      'apps.orderBtn': 'Order Now',
 
       'hero.label': 'TRUSTED CODING & ACADEMIC TASK SERVICES',
       'hero.title1': 'Fast Solutions for Web Tasks,',
@@ -59,6 +66,10 @@
       'proj3.desc': 'An advanced web programming assignment with interactive task management, status transitions, sprint tracking, and clean DOM manipulation.',
       'proj4.title': 'Academic Publishing & Journal Platform',
       'proj4.desc': 'A scholarly web platform assignment designed for research publication, citation formatting, reading metrics, and peer discussions.',
+      'proj5.title': 'Point of Sale & Inventory Web App',
+      'proj5.desc': 'A web programming assignment with product inventory management, sales logs, and printable PDF checkout receipts.',
+      'proj6.title': 'Academic Thesis & Journal Repository',
+      'proj6.desc': 'A scholarly digital repository assignment with search filters, department categorization, and in-browser PDF preview.',
 
       'services.eyebrow': 'SERVICES & EXPERTISE',
       'services.title': 'Tailored Digital & Academic Solutions.',
@@ -153,6 +164,7 @@
       'a11y.skip': 'Langsung ke konten utama',
 
       'nav.home': 'Beranda',
+      'nav.apps': 'Aplikasi Premium',
       'nav.about': 'Tentang Kami',
       'nav.techstack': 'Layanan & Stack',
       'nav.projects': 'Contoh Tugas',
@@ -160,6 +172,12 @@
       'nav.preview': 'Live Preview',
       'nav.experience': 'Alur Order',
       'nav.contact': 'Order Tugas',
+
+      'apps.eyebrow': 'APLIKASI & AKUN PREMIUM',
+      'apps.title': 'Langganan Software & Tools Produktivitas Kuliah.',
+      'apps.desc': 'Akses akun premium resmi & legal untuk mempercepat pengerjaan tugas, riset jurnal, desain presentasi, dan skripsi dengan harga terjangkau mahasiswa.',
+      'apps.priceFrom': 'Mulai dari',
+      'apps.orderBtn': 'Pesan Sekarang',
 
       'hero.label': 'JASA JOKI TUGAS & CODING TERPERCAYA',
       'hero.title1': 'Solusi Cepat Tugas Web,',
@@ -198,6 +216,10 @@
       'proj3.desc': 'Tugas pemrograman web lanjut berupa aplikasi manajemen tugas bergaya Kanban dengan checklist interaktif, kategori prioritas, dan progress sprint.',
       'proj4.title': 'Platform Publikasi Jurnal & Makalah Ilmiah',
       'proj4.desc': 'Tugas karya tulis dan web portal publikasi ilmiah dengan tata letak artikel berstandar akademik, sistem sitasi, dan fitur diskusi pembaca.',
+      'proj5.title': 'Point of Sale Kasir & Stok Inventori',
+      'proj5.desc': 'Tugas sistem kasir berbasis web dengan fitur manajemen stok barang, riwayat transaksi harian, dan cetak struk nota belanja PDF.',
+      'proj6.title': 'Portal Repositori Skripsi & Jurnal Ilmiah',
+      'proj6.desc': 'Tugas portal arsip digital karya ilmiah mahasiswa lengkap dengan fitur pencarian dokumen, filter jurusan, dan preview naskah PDF.',
 
       'services.eyebrow': 'DAFTAR LAYANAN',
       'services.title': 'Layanan Digital & Akademik Profesional.',
@@ -1384,6 +1406,55 @@
   }
 
   /* ---------------------------------------------------------
+     7.5 PREMIUM APPS & PROJECT ORDER HANDLERS
+     --------------------------------------------------------- */
+  function initAppOrderButtons() {
+    var appButtons = document.querySelectorAll('.js-order-app');
+    var projectButtons = document.querySelectorAll('.js-order-project');
+    var subjectInput = document.getElementById('subject');
+    var messageInput = document.getElementById('message');
+    var contactSection = document.getElementById('contact');
+
+    function populateAndScroll(subject, message) {
+      if (subjectInput) {
+        subjectInput.value = subject;
+      }
+      if (messageInput) {
+        messageInput.value = message;
+      }
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(function () {
+          if (messageInput) messageInput.focus();
+        }, 500);
+      }
+    }
+
+    appButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var appName = btn.getAttribute('data-app') || 'Aplikasi Premium';
+        var appPrice = btn.getAttribute('data-price') || '';
+        populateAndScroll(
+          'Order ' + appName + ' (' + appPrice + ')',
+          'Halo Admin Stackly, saya ingin memesan akun premium ' + appName + ' dengan harga ' + appPrice + '. Mohon informasi ketersediaan slot dan instruksi pembayaran. Terima kasih!'
+        );
+      });
+    });
+
+    projectButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var projName = btn.getAttribute('data-project') || 'Tugas Web';
+        populateAndScroll(
+          'Konsultasi Pengerjaan Mirip: ' + projName,
+          'Halo Admin Stackly, saya berminat membuat tugas dengan konsep mirip ' + projName + '. Mohon estimasi pengerjaan dan biaya. Terima kasih!'
+        );
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
      INIT
      --------------------------------------------------------- */
   function initAll() {
@@ -1395,6 +1466,7 @@
     initContactForm();
     initLivePreviewMockup();
     initServicesSection();
+    initAppOrderButtons();
   }
 
   if (document.readyState === 'loading') {

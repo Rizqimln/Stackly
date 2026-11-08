@@ -57,6 +57,7 @@
   <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
     <ul class="nav-menu__list">
       <li><a href="#home" class="nav-menu__link is-active" data-i18n="nav.home">Home</a></li>
+      <li><a href="#premium-apps" class="nav-menu__link" data-i18n="nav.apps">Aplikasi Premium</a></li>
       <li><a href="#about" class="nav-menu__link" data-i18n="nav.about">About</a></li>
       <li><a href="#tech-stack" class="nav-menu__link" data-i18n="nav.techstack">Tech Stack</a></li>
       <li><a href="#projects" class="nav-menu__link" data-i18n="nav.projects">Projects</a></li>
@@ -134,45 +135,304 @@
         </div>
       </div>
 
-      <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <a href="#premium-apps" class="scroll-cue" aria-label="Scroll to Premium Apps section">
         <span class="scroll-cue__line"></span>
       </a>
     </section>
 
-    <!-- ===== ABOUT ===== -->
-    <section id="about" class="section about">
-      <div class="section__inner about__grid">
-        <div class="about__text reveal">
-          <p class="section-eyebrow" data-i18n="about.eyebrow">About Me</p>
-          <h2 class="section-title" data-i18n="about.title">Turning ideas into working software.</h2>
-          <p class="about__desc" data-i18n="about.p1">I'm a Fullstack Developer based in Indonesia, focused on building
-            web applications that are fast, reliable, and easy to use. I enjoy working across the entire stack — from
-            crafting clean interfaces to designing the systems that power them.</p>
-          <p class="about__desc" data-i18n="about.p2">My interests sit at the intersection of web development, problem
-            solving, and clean architecture — writing code that's not just functional, but maintainable.</p>
+    <!-- ===== APLIKASI PREMIUM ===== -->
+    <section id="premium-apps" class="section premium-apps">
+      <div class="premium-apps__ambient" aria-hidden="true"></div>
 
-          <ul class="about__tags" aria-label="Areas of interest">
-            <li data-i18n="about.tag1">Web Development</li>
-            <li data-i18n="about.tag2">Frontend</li>
-            <li data-i18n="about.tag3">Backend</li>
-            <li data-i18n="about.tag4">Database</li>
-            <li data-i18n="about.tag5">Problem Solving</li>
-          </ul>
+      <div class="section__inner">
+        <div class="section-head reveal">
+          <p class="section-eyebrow" data-i18n="apps.eyebrow">Aplikasi & Akun Premium</p>
+          <h2 class="section-title" data-i18n="apps.title">Langganan Software & Tools Produktivitas Kuliah.</h2>
+          <p class="section-desc" data-i18n="apps.desc">Akses akun premium resmi & legal untuk mempercepat pengerjaan tugas, riset jurnal, desain presentasi, dan skripsi dengan harga terjangkau mahasiswa.</p>
         </div>
 
-        <div class="about__stats reveal">
-          <div class="stat-card">
-            <span class="stat-card__number">05<span class="stat-card__plus">+</span></span>
-            <span class="stat-card__label" data-i18n="about.stat1">Projects</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-card__number">01<span class="stat-card__plus">+</span></span>
-            <span class="stat-card__label" data-i18n="about.stat2">Years Experience</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-card__number">03<span class="stat-card__plus">+</span></span>
-            <span class="stat-card__label" data-i18n="about.stat3">Technologies</span>
-          </div>
+        <div class="apps-grid">
+
+          <!-- 01. Canva Pro -->
+          <article class="app-card reveal">
+            <div class="app-card__media">
+              <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&q=80&auto=format&fit=crop"
+                alt="Canva Pro banner" class="app-card__img" loading="lazy">
+              <div class="app-card__badge-row">
+                <span class="app-card__badge">
+                  <span class="app-card__status-dot" aria-hidden="true"></span>
+                  <span>Private / Sharing</span>
+                </span>
+                <span class="app-card__type">Desain</span>
+              </div>
+            </div>
+            <div class="app-card__content">
+              <span class="app-card__cat">Desain & PPT</span>
+              <h3 class="app-card__name">Canva Pro</h3>
+              <div class="app-card__features">
+                <span class="app-tag">Brand Kit</span>
+                <span class="app-tag">100M+ Asset</span>
+                <span class="app-tag">Magic AI</span>
+              </div>
+              <div class="app-card__price-box">
+                <span class="app-card__price-label" data-i18n="apps.priceFrom">Mulai dari</span>
+                <div class="app-card__price-wrap">
+                  <span class="app-card__price">Rp 15.000</span>
+                  <span class="app-card__period">/ bln</span>
+                </div>
+              </div>
+              <a href="#contact" class="app-card__btn js-order-app" data-app="Canva Pro" data-price="Rp 15.000 / bln">
+                <span data-i18n="apps.orderBtn">Pesan Sekarang</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 02. ChatGPT Plus -->
+          <article class="app-card reveal">
+            <div class="app-card__media">
+              <img src="https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&q=80&auto=format&fit=crop"
+                alt="ChatGPT Plus AI banner" class="app-card__img" loading="lazy">
+              <div class="app-card__badge-row">
+                <span class="app-card__badge">
+                  <span class="app-card__status-dot" aria-hidden="true"></span>
+                  <span>GPT-4o Access</span>
+                </span>
+                <span class="app-card__type">AI Bot</span>
+              </div>
+            </div>
+            <div class="app-card__content">
+              <span class="app-card__cat">AI & Coding</span>
+              <h3 class="app-card__name">ChatGPT Plus (GPT-4o)</h3>
+              <div class="app-card__features">
+                <span class="app-tag">Coding Help</span>
+                <span class="app-tag">Data Analysis</span>
+                <span class="app-tag">DALL·E 3</span>
+              </div>
+              <div class="app-card__price-box">
+                <span class="app-card__price-label" data-i18n="apps.priceFrom">Mulai dari</span>
+                <div class="app-card__price-wrap">
+                  <span class="app-card__price">Rp 45.000</span>
+                  <span class="app-card__period">/ bln</span>
+                </div>
+              </div>
+              <a href="#contact" class="app-card__btn js-order-app" data-app="ChatGPT Plus" data-price="Rp 45.000 / bln">
+                <span data-i18n="apps.orderBtn">Pesan Sekarang</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 03. Turnitin No Repo -->
+          <article class="app-card reveal">
+            <div class="app-card__media">
+              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80&auto=format&fit=crop"
+                alt="Turnitin No Repository check" class="app-card__img" loading="lazy">
+              <div class="app-card__badge-row">
+                <span class="app-card__badge">
+                  <span class="app-card__status-dot" aria-hidden="true"></span>
+                  <span>100% No Repo</span>
+                </span>
+                <span class="app-card__type">Akademik</span>
+              </div>
+            </div>
+            <div class="app-card__content">
+              <span class="app-card__cat">Cek Plagiasi</span>
+              <h3 class="app-card__name">Turnitin No Repo</h3>
+              <div class="app-card__features">
+                <span class="app-tag">Aman Skripsi</span>
+                <span class="app-tag">Hasil Kilat</span>
+                <span class="app-tag">PDF Laporan</span>
+              </div>
+              <div class="app-card__price-box">
+                <span class="app-card__price-label" data-i18n="apps.priceFrom">Mulai dari</span>
+                <div class="app-card__price-wrap">
+                  <span class="app-card__price">Rp 10.000</span>
+                  <span class="app-card__period">/ file</span>
+                </div>
+              </div>
+              <a href="#contact" class="app-card__btn js-order-app" data-app="Turnitin No Repository" data-price="Rp 10.000 / file">
+                <span data-i18n="apps.orderBtn">Pesan Sekarang</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 04. Grammarly Premium -->
+          <article class="app-card reveal">
+            <div class="app-card__media">
+              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop"
+                alt="Grammarly Premium writing assistant" class="app-card__img" loading="lazy">
+              <div class="app-card__badge-row">
+                <span class="app-card__badge">
+                  <span class="app-card__status-dot" aria-hidden="true"></span>
+                  <span>Full Premium</span>
+                </span>
+                <span class="app-card__type">Writing</span>
+              </div>
+            </div>
+            <div class="app-card__content">
+              <span class="app-card__cat">Jurnal & Essay</span>
+              <h3 class="app-card__name">Grammarly Premium</h3>
+              <div class="app-card__features">
+                <span class="app-tag">Vocabulary</span>
+                <span class="app-tag">Tone Detection</span>
+                <span class="app-tag">Clarity AI</span>
+              </div>
+              <div class="app-card__price-box">
+                <span class="app-card__price-label" data-i18n="apps.priceFrom">Mulai dari</span>
+                <div class="app-card__price-wrap">
+                  <span class="app-card__price">Rp 25.000</span>
+                  <span class="app-card__period">/ bln</span>
+                </div>
+              </div>
+              <a href="#contact" class="app-card__btn js-order-app" data-app="Grammarly Premium" data-price="Rp 25.000 / bln">
+                <span data-i18n="apps.orderBtn">Pesan Sekarang</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 05. Microsoft 365 Pro -->
+          <article class="app-card reveal">
+            <div class="app-card__media">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&auto=format&fit=crop"
+                alt="Microsoft 365 Office suite" class="app-card__img" loading="lazy">
+              <div class="app-card__badge-row">
+                <span class="app-card__badge">
+                  <span class="app-card__status-dot" aria-hidden="true"></span>
+                  <span>1TB Cloud</span>
+                </span>
+                <span class="app-card__type">Office</span>
+              </div>
+            </div>
+            <div class="app-card__content">
+              <span class="app-card__cat">Office & Dokumen</span>
+              <h3 class="app-card__name">Microsoft 365 Pro</h3>
+              <div class="app-card__features">
+                <span class="app-tag">Word/Excel/PPT</span>
+                <span class="app-tag">5 Perangkat</span>
+                <span class="app-tag">1TB OneDrive</span>
+              </div>
+              <div class="app-card__price-box">
+                <span class="app-card__price-label" data-i18n="apps.priceFrom">Mulai dari</span>
+                <div class="app-card__price-wrap">
+                  <span class="app-card__price">Rp 35.000</span>
+                  <span class="app-card__period">/ akun</span>
+                </div>
+              </div>
+              <a href="#contact" class="app-card__btn js-order-app" data-app="Microsoft 365 Pro" data-price="Rp 35.000 / akun">
+                <span data-i18n="apps.orderBtn">Pesan Sekarang</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 06. CapCut Pro -->
+          <article class="app-card reveal">
+            <div class="app-card__media">
+              <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80&auto=format&fit=crop"
+                alt="CapCut Pro video editor" class="app-card__img" loading="lazy">
+              <div class="app-card__badge-row">
+                <span class="app-card__badge">
+                  <span class="app-card__status-dot" aria-hidden="true"></span>
+                  <span>PC & Mobile</span>
+                </span>
+                <span class="app-card__type">Editor</span>
+              </div>
+            </div>
+            <div class="app-card__content">
+              <span class="app-card__cat">Editing Video</span>
+              <h3 class="app-card__name">CapCut Pro</h3>
+              <div class="app-card__features">
+                <span class="app-tag">No Watermark</span>
+                <span class="app-tag">Ekspor 4K</span>
+                <span class="app-tag">All Pro Filter</span>
+              </div>
+              <div class="app-card__price-box">
+                <span class="app-card__price-label" data-i18n="apps.priceFrom">Mulai dari</span>
+                <div class="app-card__price-wrap">
+                  <span class="app-card__price">Rp 20.000</span>
+                  <span class="app-card__period">/ bln</span>
+                </div>
+              </div>
+              <a href="#contact" class="app-card__btn js-order-app" data-app="CapCut Pro" data-price="Rp 20.000 / bln">
+                <span data-i18n="apps.orderBtn">Pesan Sekarang</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 07. Spotify Premium -->
+          <article class="app-card reveal">
+            <div class="app-card__media">
+              <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80&auto=format&fit=crop"
+                alt="Spotify Premium music streaming" class="app-card__img" loading="lazy">
+              <div class="app-card__badge-row">
+                <span class="app-card__badge">
+                  <span class="app-card__status-dot" aria-hidden="true"></span>
+                  <span>Bebas Iklan</span>
+                </span>
+                <span class="app-card__type">Audio</span>
+              </div>
+            </div>
+            <div class="app-card__content">
+              <span class="app-card__cat">Musik & Podcast</span>
+              <h3 class="app-card__name">Spotify Premium</h3>
+              <div class="app-card__features">
+                <span class="app-tag">Bebas Skip</span>
+                <span class="app-tag">Download Offline</span>
+                <span class="app-tag">High Bitrate</span>
+              </div>
+              <div class="app-card__price-box">
+                <span class="app-card__price-label" data-i18n="apps.priceFrom">Mulai dari</span>
+                <div class="app-card__price-wrap">
+                  <span class="app-card__price">Rp 18.000</span>
+                  <span class="app-card__period">/ bln</span>
+                </div>
+              </div>
+              <a href="#contact" class="app-card__btn js-order-app" data-app="Spotify Premium" data-price="Rp 18.000 / bln">
+                <span data-i18n="apps.orderBtn">Pesan Sekarang</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- 08. Netflix Premium 4K -->
+          <article class="app-card reveal">
+            <div class="app-card__media">
+              <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&q=80&auto=format&fit=crop"
+                alt="Netflix Premium 4K streaming" class="app-card__img" loading="lazy">
+              <div class="app-card__badge-row">
+                <span class="app-card__badge">
+                  <span class="app-card__status-dot" aria-hidden="true"></span>
+                  <span>Ultra HD 4K</span>
+                </span>
+                <span class="app-card__type">Cinema</span>
+              </div>
+            </div>
+            <div class="app-card__content">
+              <span class="app-card__cat">Streaming Film</span>
+              <h3 class="app-card__name">Netflix Premium 4K</h3>
+              <div class="app-card__features">
+                <span class="app-tag">1 Profile 1 User</span>
+                <span class="app-tag">Anti On-Hold</span>
+                <span class="app-tag">Semua Device</span>
+              </div>
+              <div class="app-card__price-box">
+                <span class="app-card__price-label" data-i18n="apps.priceFrom">Mulai dari</span>
+                <div class="app-card__price-wrap">
+                  <span class="app-card__price">Rp 30.000</span>
+                  <span class="app-card__period">/ bln</span>
+                </div>
+              </div>
+              <a href="#contact" class="app-card__btn js-order-app" data-app="Netflix Premium 4K" data-price="Rp 30.000 / bln">
+                <span data-i18n="apps.orderBtn">Pesan Sekarang</span>
+                <i class="bi bi-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
@@ -187,19 +447,19 @@
 
         <ul class="tech-grid reveal" aria-label="Technology list">
           <li class="tech-item">
-            <i class="devicon-html5-plain colored" aria-hidden="true"></i>
+            <i class="devicon-html5-plain" aria-hidden="true"></i>
             <span>HTML5</span>
           </li>
           <li class="tech-item">
-            <i class="devicon-css3-plain colored" aria-hidden="true"></i>
+            <i class="devicon-css3-plain" aria-hidden="true"></i>
             <span>CSS3</span>
           </li>
           <li class="tech-item">
-            <i class="devicon-javascript-plain colored" aria-hidden="true"></i>
+            <i class="devicon-javascript-plain" aria-hidden="true"></i>
             <span>JavaScript</span>
           </li>
           <li class="tech-item">
-            <i class="devicon-nodejs-plain colored" aria-hidden="true"></i>
+            <i class="devicon-nodejs-plain" aria-hidden="true"></i>
             <span>Node.js</span>
           </li>
           <li class="tech-item">
@@ -207,11 +467,11 @@
             <span>Express.js</span>
           </li>
           <li class="tech-item">
-            <i class="devicon-mysql-plain colored" aria-hidden="true"></i>
+            <i class="devicon-mysql-plain" aria-hidden="true"></i>
             <span>MySQL</span>
           </li>
           <li class="tech-item">
-            <i class="devicon-git-plain colored" aria-hidden="true"></i>
+            <i class="devicon-git-plain" aria-hidden="true"></i>
             <span>Git</span>
           </li>
           <li class="tech-item">
@@ -219,7 +479,7 @@
             <span>GitHub</span>
           </li>
           <li class="tech-item">
-            <i class="devicon-vscode-plain colored" aria-hidden="true"></i>
+            <i class="devicon-vscode-plain" aria-hidden="true"></i>
             <span>VS Code</span>
           </li>
         </ul>
@@ -246,16 +506,16 @@
               <p class="project-card__desc" data-i18n="proj1.desc">A web-based system for managing student records,
                 grades, and class schedules with a clean administrative dashboard.</p>
               <ul class="project-card__stack" aria-label="Technologies used">
-                <li><i class="devicon-html5-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-css3-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-html5-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-css3-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-javascript-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-nodejs-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain" aria-hidden="true"></i></li>
               </ul>
               <div class="project-card__links">
                 <a href="#preview" class="project-link js-preview-trigger" data-project="student"><span
                     data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
-                <a href="#" class="project-link"><span data-i18n="proj.code">Source Code</span> <i
+                <a href="#contact" class="project-link"><span data-i18n="proj.code">Order Mirip</span> <i
                     class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
               </div>
             </div>
@@ -271,16 +531,16 @@
               <p class="project-card__desc" data-i18n="proj2.desc">A responsive online store with product catalog, cart,
                 and a lightweight checkout flow built from scratch.</p>
               <ul class="project-card__stack" aria-label="Technologies used">
-                <li><i class="devicon-html5-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-css3-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-html5-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-css3-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-javascript-plain" aria-hidden="true"></i></li>
                 <li><i class="devicon-express-original" aria-hidden="true"></i></li>
-                <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain" aria-hidden="true"></i></li>
               </ul>
               <div class="project-card__links">
                 <a href="#preview" class="project-link js-preview-trigger" data-project="ecommerce"><span
                     data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
-                <a href="#" class="project-link"><span data-i18n="proj.code">Source Code</span> <i
+                <a href="#contact" class="project-link"><span data-i18n="proj.code">Order Mirip</span> <i
                     class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
               </div>
             </div>
@@ -296,15 +556,15 @@
               <p class="project-card__desc" data-i18n="proj3.desc">A kanban-style productivity app for organizing tasks
                 across projects, with drag-and-drop and real-time updates.</p>
               <ul class="project-card__stack" aria-label="Technologies used">
-                <li><i class="devicon-javascript-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-javascript-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-nodejs-plain" aria-hidden="true"></i></li>
                 <li><i class="devicon-express-original" aria-hidden="true"></i></li>
-                <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain" aria-hidden="true"></i></li>
               </ul>
               <div class="project-card__links">
                 <a href="#preview" class="project-link js-preview-trigger" data-project="task"><span
                     data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
-                <a href="#" class="project-link"><span data-i18n="proj.code">Source Code</span> <i
+                <a href="#contact" class="project-link"><span data-i18n="proj.code">Order Mirip</span> <i
                     class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
               </div>
             </div>
@@ -320,15 +580,65 @@
               <p class="project-card__desc" data-i18n="proj4.desc">A minimal blogging platform with markdown support,
                 tagging, and an admin panel for managing posts.</p>
               <ul class="project-card__stack" aria-label="Technologies used">
-                <li><i class="devicon-html5-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-css3-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-nodejs-plain colored" aria-hidden="true"></i></li>
-                <li><i class="devicon-mysql-plain colored" aria-hidden="true"></i></li>
+                <li><i class="devicon-html5-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-css3-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-nodejs-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain" aria-hidden="true"></i></li>
               </ul>
               <div class="project-card__links">
                 <a href="#preview" class="project-link js-preview-trigger" data-project="blog"><span
                     data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
-                <a href="#" class="project-link"><span data-i18n="proj.code">Source Code</span> <i
+                <a href="#contact" class="project-link"><span data-i18n="proj.code">Order Mirip</span> <i
+                    class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 05. Point of Sale (POS) Kasir -->
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="https://images.unsplash.com/photo-1556740758-90de374c12ad?w=1200&q=80&auto=format&fit=crop"
+                alt="Point of Sale kasir app screenshot" loading="lazy">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title" data-i18n="proj5.title">Point of Sale Kasir & Stok</h3>
+              <p class="project-card__desc" data-i18n="proj5.desc">Tugas sistem kasir berbasis web dengan fitur manajemen stok barang, riwayat transaksi kasir, dan cetak struk nota belanja PDF.</p>
+              <ul class="project-card__stack" aria-label="Technologies used">
+                <li><i class="devicon-html5-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-css3-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-javascript-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-nodejs-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain" aria-hidden="true"></i></li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#preview" class="project-link js-preview-trigger" data-project="ecommerce"><span
+                    data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                <a href="#contact" class="project-link"><span data-i18n="proj.code">Order Mirip</span> <i
+                    class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 06. Portal Repositori Skripsi & Jurnal -->
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1200&q=80&auto=format&fit=crop"
+                alt="Academic repository portal screenshot" loading="lazy">
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title" data-i18n="proj6.title">Portal Repositori Skripsi & Jurnal</h3>
+              <p class="project-card__desc" data-i18n="proj6.desc">Tugas portal arsip digital karya ilmiah mahasiswa lengkap dengan pencarian dokumen, filter jurusan, dan preview naskah PDF.</p>
+              <ul class="project-card__stack" aria-label="Technologies used">
+                <li><i class="devicon-html5-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-css3-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-javascript-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-mysql-plain" aria-hidden="true"></i></li>
+                <li><i class="devicon-git-plain" aria-hidden="true"></i></li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#preview" class="project-link js-preview-trigger" data-project="blog"><span
+                    data-i18n="proj.demo">Live Demo</span> <i class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
+                <a href="#contact" class="project-link"><span data-i18n="proj.code">Order Mirip</span> <i
                     class="bi bi-arrow-up-right" aria-hidden="true"></i></a>
               </div>
             </div>
@@ -538,171 +848,6 @@
       </div>
     </section>
 
-    <!-- ===== LIVE WEBSITE PREVIEW MOCKUP ===== -->
-    <section id="preview" class="section preview">
-      <div class="section__inner">
-        <div class="section-head reveal">
-          <p class="section-eyebrow" data-i18n="preview.eyebrow">Interactive Showcase</p>
-          <h2 class="section-title" data-i18n="preview.title">Live Website Preview Mockup.</h2>
-          <p class="section-desc" data-i18n="preview.desc">Experience real-time interactive previews of web applications
-            inside precision-crafted modern desktop and smartphone frames.</p>
-        </div>
-
-        <!-- Preview Controls Bar -->
-        <div class="preview-toolbar reveal">
-          <!-- Project Switcher Tabs -->
-          <div class="preview-tabs" role="tablist" aria-label="Select project demo">
-            <button type="button" class="preview-tab is-active" role="tab" aria-selected="true" data-project="ecommerce"
-              data-url="https://storefront.stackly.dev">
-              <i class="bi bi-bag-check" aria-hidden="true"></i>
-              <span data-i18n="proj2.title">E-Commerce Storefront</span>
-            </button>
-            <button type="button" class="preview-tab" role="tab" aria-selected="false" data-project="student"
-              data-url="https://student-admin.stackly.dev">
-              <i class="bi bi-mortarboard" aria-hidden="true"></i>
-              <span data-i18n="proj1.title">Student Management System</span>
-            </button>
-            <button type="button" class="preview-tab" role="tab" aria-selected="false" data-project="task"
-              data-url="https://taskflow.stackly.dev">
-              <i class="bi bi-kanban" aria-hidden="true"></i>
-              <span data-i18n="proj3.title">Task Management App</span>
-            </button>
-            <button type="button" class="preview-tab" role="tab" aria-selected="false" data-project="blog"
-              data-url="https://insights.stackly.dev">
-              <i class="bi bi-journal-text" aria-hidden="true"></i>
-              <span data-i18n="proj4.title">Blog Publishing Platform</span>
-            </button>
-          </div>
-
-          <!-- Device Switcher & Action Controls -->
-          <div class="preview-actions">
-            <!-- Device Viewport Segmented Control -->
-            <div class="device-switcher" role="group" aria-label="Device viewport switcher">
-              <button type="button" class="device-btn is-active" id="desktopViewBtn" data-mode="desktop"
-                aria-pressed="true" title="Desktop View">
-                <i class="bi bi-display" aria-hidden="true"></i>
-                <span data-i18n="preview.desktop">Desktop</span>
-              </button>
-              <button type="button" class="device-btn" id="mobileViewBtn" data-mode="mobile" aria-pressed="false"
-                title="Smartphone View">
-                <i class="bi bi-phone" aria-hidden="true"></i>
-                <span data-i18n="preview.mobile">Mobile</span>
-              </button>
-            </div>
-
-            <!-- Scroll Controls -->
-            <div class="scroll-controls" role="group" aria-label="Scroll controls">
-              <button type="button" class="control-btn" id="autoScrollBtn" title="Auto scroll content"
-                aria-pressed="false">
-                <span class="control-btn__pulse" aria-hidden="true"></span>
-                <i class="bi bi-play-circle" id="autoScrollIcon" aria-hidden="true"></i>
-                <span id="autoScrollText" data-i18n="preview.autoscroll">Auto Scroll</span>
-              </button>
-              <button type="button" class="control-btn" id="resetScrollBtn" title="Reset scroll position to top">
-                <i class="bi bi-arrow-counterclockwise" aria-hidden="true"></i>
-                <span data-i18n="preview.resetscroll">Reset Scroll</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mockup Stage -->
-        <div class="mockup-stage reveal">
-          <!-- Ambient Glow behind device -->
-          <div class="mockup-glow" aria-hidden="true"></div>
-
-          <!-- The Modern Device Mockup Frame -->
-          <div class="mockup-frame is-desktop" id="mockupFrame">
-
-            <!-- Smartphone Physical Buttons (visible only in mobile mode) -->
-            <div class="phone-buttons phone-buttons--left" aria-hidden="true">
-              <span class="phone-btn phone-btn--silent"></span>
-              <span class="phone-btn phone-btn--volume-up"></span>
-              <span class="phone-btn phone-btn--volume-down"></span>
-            </div>
-            <div class="phone-buttons phone-buttons--right" aria-hidden="true">
-              <span class="phone-btn phone-btn--power"></span>
-            </div>
-
-            <!-- DESKTOP TOP BAR (Browser Chrome) -->
-            <div class="mockup-chrome mockup-chrome--desktop">
-              <div class="browser-dots" aria-hidden="true">
-                <span class="browser-dot browser-dot--close" title="Close"></span>
-                <span class="browser-dot browser-dot--min" title="Minimize"></span>
-                <span class="browser-dot browser-dot--zoom" title="Zoom"></span>
-              </div>
-
-              <div class="browser-nav-buttons" aria-hidden="true">
-                <button type="button" class="browser-nav-btn" disabled aria-label="Back"><i
-                    class="bi bi-chevron-left"></i></button>
-                <button type="button" class="browser-nav-btn" disabled aria-label="Forward"><i
-                    class="bi bi-chevron-right"></i></button>
-                <button type="button" class="browser-nav-btn" id="browserReloadBtn" title="Reload preview"
-                  aria-label="Reload"><i class="bi bi-arrow-clockwise"></i></button>
-              </div>
-
-              <div class="browser-omnibox">
-                <i class="bi bi-lock-fill omnibox-lock" aria-hidden="true"></i>
-                <span class="omnibox-url" id="browserUrlText">https://storefront.stackly.dev</span>
-                <span class="omnibox-badge">SSL Secure</span>
-              </div>
-
-              <div class="browser-actions">
-                <a href="assets/demos/ecommerce.html" target="_blank" rel="noopener" class="browser-action-btn"
-                  id="openExternalBtn" title="Open preview in new tab" aria-label="Open in new tab">
-                  <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-
-            <!-- SMARTPHONE TOP BAR (Status Bar & Dynamic Island) -->
-            <div class="mockup-chrome mockup-chrome--mobile" aria-hidden="true">
-              <div class="status-time" id="statusTime">09:41</div>
-
-              <!-- Dynamic Island -->
-              <div class="dynamic-island">
-                <div class="island-camera"></div>
-                <div class="island-sensor"></div>
-              </div>
-
-              <div class="status-icons">
-                <i class="bi bi-reception-4 status-icon"></i>
-                <span class="status-network">5G</span>
-                <div class="status-battery">
-                  <span class="status-battery__fill"></span>
-                </div>
-              </div>
-            </div>
-
-            <!-- SCREEN VIEWPORT -->
-            <div class="mockup-screen" id="mockupScreen">
-              <!-- Loading Overlay -->
-              <div class="mockup-loader" id="mockupLoader" aria-hidden="true">
-                <div class="mockup-spinner"></div>
-                <span data-i18n="preview.loading">Loading interactive preview...</span>
-              </div>
-
-              <!-- LIVE INTERACTIVE IFRAME -->
-              <iframe id="previewIframe" class="mockup-iframe" src="assets/demos/ecommerce.html"
-                title="Interactive Website Live Preview" loading="lazy" allow="fullscreen"></iframe>
-
-              <!-- SMARTPHONE BOTTOM HOME BAR -->
-              <div class="mockup-home-bar" aria-hidden="true">
-                <span class="home-indicator"></span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Interactive Helper Note -->
-          <div class="mockup-hint">
-            <span class="mockup-hint__dot"></span>
-            <span data-i18n="preview.hint">Interactive: Click, scroll, or test buttons inside the frame.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ===== EXPERIENCE ===== -->
     <section id="experience" class="section experience">
       <div class="section__inner">
@@ -868,14 +1013,14 @@
           <div>CK</div>
           <div class="logGreen logo-accent">LY</div>
         </a>
-        <p class="footer__desc" data-i18n="footer.desc">Fullstack Developer building modern, responsive, and scalable
-          web applications.</p>
+        <p class="footer__desc" data-i18n="footer.desc">Layanan joki tugas terpercaya untuk pemrograman web, pembuatan makalah ilmiah, jurnal terakreditasi, dan tugas kuliah lainnya. Cepat, berkualitas, dan bergaransi.</p>
       </div>
 
       <div class="footer__col">
         <h4 class="footer__heading" data-i18n="footer.nav">Navigation</h4>
         <ul class="footer__list">
           <li><a href="#home" data-i18n="nav.home">Home</a></li>
+          <li><a href="#premium-apps" data-i18n="nav.apps">Aplikasi Premium</a></li>
           <li><a href="#about" data-i18n="nav.about">About</a></li>
           <li><a href="#tech-stack" data-i18n="nav.techstack">Tech Stack</a></li>
           <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
