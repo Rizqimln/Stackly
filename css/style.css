@@ -96,7 +96,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--navbar-h);
+  /* Extra 24px buffer so section headings are never hidden behind the navbar */
+  scroll-padding-top: calc(var(--navbar-h) + 24px);
 }
 
 body {
@@ -179,6 +180,28 @@ h4 {
 }
 
 /* ---------- 3. LAYOUT HELPERS ---------- */
+
+/*
+  scroll-margin-top ensures that when a section is scrolled to via an anchor link
+  (including programmatic scrollIntoView), the browser leaves enough room above
+  for the fixed navbar plus a comfortable 24-px breathing gap.
+  This complements scroll-padding-top on <html> and covers the scrollIntoView()
+  code-paths that don't respect scroll-padding-top in some browsers.
+*/
+.section,
+main section[id],
+#home,
+#premium-apps,
+#about,
+#tech-stack,
+#projects,
+#services,
+#preview,
+#experience,
+#contact {
+  scroll-margin-top: calc(var(--navbar-h) + 24px);
+}
+
 .section {
   padding: var(--section-pad-y) 0;
   border-bottom: 1px solid var(--border);
