@@ -551,7 +551,7 @@ h4 {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.05fr 0.95fr;
   gap: clamp(2.5rem, 6vw, 5rem);
   align-items: center;
 }
@@ -2536,7 +2536,7 @@ a.contact-info-card__value:hover {
   }
 
   .hero__panel {
-    max-width: 480px;
+    max-width: 560px;
     justify-self: center;
   }
 
@@ -3774,5 +3774,4 @@ a.contact-info-card__value:hover {
     padding: 1.25rem;
   }
 }
-
 
