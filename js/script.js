@@ -114,7 +114,7 @@
       'contact.availValue': 'Urgent Orders Welcome (24H)',
       'contact.socialLabel': 'Direct Chat Channels',
       'contact.nameLabel': 'Your Name',
-      'contact.emailInputLabel': 'Email or WhatsApp Number',
+      'contact.emailInputLabel': 'WhatsApp Number',
       'contact.subjectLabel': 'Task Type (Web, Paper, Journal, Other)',
       'contact.messageLabel': 'Task Brief, Requirements & Deadline',
       'contact.send': 'Submit My Order',
@@ -251,7 +251,7 @@
       'contact.availValue': 'Siap Terima Tugas Kilat (24 Jam)',
       'contact.socialLabel': 'Hubungi Langsung via',
       'contact.nameLabel': 'Nama Kamu',
-      'contact.emailInputLabel': 'Email atau Nomor WhatsApp',
+      'contact.emailInputLabel': 'Nomor WhatsApp',
       'contact.subjectLabel': 'Jenis Tugas (Web, Makalah, Jurnal, Lainnya)',
       'contact.messageLabel': 'Detail Instruksi Tugas & Deadline',
       'contact.send': 'Kirim Order Tugas',
@@ -519,13 +519,14 @@
   function initContactForm() {
     var form = document.getElementById('contactForm');
     var status = document.getElementById('formStatus');
+
     if (!form || !status) return;
 
     function getCurrentLang() {
       return getStoredLang() || DEFAULT_LANG;
     }
 
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', async function (e) {
       e.preventDefault();
 
       var name = form.elements.name.value.trim();
@@ -536,31 +537,52 @@
       var lang = getCurrentLang();
       var dict = translations[lang] || translations[DEFAULT_LANG];
 
-      /* Basic validation */
+      // Validasi
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
       if (!name || !email || !subject || !message || !emailRegex.test(email)) {
         status.textContent = dict['contact.error'];
         status.className = 'contact-form__status is-error';
         return;
       }
 
-      /* Simulate send (no backend) */
       var submitBtn = form.querySelector('.contact-form__submit');
+
       submitBtn.disabled = true;
       submitBtn.style.opacity = '0.6';
+      status.textContent = '';
 
-      setTimeout(function () {
-        status.textContent = dict['contact.success'];
-        status.className = 'contact-form__status is-success';
-        form.reset();
+      try {
+        var response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          status.textContent = dict['contact.success'];
+          status.className = 'contact-form__status is-success';
+
+          form.reset();
+        } else {
+          throw new Error('Gagal mengirim pesan');
+        }
+
+      } catch (error) {
+        status.textContent = 'Pesan gagal dikirim. Silakan coba lagi.';
+        status.className = 'contact-form__status is-error';
+
+      } finally {
         submitBtn.disabled = false;
         submitBtn.style.opacity = '1';
+      }
 
-        setTimeout(function () {
-          status.textContent = '';
-          status.className = 'contact-form__status';
-        }, 5000);
-      }, 1200);
+      setTimeout(function () {
+        status.textContent = '';
+        status.className = 'contact-form__status';
+      }, 5000);
     });
   }
 
