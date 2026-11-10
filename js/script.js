@@ -1,7 +1,3 @@
-/* =========================================================
-   RIZQI.DEV — PORTFOLIO SCRIPT
-   Vanilla JS only. No frameworks, no libraries.
-   ========================================================= */
 
 (function () {
   'use strict';
@@ -29,26 +25,13 @@
       'apps.priceFrom': 'Starting from',
       'apps.orderBtn': 'Order Now',
 
-      'hero.label': 'ACADEMIC TASK & CODING SERVICES · TRUSTED SINCE 2024',
-      'hero.title1': 'Deadline? We Handle',
+      'hero.label': 'ACADEMIC ASSISTANCE & PREMIUM APPS · TRUSTED SINCE 2024',
+      'hero.title1': 'Stackly_',
       'hero.title2': 'Your Web Tasks & Papers.',
       'hero.desc': 'From web apps and backend systems to research papers, accredited journals, and thesis documents — Stackly delivers polished, on-time results with a zero-plagiarism guarantee.',
       'hero.cta1': 'Order a Task',
       'hero.cta2': 'Free Consultation',
       'hero.status': 'Open for Orders · Fast Response',
-
-      'about.eyebrow': 'Who We Are',
-      'about.title': 'Your deadline is our responsibility. We deliver, guaranteed.',
-      'about.p1': 'Stackly is a trusted service for academic tasks and web development. We help students beat tight deadlines, tackle complex programming assignments, and produce high-quality academic writing that meets institutional standards.',
-      'about.p2': 'We cover everything from full-stack web apps (HTML, CSS, JS, PHP, MySQL, React) and scientific papers to Sinta/Scopus journals, lab reports, and final-year thesis — with source code walkthroughs and free revisions included.',
-      'about.tag1': 'Web Dev Assignments',
-      'about.tag2': 'Research Papers & Essays',
-      'about.tag3': 'Journal Articles',
-      'about.tag4': 'Lab Reports & Thesis',
-      'about.tag5': 'Zero Plagiarism Guarantee',
-      'about.stat1': 'Tasks Completed',
-      'about.stat2': 'Grades A or B',
-      'about.stat3': 'Support 24/7',
 
       'tech.eyebrow': 'Technologies We Use',
       'tech.title': 'Web stacks, frameworks, and tools we work with every day.',
@@ -72,7 +55,7 @@
       'proj6.desc': 'A digital archive portal for student academic work with document search, department filters, and in-browser PDF preview.',
 
       'services.eyebrow': 'WHAT WE OFFER',
-      'services.title': 'Every Assignment Type. One Trusted Team.',
+      'services.title': 'Every Assignment Type.',
       'services.desc': 'Whether it is a coding project, a scientific paper, or a group presentation — we handle it thoroughly, on time, and to your professor\'s standards.',
       'services.featuredBadge': 'Most Ordered',
       'services.detailCta': 'See Details',
@@ -179,29 +162,16 @@
       'apps.priceFrom': 'Mulai dari',
       'apps.orderBtn': 'Pesan Sekarang',
 
-      'hero.label': 'JASA TUGAS AKADEMIK & CODING TERPERCAYA',
-      'hero.title1': 'Deadline Mepet?',
+      'hero.label': 'JASA JOKI TUGAS & APLIKASI PREMIUM',
+      'hero.title1': 'Stackly_',
       'hero.title2': 'Tugas Web & Makalah Beres.',
       'hero.desc': 'Dari aplikasi web, sistem informasi, hingga makalah ilmiah dan jurnal terakreditasi — Stackly mengerjakan semuanya dengan rapi, tepat waktu, dan bergaransi bebas plagiasi.',
       'hero.cta1': 'Pesan Tugas',
       'hero.cta2': 'Konsultasi Gratis',
       'hero.status': 'Buka Order · Respons Cepat',
 
-      'about.eyebrow': 'Tentang Stackly',
-      'about.title': 'Deadline-mu adalah tanggung jawab kami. Selesai, bergaransi.',
-      'about.p1': 'Stackly adalah layanan jasa pengerjaan tugas akademik dan pemrograman terpercaya. Kami hadir khusus untuk mahasiswa yang dikejar deadline, kebingungan dengan materi coding, atau membutuhkan tulisan ilmiah berkualitas tinggi.',
-      'about.p2': 'Layanan mencakup aplikasi web fullstack (HTML, CSS, JS, PHP, MySQL, React), makalah ilmiah terstruktur, jurnal Sinta/internasional, laporan praktikum, hingga tugas akhir — lengkap dengan penjelasan kode dan garansi revisi gratis.',
-      'about.tag1': 'Tugas Pemrograman Web',
-      'about.tag2': 'Makalah & Karya Tulis',
-      'about.tag3': 'Artikel Jurnal Ilmiah',
-      'about.tag4': 'Laporan & Skripsi',
-      'about.tag5': 'Garansi Bebas Plagiasi',
-      'about.stat1': 'Tugas Terselesaikan',
-      'about.stat2': 'Nilai A atau B',
-      'about.stat3': 'Support 24/7',
-
       'tech.eyebrow': 'Teknologi yang Kami Gunakan',
-      'tech.title': 'Web stack, framework, dan tools yang kami kuasai setiap hari.',
+      'tech.title': 'Web stack, framework, dan tools yang kami kuasai.',
 
       'projects.eyebrow': 'Portofolio Contoh Tugas',
       'projects.title': 'Hasil nyata tugas mahasiswa yang telah kami kerjakan.',
@@ -222,7 +192,7 @@
       'proj6.desc': 'Tugas portal arsip digital karya ilmiah dengan fitur pencarian dokumen, filter jurusan, dan preview naskah PDF langsung di browser.',
 
       'services.eyebrow': 'DAFTAR LAYANAN',
-      'services.title': 'Semua Jenis Tugas. Satu Tim yang Tepat.',
+      'services.title': 'Semua Jenis Tugas.',
       'services.desc': 'Baik itu proyek coding, makalah ilmiah, atau presentasi kelompok — kami tangani secara menyeluruh, tepat waktu, dan sesuai kriteria dosen.',
       'services.featuredBadge': 'Paling Diminati',
       'services.detailCta': 'Lihat Detail',
@@ -1425,8 +1395,8 @@
   function initAppOrderButtons() {
     var appButtons = document.querySelectorAll('.js-order-app');
     var projectButtons = document.querySelectorAll('.js-order-project');
-    var subjectInput = document.getElementById('subject');
-    var messageInput = document.getElementById('message');
+    var subjectInput = document.getElementById('contactSubject');
+    var messageInput = document.getElementById('contactMessage');
     var contactSection = document.getElementById('contact');
 
     function populateAndScroll(subject, message) {

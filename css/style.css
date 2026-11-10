@@ -255,7 +255,7 @@ main section[id],
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.9rem 1.6rem;
+  padding: 0.9rem 2.6rem;
   border-radius: var(--radius-sm);
   font-size: 0.95rem;
   font-weight: 600;
@@ -2632,12 +2632,12 @@ a.contact-info-card__value:hover {
 
   .hero__inner {
     gap: 1.75rem;
-    padding-top: 0.5rem;
+    padding-top: 1.5rem;
   }
 
   .hero__title {
     font-size: clamp(1.85rem, 8.5vw, 2.75rem);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   .hero__title-accent {
@@ -2664,7 +2664,7 @@ a.contact-info-card__value:hover {
 
   .hero__cta .btn {
     justify-content: center;
-    padding: 0.85rem 1.4rem;
+    padding: 0.85rem 4.4rem;
     font-size: 0.9rem;
   }
 
