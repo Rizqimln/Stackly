@@ -24,6 +24,8 @@
       'apps.desc': 'Get verified, private-access premium accounts for design, writing, AI assistance, and office productivity — all at prices students can actually afford.',
       'apps.priceFrom': 'Starting from',
       'apps.orderBtn': 'Order Now',
+      'apps.detailBtn': 'Detail',
+      'apps.modalFeaturesTitle': 'Key Features & Perks',
 
       'hero.label': 'ACADEMIC ASSISTANCE & PREMIUM APPS · TRUSTED SINCE 2024',
       'hero.title1': 'Stackly_',
@@ -161,6 +163,8 @@
       'apps.desc': 'Akses akun premium berlisensi resmi untuk desain, penulisan, AI, hingga office suite — dengan harga yang masih masuk budget mahasiswa.',
       'apps.priceFrom': 'Mulai dari',
       'apps.orderBtn': 'Pesan Sekarang',
+      'apps.detailBtn': 'Detail',
+      'apps.modalFeaturesTitle': 'Fitur & Keunggulan Layanan',
 
       'hero.label': 'JASA JOKI TUGAS & APLIKASI PREMIUM',
       'hero.title1': 'Stackly_',
@@ -332,6 +336,9 @@
 
     if (typeof refreshServiceModalLanguage === 'function') {
       refreshServiceModalLanguage(lang);
+    }
+    if (typeof refreshAppModalLanguage === 'function') {
+      refreshAppModalLanguage(lang);
     }
   }
 
@@ -1412,6 +1419,454 @@
   }
 
   /* ---------------------------------------------------------
+     7.4.5 PREMIUM APPS DATA & DETAIL MODAL
+     --------------------------------------------------------- */
+  var appsData = {
+    'canva': {
+      id: 'canva',
+      name: 'Canva Pro',
+      image: 'assets/img/Canva.png',
+      price: 'Rp 15.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 15.000 / bln',
+      orderName: 'Canva Pro',
+      idContent: {
+        cat: 'Desain & PPT',
+        badge: 'Private / Sharing',
+        type: 'Desain',
+        desc: 'Akses Canva Pro resmi bergaransi untuk kebutuhan desain presentasi tugas kuliah, infografis, poster, dan template feed tanpa watermark dengan jutaan aset visual premium dan fitur Magic AI.',
+        features: [
+          'Brand Kit Resmi & Font Kustom',
+          'Akses 100 Juta+ Foto, Video & Grafis Premium',
+          'Magic Studio AI: Magic Write, Expand & Switch',
+          'Penghapus Latar Belakang (Background Remover) 1-Klik'
+        ]
+      },
+      enContent: {
+        cat: 'Design & Presentation',
+        badge: 'Private / Sharing',
+        type: 'Design',
+        desc: 'Official licensed Canva Pro access for academic presentations, infographics, research posters, and media projects with 100M+ premium assets and unlimited Magic AI design tools.',
+        features: [
+          'Official Brand Kit & Custom Fonts',
+          '100M+ Premium Stock Photos, Videos & Graphics',
+          'Magic Studio AI: Magic Write, Expand & Switch',
+          '1-Click AI Background Remover'
+        ]
+      }
+    },
+    'chatgpt': {
+      id: 'chatgpt',
+      name: 'ChatGPT Plus (GPT-4o)',
+      image: 'assets/img/ChatGPT_Plus.png',
+      price: 'Rp 45.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 45.000 / bln',
+      orderName: 'ChatGPT Plus',
+      idContent: {
+        cat: 'AI & Coding',
+        badge: 'GPT-4o Access',
+        type: 'AI Bot',
+        desc: 'Akses model tercanggih OpenAI GPT-4o untuk asistensi pengerjaan tugas koding, debugging error, pemecahan rumus matematis, bedah jurnal ilmiah, analisis data tabel, dan kreasi visual DALL·E 3.',
+        features: [
+          'Akses Model Unggulan GPT-4o & GPT-4',
+          'Asistensi Pemrograman & Debugging Multi-Bahasa',
+          'Advanced Data Analysis & Visualisasi Grafik',
+          'Generate Gambar Resolusi Tinggi via DALL·E 3'
+        ]
+      },
+      enContent: {
+        cat: 'AI & Coding Assistant',
+        badge: 'GPT-4o Access',
+        type: 'AI Assistant',
+        desc: 'Access OpenAI\'s flagship GPT-4o model for programming guidance, syntax debugging, math formula proofs, research paper synthesis, data charting, and DALL·E 3 generative art.',
+        features: [
+          'Full GPT-4o & GPT-4 Model Access',
+          'Multi-Language Code Synthesis & Debugging',
+          'Advanced Data Analysis & File Upload Parsing',
+          'High-Resolution Image Generation via DALL·E 3'
+        ]
+      }
+    },
+    'turnitin': {
+      id: 'turnitin',
+      name: 'Turnitin No Repo',
+      image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80&auto=format&fit=crop',
+      price: 'Rp 10.000',
+      period: '/ file',
+      priceFormatted: 'Rp 10.000 / file',
+      orderName: 'Turnitin No Repository',
+      idContent: {
+        cat: 'Cek Plagiasi',
+        badge: '100% No Repo',
+        type: 'Akademik',
+        desc: 'Pengecekan similarity dokumen menggunakan Turnitin akun instructor dengan pengaturan 100% No Repository. Dokumen Anda dijamin tidak tersimpan di repositori Turnitin sehingga aman saat dicek ulang oleh pihak kampus.',
+        features: [
+          '100% Aman Skripsi & Tesis (No Repository Guarantee)',
+          'Hasil Pengecekan Kilat 5 - 15 Menit',
+          'Laporan PDF Lengkap dengan Penanda Similarity Berwarna',
+          'Dukungan Filter Kutipan (Exclude Quotes & Bibliography)'
+        ]
+      },
+      enContent: {
+        cat: 'Plagiarism Check',
+        badge: '100% No Repo',
+        type: 'Academic',
+        desc: 'Instructor-tier Turnitin similarity checking strictly configured to No Repository. Your thesis, paper, or manuscript will never be stored or indexed upon final university evaluation.',
+        features: [
+          '100% No Repository Thesis Safe Guarantee',
+          'Ultra-Fast 5 - 15 Minute Processing Turnaround',
+          'Complete Official PDF Report with Color-Coded Matches',
+          'Exclude Quotes & Bibliography Filters Supported'
+        ]
+      }
+    },
+    'grammarly': {
+      id: 'grammarly',
+      name: 'Grammarly Premium',
+      image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
+      price: 'Rp 25.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 25.000 / bln',
+      orderName: 'Grammarly Premium',
+      idContent: {
+        cat: 'Jurnal & Essay',
+        badge: 'Full Premium',
+        type: 'Writing',
+        desc: 'Akun Grammarly Premium resmi untuk menyempurnakan tulisan bahasa Inggris pada jurnal internasional, essay, abstrak skripsi, dan cover letter dengan koreksi tata bahasa mendalam dan parafrase cerdas.',
+        features: [
+          'Koreksi Grammar, Ejaan & Tanda Baca Mendalam',
+          'Peningkatan Kosa Kata Akademik (Vocabulary Suggestions)',
+          'Deteksi Nada & Kesopanan Tulisan Formal',
+          'Penyempurnaan Struktur Kalimat (Clarity Rewrites)'
+        ]
+      },
+      enContent: {
+        cat: 'Academic Writing',
+        badge: 'Full Premium',
+        type: 'Writing AI',
+        desc: 'Official Grammarly Premium account to polish English academic manuscripts, international journal submissions, and essays with in-depth grammar correction and intelligent rewrites.',
+        features: [
+          'Comprehensive Grammar, Spelling & Punctuation Engine',
+          'Contextual Academic Vocabulary Suggestions',
+          'Formal Tone, Formality & Clarity Optimization',
+          'Full-Sentence Rewrite Recommendations'
+        ]
+      }
+    },
+    'office365': {
+      id: 'office365',
+      name: 'Microsoft 365 Pro',
+      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&auto=format&fit=crop',
+      price: 'Rp 35.000',
+      period: '/ akun',
+      priceFormatted: 'Rp 35.000 / akun',
+      orderName: 'Microsoft 365 Pro',
+      idContent: {
+        cat: 'Office & Dokumen',
+        badge: '1TB Cloud',
+        type: 'Office',
+        desc: 'Lisensi resmi Microsoft 365 Pro lengkap dengan paket aplikasi desktop Word, Excel, PowerPoint, Outlook, serta cloud storage OneDrive 1TB untuk backup dokumen skripsi dan file akademik Anda.',
+        features: [
+          'Aplikasi Desktop Asli: Word, Excel, PowerPoint, OneNote',
+          'Aktivasi Hingga 5 Perangkat (PC, Mac, Tablet & HP)',
+          'Kapasitas Cloud 1TB OneDrive Aman & Terenkripsi',
+          'Update Versi Aplikasi Terbaru Otomatis'
+        ]
+      },
+      enContent: {
+        cat: 'Productivity & Office',
+        badge: '1TB Cloud',
+        type: 'Office',
+        desc: 'Official Microsoft 365 Pro subscription bundled with desktop suites (Word, Excel, PowerPoint) and 1TB OneDrive secure cloud storage for reliable thesis and project backup.',
+        features: [
+          'Full Desktop Suite: Word, Excel, PowerPoint & Outlook',
+          'Simultaneous Install on Up to 5 Devices (PC/Mac/Phone)',
+          '1TB Encrypted OneDrive Cloud Backup Space',
+          'Continuous Automatic Feature Updates'
+        ]
+      }
+    },
+    'capcut': {
+      id: 'capcut',
+      name: 'CapCut Pro',
+      image: 'assets/img/CapCut.png',
+      price: 'Rp 20.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 20.000 / bln',
+      orderName: 'CapCut Pro',
+      idContent: {
+        cat: 'Editing Video',
+        badge: 'PC & Mobile',
+        type: 'Editor',
+        desc: 'Langganan CapCut Pro resmi untuk mengedit video presentasi tugas, video pembelajaran, reels, dan YouTube tanpa watermark dengan akses penuh ke seluruh filter pro, efek sinematik, dan audio premium.',
+        features: [
+          'Ekspor Video Bebas Watermark Resolusi 4K 60fps',
+          'Akses Penuh Seluruh Efek, Filter & Transisi Pro',
+          'Dukungan Multi-Platform (Windows PC, Mac, Android, iOS)',
+          'Fitur AI Canggih: Auto-Caption & Smart Cutout'
+        ]
+      },
+      enContent: {
+        cat: 'Video Editing',
+        badge: 'PC & Mobile',
+        type: 'Editor',
+        desc: 'Official CapCut Pro subscription for student video assignments, instructional content, reels, and YouTube projects without watermarks, featuring full 4K rendering and unlocked pro assets.',
+        features: [
+          'Watermark-Free Export Up to 4K 60fps Resolution',
+          'Complete Library of Pro Cinematic Filters & Transitions',
+          'Cross-Platform Sync (Windows, macOS, Android, iOS)',
+          'Smart AI Tools: Auto-Captions & Instant Background Cutout'
+        ]
+      }
+    },
+    'spotify': {
+      id: 'spotify',
+      name: 'Spotify Premium',
+      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80&auto=format&fit=crop',
+      price: 'Rp 18.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 18.000 / bln',
+      orderName: 'Spotify Premium',
+      idContent: {
+        cat: 'Musik & Podcast',
+        badge: 'Bebas Iklan',
+        type: 'Audio',
+        desc: 'Akun Spotify Premium resmi tanpa jeda iklan dengan kualitas audio ultra-jernih 320kbps, fitur unduh lagu offline tanpa batas, dan bebas skip untuk menemani sesi belajar dan tugas semalaman.',
+        features: [
+          'Streaming Musik & Podcast 100% Bebas Jeda Iklan',
+          'Kualitas Audio High Bitrate (320kbps Lossless Feel)',
+          'Download Musik Offline Tanpa Batas Kuota',
+          'Bebas Lewati Lagu (Unlimited Skips) di Semua Perangkat'
+        ]
+      },
+      enContent: {
+        cat: 'Audio & Podcast',
+        badge: 'Ad-Free',
+        type: 'Audio',
+        desc: 'Official Spotify Premium subscription without commercial interruptions, delivering crystal-clear 320kbps audio, unlimited song skips, and offline listening for late-night study sessions.',
+        features: [
+          '100% Ad-Free Music & Academic Podcast Streaming',
+          'Extreme High Bitrate Audio Quality (320kbps)',
+          'Unlimited Offline Song & Playlist Downloads',
+          'Unlimited Track Skips on Smartphone, Tablet, and Desktop'
+        ]
+      }
+    },
+    'netflix': {
+      id: 'netflix',
+      name: 'Netflix Premium 4K',
+      image: 'assets/img/Netflix.png',
+      price: 'Rp 30.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 30.000 / bln',
+      orderName: 'Netflix Premium 4K',
+      idContent: {
+        cat: 'Streaming Film',
+        badge: 'Ultra HD 4K',
+        type: 'Cinema',
+        desc: 'Akses Netflix Premium Ultra HD 4K resmi dengan slot profil pribadi ber-PIN mandiri, koneksi stabil anti on-hold, dan garansi penuh untuk rehat sejenak setelah menyelesaikan tugas kuliah.',
+        features: [
+          'Kualitas Gambar Tertinggi Ultra HD 4K & Audio Spasial',
+          '1 Profil 1 Pengguna dengan PIN Pribadi Mandiri',
+          'Garansi Penuh Aktif & Bebas Gangguan On-Hold',
+          'Dukungan Tontonan di Smart TV, Laptop, Tablet & Smartphone'
+        ]
+      },
+      enContent: {
+        cat: 'Cinema & Streaming',
+        badge: 'Ultra HD 4K',
+        type: 'Cinema',
+        desc: 'Official Netflix Premium Ultra HD 4K streaming profile secured with your personal PIN, offering stable anti-on-hold performance and full warranty to unwind after academic sprints.',
+        features: [
+          'Ultra HD 4K Resolution & Immersive Spatial Audio',
+          'Private 1-User Profile Secured with a Personal PIN',
+          'Anti-On-Hold Guarantee with Full Warranty Support',
+          'Stream Seamlessly on Smart TVs, Laptops, Tablets & Phones'
+        ]
+      }
+    }
+  };
+
+  var activeAppId = null;
+  var activeAppTriggerElement = null;
+
+  function populateAppModal(appId, lang) {
+    var currentLang = lang || getStoredLang() || DEFAULT_LANG;
+    var rawItem = appsData[appId];
+    if (!rawItem) return;
+
+    var content = (currentLang === 'en') ? rawItem.enContent : rawItem.idContent;
+
+    var modalImg = document.getElementById('appModalImg');
+    var modalBadgeText = document.getElementById('appModalBadgeText');
+    var modalType = document.getElementById('appModalType');
+    var modalCat = document.getElementById('appModalCat');
+    var modalTitle = document.getElementById('appModalTitle');
+    var modalDesc = document.getElementById('appModalDesc');
+    var modalTags = document.getElementById('appModalTags');
+    var modalPrice = document.getElementById('appModalPrice');
+    var modalPeriod = document.getElementById('appModalPeriod');
+
+    if (modalImg) {
+      modalImg.src = rawItem.image;
+      modalImg.alt = rawItem.name;
+    }
+    if (modalBadgeText) modalBadgeText.textContent = content.badge;
+    if (modalType) modalType.textContent = content.type;
+    if (modalCat) modalCat.textContent = content.cat;
+    if (modalTitle) modalTitle.textContent = rawItem.name;
+    if (modalDesc) modalDesc.textContent = content.desc;
+    if (modalPrice) modalPrice.textContent = rawItem.price;
+    if (modalPeriod) modalPeriod.textContent = rawItem.period;
+
+    if (modalTags) {
+      modalTags.innerHTML = '';
+      content.features.forEach(function (feat) {
+        var tagSpan = document.createElement('span');
+        tagSpan.className = 'app-modal__tag';
+        tagSpan.innerHTML = '<i class="bi bi-check-circle" aria-hidden="true"></i><span>' + feat + '</span>';
+        modalTags.appendChild(tagSpan);
+      });
+    }
+  }
+
+  function refreshAppModalLanguage(lang) {
+    if (activeAppId) {
+      populateAppModal(activeAppId, lang);
+    }
+  }
+
+  function initPremiumAppsModal() {
+    var detailButtons = document.querySelectorAll('.js-app-detail');
+    var appCards = document.querySelectorAll('.app-card[data-app-id]');
+    var modalBackdrop = document.getElementById('appModalBackdrop');
+    var modalDialog = document.getElementById('appModalDialog');
+    var modalCloseBtn = document.getElementById('appModalCloseBtn');
+    var modalOrderBtn = document.getElementById('appModalOrderBtn');
+
+    if (!modalBackdrop) return;
+
+    function openModal(appId, triggerEl) {
+      activeAppId = appId;
+      activeAppTriggerElement = triggerEl;
+      populateAppModal(appId);
+
+      modalBackdrop.classList.add('is-open');
+      modalBackdrop.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      if (modalCloseBtn) {
+        modalCloseBtn.focus();
+      }
+    }
+
+    function closeModal() {
+      if (!modalBackdrop.classList.contains('is-open')) return;
+      modalBackdrop.classList.remove('is-open');
+      modalBackdrop.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+
+      if (activeAppTriggerElement && typeof activeAppTriggerElement.focus === 'function') {
+        activeAppTriggerElement.focus();
+      }
+      activeAppId = null;
+      activeAppTriggerElement = null;
+    }
+
+    function handleAppOrder(appId) {
+      if (!appId) return;
+      var currentLang = getStoredLang() || DEFAULT_LANG;
+      var rawItem = appsData[appId];
+      if (!rawItem) return;
+
+      var appName = rawItem.orderName || rawItem.name;
+      var appPrice = rawItem.priceFormatted;
+
+      closeModal();
+
+      var contactSection = document.getElementById('contact');
+      var subjectInput = document.getElementById('contactSubject');
+      var messageInput = document.getElementById('contactMessage');
+      var nameInput = document.getElementById('contactName');
+
+      if (subjectInput) {
+        subjectInput.value = 'Order ' + appName + ' (' + appPrice + ')';
+      }
+      if (messageInput) {
+        messageInput.value = currentLang === 'en'
+          ? 'Hello Stackly Admin, I would like to order a premium account for ' + appName + ' at ' + appPrice + '. Please provide information on slot availability and payment instructions. Thank you!'
+          : 'Halo Admin Stackly, saya ingin memesan akun premium ' + appName + ' dengan harga ' + appPrice + '. Mohon informasi ketersediaan slot dan instruksi pembayaran. Terima kasih!';
+      }
+
+      if (contactSection) {
+        scrollToSection(contactSection);
+      }
+
+      setTimeout(function () {
+        if (nameInput) {
+          nameInput.focus();
+        } else if (messageInput) {
+          messageInput.focus();
+        }
+      }, 450);
+    }
+
+    /* Detail button and card click listeners */
+    detailButtons.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var appId = btn.getAttribute('data-app-id');
+        openModal(appId, btn);
+      });
+    });
+
+    appCards.forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        if (e.target.closest('.js-app-detail')) return;
+        var appId = card.getAttribute('data-app-id');
+        var btn = card.querySelector('.js-app-detail');
+        openModal(appId, btn || card);
+      });
+
+      card.addEventListener('keydown', function (e) {
+        if ((e.key === 'Enter' || e.key === ' ') && e.target === card) {
+          e.preventDefault();
+          var appId = card.getAttribute('data-app-id');
+          openModal(appId, card);
+        }
+      });
+    });
+
+    /* Close button listener */
+    if (modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', closeModal);
+    }
+
+    /* Click outside dialog to close */
+    modalBackdrop.addEventListener('click', function (e) {
+      if (modalDialog && !modalDialog.contains(e.target)) {
+        closeModal();
+      }
+    });
+
+    /* Escape key to close */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modalBackdrop.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+
+    /* Order button click */
+    if (modalOrderBtn) {
+      modalOrderBtn.addEventListener('click', function () {
+        handleAppOrder(activeAppId);
+      });
+    }
+  }
+
+  /* ---------------------------------------------------------
      7.5 PREMIUM APPS & PROJECT ORDER HANDLERS
      --------------------------------------------------------- */
   function initAppOrderButtons() {
@@ -1472,6 +1927,7 @@
     initContactForm();
     initLivePreviewMockup();
     initServicesSection();
+    initPremiumAppsModal();
     initAppOrderButtons();
   }
 
