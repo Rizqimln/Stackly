@@ -1496,175 +1496,10 @@
      7.4.5 PREMIUM APPS DATA & DETAIL MODAL
      --------------------------------------------------------- */
   var appsData = {
-    'canva': {
-      id: 'canva',
-      name: 'Canva Pro',
-      image: 'assets/img/Canva.png',
-      price: 'Rp 15.000',
-      period: '/ bln',
-      priceFormatted: 'Rp 15.000 / bln',
-      orderName: 'Canva Pro',
-      idContent: {
-        cat: 'Desain & PPT',
-        badge: 'Private / Sharing',
-        type: 'Desain',
-        desc: 'Akses Canva Pro resmi bergaransi untuk kebutuhan desain presentasi tugas kuliah, infografis, poster, dan template feed tanpa watermark dengan jutaan aset visual premium dan fitur Magic AI.',
-        features: [
-          'Brand Kit Resmi & Font Kustom',
-          'Akses 100 Juta+ Foto, Video & Grafis Premium',
-          'Magic Studio AI: Magic Write, Expand & Switch',
-          'Penghapus Latar Belakang (Background Remover) 1-Klik'
-        ]
-      },
-      enContent: {
-        cat: 'Design & Presentation',
-        badge: 'Private / Sharing',
-        type: 'Design',
-        desc: 'Official licensed Canva Pro access for academic presentations, infographics, research posters, and media projects with 100M+ premium assets and unlimited Magic AI design tools.',
-        features: [
-          'Official Brand Kit & Custom Fonts',
-          '100M+ Premium Stock Photos, Videos & Graphics',
-          'Magic Studio AI: Magic Write, Expand & Switch',
-          '1-Click AI Background Remover'
-        ]
-      }
-    },
-    'chatgpt': {
-      id: 'chatgpt',
-      name: 'ChatGPT Plus (GPT-4o)',
-      image: 'assets/img/ChatGPT_Plus.png',
-      price: 'Rp 45.000',
-      period: '/ bln',
-      priceFormatted: 'Rp 45.000 / bln',
-      orderName: 'ChatGPT Plus',
-      idContent: {
-        cat: 'AI & Coding',
-        badge: 'GPT-4o Access',
-        type: 'AI Bot',
-        desc: 'Akses model tercanggih OpenAI GPT-4o untuk asistensi pengerjaan tugas koding, debugging error, pemecahan rumus matematis, bedah jurnal ilmiah, analisis data tabel, dan kreasi visual DALL·E 3.',
-        features: [
-          'Akses Model Unggulan GPT-4o & GPT-4',
-          'Asistensi Pemrograman & Debugging Multi-Bahasa',
-          'Advanced Data Analysis & Visualisasi Grafik',
-          'Generate Gambar Resolusi Tinggi via DALL·E 3'
-        ]
-      },
-      enContent: {
-        cat: 'AI & Coding Assistant',
-        badge: 'GPT-4o Access',
-        type: 'AI Assistant',
-        desc: 'Access OpenAI\'s flagship GPT-4o model for programming guidance, syntax debugging, math formula proofs, research paper synthesis, data charting, and DALL·E 3 generative art.',
-        features: [
-          'Full GPT-4o & GPT-4 Model Access',
-          'Multi-Language Code Synthesis & Debugging',
-          'Advanced Data Analysis & File Upload Parsing',
-          'High-Resolution Image Generation via DALL·E 3'
-        ]
-      }
-    },
-    'turnitin': {
-      id: 'turnitin',
-      name: 'Turnitin No Repo',
-      image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80&auto=format&fit=crop',
-      price: 'Rp 10.000',
-      period: '/ file',
-      priceFormatted: 'Rp 10.000 / file',
-      orderName: 'Turnitin No Repository',
-      idContent: {
-        cat: 'Cek Plagiasi',
-        badge: '100% No Repo',
-        type: 'Akademik',
-        desc: 'Pengecekan similarity dokumen menggunakan Turnitin akun instructor dengan pengaturan 100% No Repository. Dokumen Anda dijamin tidak tersimpan di repositori Turnitin sehingga aman saat dicek ulang oleh pihak kampus.',
-        features: [
-          '100% Aman Skripsi & Tesis (No Repository Guarantee)',
-          'Hasil Pengecekan Kilat 5 - 15 Menit',
-          'Laporan PDF Lengkap dengan Penanda Similarity Berwarna',
-          'Dukungan Filter Kutipan (Exclude Quotes & Bibliography)'
-        ]
-      },
-      enContent: {
-        cat: 'Plagiarism Check',
-        badge: '100% No Repo',
-        type: 'Academic',
-        desc: 'Instructor-tier Turnitin similarity checking strictly configured to No Repository. Your thesis, paper, or manuscript will never be stored or indexed upon final university evaluation.',
-        features: [
-          '100% No Repository Thesis Safe Guarantee',
-          'Ultra-Fast 5 - 15 Minute Processing Turnaround',
-          'Complete Official PDF Report with Color-Coded Matches',
-          'Exclude Quotes & Bibliography Filters Supported'
-        ]
-      }
-    },
-    'grammarly': {
-      id: 'grammarly',
-      name: 'Grammarly Premium',
-      image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80&auto=format&fit=crop',
-      price: 'Rp 25.000',
-      period: '/ bln',
-      priceFormatted: 'Rp 25.000 / bln',
-      orderName: 'Grammarly Premium',
-      idContent: {
-        cat: 'Jurnal & Essay',
-        badge: 'Full Premium',
-        type: 'Writing',
-        desc: 'Akun Grammarly Premium resmi untuk menyempurnakan tulisan bahasa Inggris pada jurnal internasional, essay, abstrak skripsi, dan cover letter dengan koreksi tata bahasa mendalam dan parafrase cerdas.',
-        features: [
-          'Koreksi Grammar, Ejaan & Tanda Baca Mendalam',
-          'Peningkatan Kosa Kata Akademik (Vocabulary Suggestions)',
-          'Deteksi Nada & Kesopanan Tulisan Formal',
-          'Penyempurnaan Struktur Kalimat (Clarity Rewrites)'
-        ]
-      },
-      enContent: {
-        cat: 'Academic Writing',
-        badge: 'Full Premium',
-        type: 'Writing AI',
-        desc: 'Official Grammarly Premium account to polish English academic manuscripts, international journal submissions, and essays with in-depth grammar correction and intelligent rewrites.',
-        features: [
-          'Comprehensive Grammar, Spelling & Punctuation Engine',
-          'Contextual Academic Vocabulary Suggestions',
-          'Formal Tone, Formality & Clarity Optimization',
-          'Full-Sentence Rewrite Recommendations'
-        ]
-      }
-    },
-    'office365': {
-      id: 'office365',
-      name: 'Microsoft 365 Pro',
-      image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80&auto=format&fit=crop',
-      price: 'Rp 35.000',
-      period: '/ akun',
-      priceFormatted: 'Rp 35.000 / akun',
-      orderName: 'Microsoft 365 Pro',
-      idContent: {
-        cat: 'Office & Dokumen',
-        badge: '1TB Cloud',
-        type: 'Office',
-        desc: 'Lisensi resmi Microsoft 365 Pro lengkap dengan paket aplikasi desktop Word, Excel, PowerPoint, Outlook, serta cloud storage OneDrive 1TB untuk backup dokumen skripsi dan file akademik Anda.',
-        features: [
-          'Aplikasi Desktop Asli: Word, Excel, PowerPoint, OneNote',
-          'Aktivasi Hingga 5 Perangkat (PC, Mac, Tablet & HP)',
-          'Kapasitas Cloud 1TB OneDrive Aman & Terenkripsi',
-          'Update Versi Aplikasi Terbaru Otomatis'
-        ]
-      },
-      enContent: {
-        cat: 'Productivity & Office',
-        badge: '1TB Cloud',
-        type: 'Office',
-        desc: 'Official Microsoft 365 Pro subscription bundled with desktop suites (Word, Excel, PowerPoint) and 1TB OneDrive secure cloud storage for reliable thesis and project backup.',
-        features: [
-          'Full Desktop Suite: Word, Excel, PowerPoint & Outlook',
-          'Simultaneous Install on Up to 5 Devices (PC/Mac/Phone)',
-          '1TB Encrypted OneDrive Cloud Backup Space',
-          'Continuous Automatic Feature Updates'
-        ]
-      }
-    },
     'capcut': {
       id: 'capcut',
       name: 'CapCut Pro',
-      image: 'assets/img/CapCut.png',
+      image: 'assets/img/01_CapCut.png',
       price: 'Rp 20.000',
       period: '/ bln',
       priceFormatted: 'Rp 20.000 / bln',
@@ -1673,64 +1508,361 @@
         cat: 'Editing Video',
         badge: 'PC & Mobile',
         type: 'Editor',
-        desc: 'Langganan CapCut Pro resmi untuk mengedit video presentasi tugas, video pembelajaran, reels, dan YouTube tanpa watermark dengan akses penuh ke seluruh filter pro, efek sinematik, dan audio premium.',
+        desc: 'CapCut Pro adalah aplikasi edit video bertenaga AI paling populer untuk membuat konten kreator dan tugas presentasi video. Nikmati semua fitur pro tanpa watermark dengan ekspor 4K berkualitas sinematik.',
         features: [
           'Ekspor Video Bebas Watermark Resolusi 4K 60fps',
-          'Akses Penuh Seluruh Efek, Filter & Transisi Pro',
+          'Akses Penuh Seluruh Efek, Filter & Transisi Pro Eksklusif',
           'Dukungan Multi-Platform (Windows PC, Mac, Android, iOS)',
-          'Fitur AI Canggih: Auto-Caption & Smart Cutout'
+          'Fitur AI Canggih: Auto-Caption, Voice Cloning & Smart Cutout'
         ]
       },
       enContent: {
         cat: 'Video Editing',
         badge: 'PC & Mobile',
         type: 'Editor',
-        desc: 'Official CapCut Pro subscription for student video assignments, instructional content, reels, and YouTube projects without watermarks, featuring full 4K rendering and unlocked pro assets.',
+        desc: 'CapCut Pro is the most popular AI-powered video editor for content creators and academic video projects. Export stunning 4K videos across all platforms without any watermarks.',
         features: [
           'Watermark-Free Export Up to 4K 60fps Resolution',
-          'Complete Library of Pro Cinematic Filters & Transitions',
+          'Complete Library of Exclusive Pro Filters & Cinematic Transitions',
           'Cross-Platform Sync (Windows, macOS, Android, iOS)',
-          'Smart AI Tools: Auto-Captions & Instant Background Cutout'
+          'AI Tools: Auto-Captions, Voice Cloning & Smart Background Cutout'
         ]
       }
     },
-    'spotify': {
-      id: 'spotify',
-      name: 'Spotify Premium',
-      image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80&auto=format&fit=crop',
-      price: 'Rp 18.000',
+    'pxstream': {
+      id: 'pxstream',
+      name: 'PX Stream',
+      image: 'assets/img/02_PX_Stream.png',
+      price: 'Rp 25.000',
       period: '/ bln',
-      priceFormatted: 'Rp 18.000 / bln',
-      orderName: 'Spotify Premium',
+      priceFormatted: 'Rp 25.000 / bln',
+      orderName: 'PX Stream',
       idContent: {
-        cat: 'Musik & Podcast',
-        badge: 'Bebas Iklan',
-        type: 'Audio',
-        desc: 'Akun Spotify Premium resmi tanpa jeda iklan dengan kualitas audio ultra-jernih 320kbps, fitur unduh lagu offline tanpa batas, dan bebas skip untuk menemani sesi belajar dan tugas semalaman.',
+        cat: 'Streaming Film',
+        badge: 'All Device',
+        type: 'Streaming',
+        desc: 'PX Stream adalah platform streaming hiburan dengan koleksi film, serial, dan anime pilihan terlengkap. Akses konten premium dari ribuan judul tanpa batas di semua perangkat favoritmu.',
         features: [
-          'Streaming Musik & Podcast 100% Bebas Jeda Iklan',
-          'Kualitas Audio High Bitrate (320kbps Lossless Feel)',
-          'Download Musik Offline Tanpa Batas Kuota',
-          'Bebas Lewati Lagu (Unlimited Skips) di Semua Perangkat'
+          'Koleksi Film, Serial & Anime Premium Terlengkap',
+          'Streaming Kualitas HD & Full HD Stabil',
+          'Akses di Semua Perangkat (TV, HP, Tablet, PC)',
+          'Tanpa Iklan & Tidak Perlu VPN'
         ]
       },
       enContent: {
-        cat: 'Audio & Podcast',
-        badge: 'Ad-Free',
-        type: 'Audio',
-        desc: 'Official Spotify Premium subscription without commercial interruptions, delivering crystal-clear 320kbps audio, unlimited song skips, and offline listening for late-night study sessions.',
+        cat: 'Movie Streaming',
+        badge: 'All Device',
+        type: 'Streaming',
+        desc: 'PX Stream is an entertainment streaming platform with the most complete collection of movies, series, and anime. Access premium content from thousands of titles on all your devices.',
         features: [
-          '100% Ad-Free Music & Academic Podcast Streaming',
-          'Extreme High Bitrate Audio Quality (320kbps)',
-          'Unlimited Offline Song & Playlist Downloads',
-          'Unlimited Track Skips on Smartphone, Tablet, and Desktop'
+          'Complete Library of Premium Movies, Series & Anime',
+          'Stable HD & Full HD Streaming Quality',
+          'Access on All Devices (TV, Mobile, Tablet, PC)',
+          'Ad-Free & No VPN Required'
+        ]
+      }
+    },
+    'canva': {
+      id: 'canva',
+      name: 'Canva Pro',
+      image: 'assets/img/03_Canva.png',
+      price: 'Rp 15.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 15.000 / bln',
+      orderName: 'Canva Pro',
+      idContent: {
+        cat: 'Desain & PPT',
+        badge: 'Private / Sharing',
+        type: 'Desain',
+        desc: 'Canva Pro adalah alat desain grafis online #1 untuk mahasiswa dan profesional. Buat presentasi tugas memukau, poster, infografis, dan konten media sosial dengan jutaan aset premium dan kecerdasan buatan Magic AI.',
+        features: [
+          'Brand Kit Resmi, Logo & Font Kustom Tanpa Batas',
+          'Akses 100 Juta+ Foto, Video & Template Grafis Premium',
+          'Magic Studio AI: Magic Write, Magic Expand & Background Remover',
+          'Ekspor Berkualitas Tinggi ke PDF, PNG, MP4 & Presentasi'
+        ]
+      },
+      enContent: {
+        cat: 'Design & Presentation',
+        badge: 'Private / Sharing',
+        type: 'Design',
+        desc: 'Canva Pro is the #1 online graphic design tool for students and professionals. Create stunning academic presentations, posters, infographics, and social media content with millions of premium assets and Magic AI.',
+        features: [
+          'Unlimited Brand Kit, Custom Logo & Fonts',
+          '100M+ Premium Stock Photos, Videos & Design Templates',
+          'Magic Studio AI: Magic Write, Magic Expand & Background Remover',
+          'High-Quality Export to PDF, PNG, MP4 & Presentations'
+        ]
+      }
+    },
+    'primevideo': {
+      id: 'primevideo',
+      name: 'Amazon Prime Video',
+      image: 'assets/img/04_Prime_Video.png',
+      price: 'Rp 25.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 25.000 / bln',
+      orderName: 'Amazon Prime Video',
+      idContent: {
+        cat: 'Streaming Film',
+        badge: 'Prime Exclusive',
+        type: 'Cinema',
+        desc: 'Amazon Prime Video menghadirkan ribuan judul film box office terbaru, serial Amazon Original eksklusif, dan dokumenter kelas dunia. Nikmati streaming Ultra HD 4K dengan subtitle multi-bahasa di semua perangkat.',
+        features: [
+          'Ribuan Film Box Office & Konten Amazon Original Eksklusif',
+          'Streaming Ultra HD 4K + HDR dengan Audio Dolby Atmos',
+          'Unduh Konten untuk Ditonton Offline (Download to Watch)',
+          'Akses di Smart TV, HP, Laptop & Tablet Semua OS'
+        ]
+      },
+      enContent: {
+        cat: 'Movie Streaming',
+        badge: 'Prime Exclusive',
+        type: 'Cinema',
+        desc: 'Amazon Prime Video delivers thousands of the latest blockbusters, exclusive Amazon Original series, and world-class documentaries. Stream in Ultra HD 4K with multi-language subtitles on any device.',
+        features: [
+          'Thousands of Box Office Films & Exclusive Amazon Original Content',
+          'Ultra HD 4K + HDR Streaming with Dolby Atmos Audio',
+          'Download Content for Offline Viewing',
+          'Available on Smart TV, Mobile, Laptop & Tablet (All OS)'
+        ]
+      }
+    },
+    'bstation': {
+      id: 'bstation',
+      name: 'Bilibili (B-Station)',
+      image: 'assets/img/05_Bstation.png',
+      price: 'Rp 15.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 15.000 / bln',
+      orderName: 'Bilibili Premium',
+      idContent: {
+        cat: 'Anime & Manga',
+        badge: 'Premium Akses',
+        type: 'Streaming',
+        desc: 'Bilibili (B-Station) adalah platform streaming anime, donghua, manga, dan konten kreatif terlengkap asal Asia. Akses ribuan episode anime eksklusif, film animasi, dan manga digital tanpa iklan dengan kualitas video terbaik.',
+        features: [
+          'Koleksi Anime, Donghua & Manga Eksklusif Terlengkap se-Asia',
+          'Streaming Bebas Iklan di Kualitas HD & 4K',
+          'Akses Konten Early Release & Simulcast dari Jepang & China',
+          'Download Episode untuk Ditonton Offline Tanpa Batas'
+        ]
+      },
+      enContent: {
+        cat: 'Anime & Entertainment',
+        badge: 'Premium Access',
+        type: 'Streaming',
+        desc: 'Bilibili (B-Station) is Asia\'s most complete anime, donghua, manga, and creative content streaming platform. Access thousands of exclusive anime episodes, animated films, and digital manga ad-free in top quality.',
+        features: [
+          'Asia\'s Most Complete Library of Anime, Donghua & Exclusive Manga',
+          'Ad-Free HD & 4K Streaming Quality',
+          'Early Release & Simulcast Access from Japan & China',
+          'Unlimited Offline Episode Downloads'
+        ]
+      }
+    },
+    'vidio': {
+      id: 'vidio',
+      name: 'Vidio Premium',
+      image: 'assets/img/06_Vidio.png',
+      price: 'Rp 12.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 12.000 / bln',
+      orderName: 'Vidio Premium',
+      idContent: {
+        cat: 'Streaming Lokal',
+        badge: 'Live Sport',
+        type: 'Streaming',
+        desc: 'Vidio adalah platform streaming hiburan & olahraga #1 Indonesia. Nonton siaran langsung Liga 1, EPL, BRI Liga, film box office, serial Indonesia eksklusif, dan acara TV favorit kapan saja dan di mana saja.',
+        features: [
+          'Live Streaming Sepak Bola: Liga 1, EPL, BRI Liga & Turnamen',
+          'Koleksi Film Box Office & Serial Indonesia Eksklusif',
+          'Konten Lokal Terlengkap: FTV, Sinetron & Acara TV Nasional',
+          'Streaming Bebas Iklan di Kualitas Full HD'
+        ]
+      },
+      enContent: {
+        cat: 'Local Streaming',
+        badge: 'Live Sport',
+        type: 'Streaming',
+        desc: 'Vidio is Indonesia\'s #1 entertainment & sports streaming platform. Watch live Liga 1, EPL, BRI Liga football, box office films, exclusive Indonesian series, and your favorite TV shows anytime, anywhere.',
+        features: [
+          'Live Football Streaming: Liga 1, EPL, BRI Liga & Tournaments',
+          'Box Office Films & Exclusive Indonesian Series Library',
+          'Complete Local Content: FTV, Sinetron & National TV Shows',
+          'Ad-Free Streaming in Full HD Quality'
+        ]
+      }
+    },
+    'youtube': {
+      id: 'youtube',
+      name: 'YouTube Premium',
+      image: 'assets/img/07_YouTube_Premium.png',
+      price: 'Rp 25.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 25.000 / bln',
+      orderName: 'YouTube Premium',
+      idContent: {
+        cat: 'Video & Musik',
+        badge: 'Bebas Iklan',
+        type: 'Premium',
+        desc: 'YouTube Premium menghilangkan seluruh iklan dari YouTube dan memberikan akses ke YouTube Music Premium. Nikmati video dan musik favorit tanpa gangguan iklan, putar di background, dan unduh offline kapan saja.',
+        features: [
+          'Nonton YouTube 100% Bebas Iklan di Semua Perangkat',
+          'Background Play: Video & Musik Tetap Jalan saat HP Dikunci',
+          'Download Video & Playlist untuk Ditonton Offline',
+          'Akses YouTube Music Premium: 100 Juta+ Lagu Tanpa Iklan'
+        ]
+      },
+      enContent: {
+        cat: 'Video & Music',
+        badge: 'Ad-Free',
+        type: 'Premium',
+        desc: 'YouTube Premium removes all ads from YouTube and grants access to YouTube Music Premium. Enjoy your favorite videos and music without interruptions, with background play and offline download.',
+        features: [
+          '100% Ad-Free YouTube Watching on All Devices',
+          'Background Play: Keep Videos & Music Running When Screen is Locked',
+          'Download Videos & Playlists for Offline Viewing',
+          'YouTube Music Premium Access: 100M+ Songs Without Ads'
+        ]
+      }
+    },
+    'alightmotion': {
+      id: 'alightmotion',
+      name: 'Alight Motion Pro',
+      image: 'assets/img/08_Alight_Motion.png',
+      price: 'Rp 18.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 18.000 / bln',
+      orderName: 'Alight Motion Pro',
+      idContent: {
+        cat: 'Motion Graphic',
+        badge: 'No Watermark',
+        type: 'Editor',
+        desc: 'Alight Motion Pro adalah aplikasi edit video & motion graphic profesional untuk mobile. Buat animasi teks, efek visual memukau, transisi kustom, dan komposisi multi-layer langsung dari smartphone.',
+        features: [
+          'Animasi Teks & Motion Graphic Berkualitas Profesional',
+          'Multi-Layer Timeline: Video, Audio, Gambar & Efek',
+          'Ekspor Video Bebas Watermark dalam Resolusi Tinggi',
+          'Ratusan Preset Efek, Keyframe & Kurva Animasi Canggih'
+        ]
+      },
+      enContent: {
+        cat: 'Motion Graphics',
+        badge: 'No Watermark',
+        type: 'Editor',
+        desc: 'Alight Motion Pro is a professional video editing & motion graphics app for mobile. Create stunning text animations, visual effects, custom transitions, and multi-layer compositions directly from your smartphone.',
+        features: [
+          'Professional-Grade Text Animation & Motion Graphics',
+          'Multi-Layer Timeline: Video, Audio, Images & Effects',
+          'Watermark-Free High-Resolution Video Export',
+          'Hundreds of Effect Presets, Keyframes & Advanced Animation Curves'
+        ]
+      }
+    },
+    'loklok': {
+      id: 'loklok',
+      name: 'LokLok Premium',
+      image: 'assets/img/09_LokLok.png',
+      price: 'Rp 10.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 10.000 / bln',
+      orderName: 'LokLok Premium',
+      idContent: {
+        cat: 'Drama & Film',
+        badge: 'Asia Content',
+        type: 'Streaming',
+        desc: 'LokLok adalah platform streaming drama Asia terpopuler dengan koleksi drama Korea, China, Jepang, Thailand, dan Indonesia terlengkap dan terbaru. Nikmati subtitle multi-bahasa dan kualitas video HD tanpa buffering.',
+        features: [
+          'Koleksi Drama Korea, China, Jepang & Thailand Terlengkap',
+          'Update Episode Terbaru Secara Real-Time & Simulcast',
+          'Subtitle Multi-Bahasa Termasuk Bahasa Indonesia',
+          'Streaming HD Stabil & Download Offline Tanpa Batas'
+        ]
+      },
+      enContent: {
+        cat: 'Drama & Film',
+        badge: 'Asia Content',
+        type: 'Streaming',
+        desc: 'LokLok is the most popular Asian drama streaming platform with the most complete and latest collection of Korean, Chinese, Japanese, Thai, and Indonesian dramas. Enjoy multi-language subtitles and HD quality.',
+        features: [
+          'Most Complete K-Drama, C-Drama, J-Drama & Thai Drama Library',
+          'Real-Time Episode Updates & Simulcast Streaming',
+          'Multi-Language Subtitles Including Indonesian',
+          'Stable HD Streaming & Unlimited Offline Downloads'
+        ]
+      }
+    },
+    'zoom': {
+      id: 'zoom',
+      name: 'Zoom Pro',
+      image: 'assets/img/10_Zoom.png',
+      price: 'Rp 30.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 30.000 / bln',
+      orderName: 'Zoom Pro',
+      idContent: {
+        cat: 'Video Konferensi',
+        badge: '100 Peserta',
+        type: 'Produktivitas',
+        desc: 'Zoom Pro adalah solusi video konferensi profesional terpercaya untuk rapat tim, presentasi tugas kelompok, seminar online, dan bimbingan skripsi dengan kapasitas besar dan fitur kolaborasi lengkap.',
+        features: [
+          'Meeting Hingga 100 Peserta Tanpa Batas Waktu',
+          'Rekam Rapat & Simpan ke Cloud Storage Otomatis',
+          'Whiteboard Digital & Fitur Anotasi Kolaboratif',
+          'Breakout Rooms untuk Diskusi Kelompok Paralel'
+        ]
+      },
+      enContent: {
+        cat: 'Video Conferencing',
+        badge: '100 Participants',
+        type: 'Productivity',
+        desc: 'Zoom Pro is the trusted professional video conferencing solution for team meetings, group project presentations, online seminars, and thesis guidance sessions with large capacity and full collaboration features.',
+        features: [
+          'Meetings for Up to 100 Participants with No Time Limit',
+          'Auto Record Meetings & Save to Cloud Storage',
+          'Digital Whiteboard & Collaborative Annotation Tools',
+          'Breakout Rooms for Parallel Group Discussions'
+        ]
+      }
+    },
+    'chatgpt': {
+      id: 'chatgpt',
+      name: 'ChatGPT Plus (GPT-4o)',
+      image: 'assets/img/11_ChatGPT_Plus.png',
+      price: 'Rp 45.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 45.000 / bln',
+      orderName: 'ChatGPT Plus',
+      idContent: {
+        cat: 'AI & Coding',
+        badge: 'GPT-4o Access',
+        type: 'AI Bot',
+        desc: 'ChatGPT Plus menggunakan model OpenAI GPT-4o paling canggih untuk asistensi koding, debugging error, pemecahan soal matematika, analisis data, bedah jurnal ilmiah, dan pembuatan gambar DALL·E 3 berkualitas tinggi.',
+        features: [
+          'Akses Model Flagship GPT-4o & GPT-4 Tanpa Batas',
+          'Asistensi Koding & Debugging 50+ Bahasa Pemrograman',
+          'Advanced Data Analysis: Upload File Excel, CSV & PDF',
+          'Generate Gambar Realistis via DALL·E 3 (AI Image)'
+        ]
+      },
+      enContent: {
+        cat: 'AI & Coding Assistant',
+        badge: 'GPT-4o Access',
+        type: 'AI Assistant',
+        desc: 'ChatGPT Plus uses OpenAI\'s most advanced GPT-4o model for coding assistance, debugging, math problem solving, data analysis, research paper breakdown, and high-quality DALL·E 3 image generation.',
+        features: [
+          'Unlimited Access to Flagship GPT-4o & GPT-4 Models',
+          'Code Writing & Debugging in 50+ Programming Languages',
+          'Advanced Data Analysis: Upload Excel, CSV & PDF Files',
+          'Generate Realistic Images via DALL·E 3 AI'
         ]
       }
     },
     'netflix': {
       id: 'netflix',
       name: 'Netflix Premium 4K',
-      image: 'assets/img/Netflix.png',
+      image: 'assets/img/12_Netflix.png',
       price: 'Rp 30.000',
       period: '/ bln',
       priceFormatted: 'Rp 30.000 / bln',
@@ -1739,24 +1871,57 @@
         cat: 'Streaming Film',
         badge: 'Ultra HD 4K',
         type: 'Cinema',
-        desc: 'Akses Netflix Premium Ultra HD 4K resmi dengan slot profil pribadi ber-PIN mandiri, koneksi stabil anti on-hold, dan garansi penuh untuk rehat sejenak setelah menyelesaikan tugas kuliah.',
+        desc: 'Netflix Premium 4K menghadirkan pengalaman sinematik terbaik dengan ribuan film Hollywood terbaru, serial Netflix Original, dokumenter, dan anime eksklusif dalam kualitas gambar Ultra HD 4K + HDR yang memukau.',
         features: [
-          'Kualitas Gambar Tertinggi Ultra HD 4K & Audio Spasial',
-          '1 Profil 1 Pengguna dengan PIN Pribadi Mandiri',
-          'Garansi Penuh Aktif & Bebas Gangguan On-Hold',
-          'Dukungan Tontonan di Smart TV, Laptop, Tablet & Smartphone'
+          'Streaming Ultra HD 4K + HDR & Audio Dolby Atmos Sinematik',
+          '1 Profil Pribadi dengan PIN Mandiri (Anti Sharing Liar)',
+          'Garansi Aktif Penuh & Anti Gangguan On-Hold',
+          'Nonton di Smart TV, Laptop, Tablet & Smartphone Semua OS'
         ]
       },
       enContent: {
         cat: 'Cinema & Streaming',
         badge: 'Ultra HD 4K',
         type: 'Cinema',
-        desc: 'Official Netflix Premium Ultra HD 4K streaming profile secured with your personal PIN, offering stable anti-on-hold performance and full warranty to unwind after academic sprints.',
+        desc: 'Netflix Premium 4K delivers the best cinematic experience with thousands of the latest Hollywood films, Netflix Original series, documentaries, and exclusive anime in stunning Ultra HD 4K + HDR quality.',
         features: [
-          'Ultra HD 4K Resolution & Immersive Spatial Audio',
-          'Private 1-User Profile Secured with a Personal PIN',
-          'Anti-On-Hold Guarantee with Full Warranty Support',
-          'Stream Seamlessly on Smart TVs, Laptops, Tablets & Phones'
+          'Ultra HD 4K + HDR Streaming & Cinematic Dolby Atmos Audio',
+          '1 Private Profile with Independent PIN (Anti Wild Sharing)',
+          'Full Active Warranty & Anti On-Hold Guarantee',
+          'Watch on Smart TV, Laptop, Tablet & Smartphone (All OS)'
+        ]
+      }
+    },
+    'adobe': {
+      id: 'adobe',
+      name: 'Adobe Creative Cloud',
+      image: 'assets/img/13_Adobe.png',
+      price: 'Rp 55.000',
+      period: '/ bln',
+      priceFormatted: 'Rp 55.000 / bln',
+      orderName: 'Adobe Creative Cloud',
+      idContent: {
+        cat: 'Desain Profesional',
+        badge: 'All Apps Bundle',
+        type: 'Creative Suite',
+        desc: 'Adobe Creative Cloud memberikan akses ke seluruh ekosistem aplikasi kreatif profesional Adobe — dari Photoshop, Illustrator, Premiere Pro, After Effects, hingga Lightroom — dalam satu paket lengkap untuk kebutuhan desain dan multimedia akademik level tinggi.',
+        features: [
+          'Akses Penuh 20+ Aplikasi Adobe: Photoshop, Illustrator, Premiere Pro',
+          'Adobe Firefly AI: Generate Gambar & Efek Visual berbasis AI',
+          'Cloud Storage 100GB untuk Aset & Proyek Desain',
+          'Adobe Fonts: Ribuan Font Premium untuk Desain & Tipografi'
+        ]
+      },
+      enContent: {
+        cat: 'Professional Design',
+        badge: 'All Apps Bundle',
+        type: 'Creative Suite',
+        desc: 'Adobe Creative Cloud gives access to Adobe\'s entire professional creative app ecosystem — from Photoshop, Illustrator, Premiere Pro, After Effects, to Lightroom — in one complete package for high-level academic design and multimedia needs.',
+        features: [
+          'Full Access to 20+ Adobe Apps: Photoshop, Illustrator, Premiere Pro',
+          'Adobe Firefly AI: Generate Images & Visual Effects with AI',
+          '100GB Cloud Storage for Design Assets & Projects',
+          'Adobe Fonts: Thousands of Premium Fonts for Design & Typography'
         ]
       }
     }
