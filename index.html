@@ -38,7 +38,7 @@
       </a>
 
       <div class="navbar__right">
-        <div class="lang-switch" role="group" aria-label="Language switcher">
+        <div class="lang-switch" rol1` e="group" aria-label="Language switcher">
           <button type="button" class="lang-switch__btn is-active" data-lang="en" aria-pressed="true">EN</button>
           <span class="lang-switch__divider" aria-hidden="true">|</span>
           <button type="button" class="lang-switch__btn" data-lang="id" aria-pressed="false">ID</button>
@@ -580,6 +580,49 @@
               <label for="contactMessage" data-i18n="contact.messageLabel">Message</label>
               <textarea id="contactMessage" name="message" rows="5" required placeholder=""></textarea>
               <span class="contact-form__focus-line" aria-hidden="true"></span>
+            </div>
+
+            <!-- Print & Delivery (Jasa Cetak dan Antar) -->
+            <div class="contact-form__group contact-print-delivery">
+              <div class="contact-print-delivery__header">
+                <div class="contact-print-delivery__title-row">
+                  <i class="bi bi-printer" aria-hidden="true"></i>
+                  <span class="contact-print-delivery__title" data-i18n="contact.printDeliveryTitle">Jasa Cetak & Antar (Print & Delivery)</span>
+                </div>
+                <p class="contact-print-delivery__note" data-i18n="contact.printDeliveryNote">
+                  Layanan ini hanya untuk pelanggan yang membutuhkan dokumen fisik (seperti makalah, laporan, skripsi). Pemesanan aplikasi premium (Canva Pro, ChatGPT, dll.) dan layanan digital lainnya tidak memerlukan jasa cetak.
+                </p>
+              </div>
+
+              <!-- Pilihan Ya / Tidak (Default: Tidak) -->
+              <div class="contact-print-options" role="radiogroup" aria-label="Pilihan Jasa Cetak & Antar">
+                <label class="contact-print-option is-active" id="labelPrintNo">
+                  <input type="radio" name="print_delivery" id="printDeliveryNo" value="Tidak" checked>
+                  <span class="contact-print-option__indicator" aria-hidden="true"></span>
+                  <span class="contact-print-option__text" data-i18n="contact.printDeliveryNo">Tidak (Hanya File Digital)</span>
+                </label>
+
+                <label class="contact-print-option" id="labelPrintYes">
+                  <input type="radio" name="print_delivery" id="printDeliveryYes" value="Ya">
+                  <span class="contact-print-option__indicator" aria-hidden="true"></span>
+                  <span class="contact-print-option__text" data-i18n="contact.printDeliveryYes">Ya (Cetak & Antar Fisik)</span>
+                </label>
+              </div>
+
+              <!-- Kolom Tambahan (Alamat Pengantaran & Kebutuhan Cetak) - Tersembunyi saat 'Tidak' -->
+              <div class="contact-print-fields" id="printDeliveryFields" aria-hidden="true" style="display: none;">
+                <div class="contact-form__group contact-print-fields__item">
+                  <label for="deliveryAddress" data-i18n="contact.deliveryAddressLabel">Alamat Pengantaran Dokumen</label>
+                  <textarea id="deliveryAddress" name="delivery_address" rows="2" placeholder="Masukkan alamat lengkap pengantaran (Nama jalan, no rumah/kos, kecamatan, kota/kabupaten)..." data-i18n-placeholder="contact.deliveryAddressPlaceholder"></textarea>
+                  <span class="contact-form__focus-line" aria-hidden="true"></span>
+                </div>
+
+                <div class="contact-form__group contact-print-fields__item">
+                  <label for="printSpecs" data-i18n="contact.printSpecsLabel">Kebutuhan & Spesifikasi Cetak</label>
+                  <textarea id="printSpecs" name="print_specs" rows="2" placeholder="Contoh: Jumlah rangkap/eksemplar, jenis jilid (soft/hard cover/lakban), cetak warna/hitam-putih, ukuran kertas (A4/F4)..." data-i18n-placeholder="contact.printSpecsPlaceholder"></textarea>
+                  <span class="contact-form__focus-line" aria-hidden="true"></span>
+                </div>
+              </div>
             </div>
 
             <button type="submit" class="btn btn--primary contact-form__submit">

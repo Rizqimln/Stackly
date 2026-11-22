@@ -2572,6 +2572,189 @@ a.contact-info-card__value:hover {
   transform: scaleX(1);
 }
 
+/* ---------- Contact Print & Delivery Feature ---------- */
+.contact-print-delivery {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.25rem;
+  margin-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  transition: border-color var(--duration-fast) var(--ease),
+              background var(--duration-fast) var(--ease);
+}
+
+.contact-print-delivery:focus-within {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.contact-print-delivery__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.contact-print-delivery__title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.contact-print-delivery__title-row i {
+  font-size: 0.95rem;
+  color: #FFFFFF;
+}
+
+.contact-print-delivery__note {
+  font-size: 0.76rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 2px solid #FFFFFF;
+  padding: 0.45rem 0.65rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 0;
+}
+
+.contact-print-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+
+.contact-print-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 0.85rem;
+  background: rgba(9, 9, 11, 0.7);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease);
+  user-select: none;
+}
+
+.contact-print-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.contact-print-option__indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.04);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--duration-fast) var(--ease);
+  position: relative;
+}
+
+.contact-print-option__indicator::after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all var(--duration-fast) var(--ease);
+}
+
+.contact-print-option.is-active {
+  border-color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.06);
+}
+
+.contact-print-option.is-active .contact-print-option__indicator {
+  border-color: #FFFFFF;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.contact-print-option.is-active .contact-print-option__indicator::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.contact-print-option:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.contact-print-option__text {
+  font-family: var(--font-display);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: #E4E4E7;
+  line-height: 1.3;
+}
+
+.contact-print-option.is-active .contact-print-option__text {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.contact-print-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-top: 0.35rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--border);
+  animation: fadeInDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-print-fields__item textarea {
+  min-height: 75px !important;
+}
+
+@media (max-width: 600px) {
+  .contact-print-options {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .contact-print-option {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .contact-print-option__text {
+    font-size: 0.8rem;
+  }
+
+  .contact-print-delivery {
+    padding: 1rem;
+  }
+}
+
 .contact-form__submit {
   align-self: flex-start;
   margin-top: 0.5rem;

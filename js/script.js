@@ -27,7 +27,7 @@
       'apps.detailBtn': 'Detail',
       'apps.modalFeaturesTitle': 'Key Features & Perks',
 
-      'hero.label': 'ACADEMIC ASSISTANCE & PREMIUM APPS · TRUSTED SINCE 2024',
+      'hero.label': 'ACADEMIC ASSISTANCE & PREMIUM APPS',
       'hero.title1': 'Stackly_',
       'hero.title2': 'Your Web Tasks & Papers.',
       'hero.desc': 'From web apps and backend systems to research papers, accredited journals, and thesis documents — Stackly delivers polished, on-time results with a zero-plagiarism guarantee.',
@@ -122,6 +122,15 @@
       'contact.send': 'Submit My Order',
       'contact.success': 'Order received! Our team will reach out to you shortly.',
       'contact.error': 'Please fill in all fields before submitting.',
+      'contact.printDeliveryTitle': 'Print & Delivery Service',
+      'contact.printDeliveryNote': 'This service is only for customers requiring physical printed documents (papers, reports, thesis). Digital orders (Canva Pro, ChatGPT, etc.) do not require printing.',
+      'contact.printDeliveryNo': 'No (Digital only)',
+      'contact.printDeliveryYes': 'Yes (Print & Deliver)',
+      'contact.deliveryAddressLabel': 'Delivery Address',
+      'contact.deliveryAddressPlaceholder': 'Enter complete delivery address (Street name, house/dorm number, district, city)...',
+      'contact.printSpecsLabel': 'Print Specifications',
+      'contact.printSpecsPlaceholder': 'e.g. Number of copies, binding type (soft/hard cover/tape), color or B&W, paper size (A4/F4)...',
+      'contact.printError': 'Please complete your delivery address and print specifications.',
 
       'nav.preview': 'Live Preview',
       'preview.eyebrow': 'Interactive Task Demo',
@@ -261,6 +270,15 @@
       'contact.send': 'Kirim Order Tugas',
       'contact.success': 'Order diterima! Tim Stackly akan segera menghubungimu.',
       'contact.error': 'Mohon isi semua kolom sebelum mengirim.',
+      'contact.printDeliveryTitle': 'Jasa Cetak & Antar (Print & Delivery)',
+      'contact.printDeliveryNote': 'Layanan ini hanya untuk pelanggan yang membutuhkan dokumen fisik (seperti makalah, laporan, skripsi). Pemesanan aplikasi premium (Canva Pro, ChatGPT, dll.) dan layanan digital lainnya tidak memerlukan jasa cetak.',
+      'contact.printDeliveryNo': 'Tidak (Hanya File Digital)',
+      'contact.printDeliveryYes': 'Ya (Cetak & Antar Fisik)',
+      'contact.deliveryAddressLabel': 'Alamat Pengantaran Dokumen',
+      'contact.deliveryAddressPlaceholder': 'Masukkan alamat lengkap pengantaran (Nama jalan, no rumah/kos, kecamatan, kota/kabupaten)...',
+      'contact.printSpecsLabel': 'Kebutuhan & Spesifikasi Cetak',
+      'contact.printSpecsPlaceholder': 'Contoh: Jumlah rangkap/eksemplar, jenis jilid (soft/hard cover/lakban), cetak warna/hitam-putih, ukuran kertas (A4/F4)...',
+      'contact.printError': 'Mohon lengkapi alamat pengantaran dan spesifikasi cetak.',
 
       'nav.preview': 'Live Preview',
       'preview.eyebrow': 'Demo Interaktif Hasil Tugas',
@@ -329,6 +347,13 @@
       const key = el.getAttribute('data-i18n');
       if (Object.prototype.hasOwnProperty.call(dict, key)) {
         el.textContent = dict[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function (el) {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (Object.prototype.hasOwnProperty.call(dict, key)) {
+        el.setAttribute('placeholder', dict[key]);
       }
     });
 
@@ -529,6 +554,38 @@
 
     if (!form || !status) return;
 
+    var printNoRadio = document.getElementById('printDeliveryNo');
+    var printYesRadio = document.getElementById('printDeliveryYes');
+    var printFields = document.getElementById('printDeliveryFields');
+    var labelPrintNo = document.getElementById('labelPrintNo');
+    var labelPrintYes = document.getElementById('labelPrintYes');
+    var deliveryAddressInput = document.getElementById('deliveryAddress');
+    var printSpecsInput = document.getElementById('printSpecs');
+
+    function updatePrintDeliveryState() {
+      if (!printYesRadio || !printFields) return;
+      var isYes = printYesRadio.checked;
+
+      if (isYes) {
+        printFields.style.display = 'flex';
+        printFields.setAttribute('aria-hidden', 'false');
+        if (labelPrintYes) labelPrintYes.classList.add('is-active');
+        if (labelPrintNo) labelPrintNo.classList.remove('is-active');
+      } else {
+        printFields.style.display = 'none';
+        printFields.setAttribute('aria-hidden', 'true');
+        if (labelPrintNo) labelPrintNo.classList.add('is-active');
+        if (labelPrintYes) labelPrintYes.classList.remove('is-active');
+        if (deliveryAddressInput) deliveryAddressInput.value = '';
+        if (printSpecsInput) printSpecsInput.value = '';
+      }
+    }
+
+    if (printNoRadio && printYesRadio) {
+      printNoRadio.addEventListener('change', updatePrintDeliveryState);
+      printYesRadio.addEventListener('change', updatePrintDeliveryState);
+    }
+
     function getCurrentLang() {
       return getStoredLang() || DEFAULT_LANG;
     }
@@ -541,15 +598,31 @@
       var subject = form.elements.subject.value.trim();
       var message = form.elements.message.value.trim();
 
+      var isPrintDelivery = printYesRadio && printYesRadio.checked;
+      var deliveryAddress = deliveryAddressInput ? deliveryAddressInput.value.trim() : '';
+      var printSpecs = printSpecsInput ? printSpecsInput.value.trim() : '';
+
       var lang = getCurrentLang();
       var dict = translations[lang] || translations[DEFAULT_LANG];
 
-      // Validasi
+      // Validasi input standar
       var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
       if (!name || !email || !subject || !message || !emailRegex.test(email)) {
         status.textContent = dict['contact.error'];
         status.className = 'contact-form__status is-error';
+        return;
+      }
+
+      // Validasi jika memilih Jasa Cetak & Antar (Ya)
+      if (isPrintDelivery && (!deliveryAddress || !printSpecs)) {
+        status.textContent = dict['contact.printError'] || 'Mohon lengkapi alamat pengantaran dan spesifikasi cetak.';
+        status.className = 'contact-form__status is-error';
+        if (!deliveryAddress && deliveryAddressInput) {
+          deliveryAddressInput.focus();
+        } else if (!printSpecs && printSpecsInput) {
+          printSpecsInput.focus();
+        }
         return;
       }
 
@@ -573,6 +646,7 @@
           status.className = 'contact-form__status is-success';
 
           form.reset();
+          updatePrintDeliveryState();
         } else {
           throw new Error('Gagal mengirim pesan');
         }
