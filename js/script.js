@@ -207,7 +207,7 @@
       'services.eyebrow': 'DAFTAR LAYANAN',
       'services.title': 'Semua Jenis Tugas.',
       'services.desc': 'Baik itu proyek coding, makalah ilmiah, atau presentasi kelompok — kami tangani secara menyeluruh, tepat waktu, dan sesuai kriteria dosen.',
-      'services.featuredBadge': 'Paling Diminati',
+      'services.featuredBadge': '',
       'services.detailCta': 'Lihat Detail',
 
       'service1.title': 'Jasa Pembuatan Website',

@@ -1,33 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STACKLY</title>
   <meta name="description" content="Portfolio of Rizqi, a Fullstack Developer building modern web applications.">
   <meta name="theme-color" content="#09090B">
-
-  <!-- Bootstrap Icons (icons only) -->
   <link rel="stylesheet" href="assets/icons/bootstrap-icons/bootstrap-icons.min.css">
-  <!-- Devicon (tech stack icons) -->
   <link rel="stylesheet" href="assets/icons/devicon/devicon.min.css">
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-  <!-- ===== SKIP LINK ===== -->
   <a href="#main-content" class="skip-link" data-i18n="a11y.skip">Skip to main content</a>
-
-  <!-- ===== NAVBAR ===== -->
   <header class="navbar" id="navbar">
     <div class="navbar__inner">
       <a href="#home" class="navbar__logo">
@@ -36,14 +25,12 @@
         <div>CK</div>
         <div class="logGreen logo-accent">LY</div>
       </a>
-
       <div class="navbar__right">
         <div class="lang-switch" rol1` e="group" aria-label="Language switcher">
           <button type="button" class="lang-switch__btn is-active" data-lang="en" aria-pressed="true">EN</button>
           <span class="lang-switch__divider" aria-hidden="true">|</span>
           <button type="button" class="lang-switch__btn" data-lang="id" aria-pressed="false">ID</button>
         </div>
-
         <button type="button" class="burger" id="burgerBtn" aria-label="Open menu" aria-expanded="false"
           aria-controls="navMenu">
           <i class="bi bi-list" id="burgerIcon" aria-hidden="true"></i>
@@ -51,8 +38,6 @@
       </div>
     </div>
   </header>
-
-  <!-- ===== NAV MENU (overlay panel, all breakpoints) ===== -->
   <div class="nav-overlay" id="navOverlay"></div>
   <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
     <ul class="nav-menu__list">
@@ -72,31 +57,24 @@
           aria-hidden="true"></i></a>
     </div>
   </nav>
-
   <main id="main-content">
-
-    <!-- ===== HERO ===== -->
     <section id="home" class="hero">
       <div class="hero__bg" aria-hidden="true">
         <div class="hero__grid"></div>
         <div class="hero__glow"></div>
       </div>
-
       <div class="hero__inner">
         <div class="hero__content reveal">
           <p class="eyebrow">
             <span class="eyebrow__dot" aria-hidden="true"></span>
             <span data-i18n="hero.label">HELLO, I'M RIZQI</span>
           </p>
-
           <h1 class="hero__title">
             <span data-i18n="hero.title1">Fullstack Developer</span>
             <span class="hero__title-accent" data-i18n="hero.title2">building modern web experiences.</span>
           </h1>
-
           <p class="hero__desc" data-i18n="hero.desc">I build modern, responsive, and scalable web applications from
             frontend interfaces to backend systems.</p>
-
           <div class="hero__cta">
             <a href="#services" class="btn btn--primary">
               <span data-i18n="hero.cta1">View Projects</span>
@@ -107,7 +85,6 @@
             </a>
           </div>
         </div>
-
         <div class="hero__panel reveal" aria-hidden="true">
           <div class="code-card">
             <div class="code-card__head">
@@ -130,18 +107,14 @@
           </div>
         </div>
       </div>
-
       <a href="#premium-apps" class="scroll-cue" aria-label="Scroll to Premium Apps section">
         <span class="scroll-cue__line"></span>
       </a>
     </section>
-
-    <!-- ===== SERVICES / DAFTAR LAYANAN ===== -->
     <section id="services" class="section services">
       <div class="services__bg" aria-hidden="true">
         <div class="services__glow"></div>
       </div>
-
       <div class="section__inner">
         <div class="section-head reveal">
           <p class="section-eyebrow" data-i18n="services.eyebrow">Daftar Layanan</p>
@@ -150,31 +123,23 @@
             tinggi,
             transparan, cepat, dan bergaransi.</p>
         </div>
-
         <div class="service-bento">
-          <!-- 01. Jasa Pembuatan Website (Featured Card) -->
           <article class="service-card service-card--featured reveal" data-service-id="01" role="button" tabindex="0"
             aria-haspopup="dialog" aria-label="Lihat detail Jasa Pembuatan Website">
             <div class="service-card__ambient" aria-hidden="true"></div>
             <div class="service-card__top">
               <div class="service-card__header-left">
-                <span class="service-card__badge-featured">
-                  <span class="service-card__pulse-dot" aria-hidden="true"></span>
-                  <span data-i18n="services.featuredBadge">Featured Service</span>
-                </span>
                 <span class="service-card__num" aria-hidden="true">01</span>
               </div>
               <div class="service-card__icon-box">
                 <i class="bi bi-laptop" aria-hidden="true"></i>
               </div>
             </div>
-
             <div class="service-card__body">
               <h3 class="service-card__title" data-i18n="service1.title">Jasa Pembuatan Website</h3>
               <p class="service-card__tagline" data-i18n="service1.tagline">Pengembangan aplikasi web modern, landing
                 page,
                 sistem informasi, dan tugas web responsif fullstack.</p>
-
               <div class="service-card__chips">
                 <span class="service-chip">Fullstack</span>
                 <span class="service-chip">Responsive UI</span>
@@ -182,7 +147,6 @@
                 <span class="service-chip">Clean Code</span>
               </div>
             </div>
-
             <div class="service-card__footer">
               <span class="service-card__action">
                 <span data-i18n="services.detailCta">Lihat Detail</span>
@@ -190,8 +154,6 @@
               </span>
             </div>
           </article>
-
-          <!-- 02. Makalah -->
           <article class="service-card reveal" data-service-id="02" role="button" tabindex="0" aria-haspopup="dialog"
             aria-label="Lihat detail Makalah">
             <div class="service-card__ambient" aria-hidden="true"></div>
@@ -213,8 +175,6 @@
               </span>
             </div>
           </article>
-
-          <!-- 03. PPT / Presentasi -->
           <article class="service-card reveal" data-service-id="03" role="button" tabindex="0" aria-haspopup="dialog"
             aria-label="Lihat detail PPT / Presentasi">
             <div class="service-card__ambient" aria-hidden="true"></div>
@@ -236,8 +196,6 @@
               </span>
             </div>
           </article>
-
-          <!-- 04. Resume Materi -->
           <article class="service-card reveal" data-service-id="04" role="button" tabindex="0" aria-haspopup="dialog"
             aria-label="Lihat detail Resume Materi">
             <div class="service-card__ambient" aria-hidden="true"></div>
@@ -259,8 +217,6 @@
               </span>
             </div>
           </article>
-
-          <!-- 05. Laporan Praktikum -->
           <article class="service-card reveal" data-service-id="05" role="button" tabindex="0" aria-haspopup="dialog"
             aria-label="Lihat detail Laporan Praktikum">
             <div class="service-card__ambient" aria-hidden="true"></div>
@@ -282,8 +238,6 @@
               </span>
             </div>
           </article>
-
-          <!-- 06. Rangkuman Materi -->
           <article class="service-card service-card--wide reveal" data-service-id="06" role="button" tabindex="0"
             aria-haspopup="dialog" aria-label="Lihat detail Rangkuman Materi">
             <div class="service-card__ambient" aria-hidden="true"></div>
@@ -306,8 +260,6 @@
               </span>
             </div>
           </article>
-
-          <!-- 07. Tugas Individu -->
           <article class="service-card reveal" data-service-id="07" role="button" tabindex="0" aria-haspopup="dialog"
             aria-label="Lihat detail Tugas Individu">
             <div class="service-card__ambient" aria-hidden="true"></div>
@@ -330,8 +282,6 @@
               </span>
             </div>
           </article>
-
-          <!-- 08. Tugas Kelompok -->
           <article class="service-card reveal" data-service-id="08" role="button" tabindex="0" aria-haspopup="dialog"
             aria-label="Lihat detail Tugas Kelompok">
             <div class="service-card__ambient" aria-hidden="true"></div>
@@ -357,11 +307,8 @@
         </div>
       </div>
     </section>
-
-    <!-- ===== APLIKASI PREMIUM ===== -->
     <section id="premium-apps" class="section premium-apps">
       <div class="premium-apps__ambient" aria-hidden="true"></div>
-
       <div class="section__inner">
         <div class="section-head reveal">
           <p class="section-eyebrow" data-i18n="apps.eyebrow">Aplikasi & Akun Premium</p>
@@ -369,10 +316,7 @@
           <p class="section-desc" data-i18n="apps.desc">Akses akun premium resmi & legal untuk mempercepat pengerjaan
             tugas, riset jurnal, desain presentasi, dan skripsi dengan harga terjangkau mahasiswa.</p>
         </div>
-
         <div class="apps-grid">
-
-          <!-- 01. CapCut Pro -->
           <article class="app-card reveal" data-app-id="capcut">
             <div class="app-card__media">
               <img src="assets/img/01_CapCut.png" alt="CapCut Pro" class="app-card__img" loading="lazy">
@@ -385,8 +329,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 02. PX Stream -->
           <article class="app-card reveal" data-app-id="pxstream">
             <div class="app-card__media">
               <img src="assets/img/02_PX_Stream.png" alt="PX Stream" class="app-card__img" loading="lazy">
@@ -399,8 +341,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 03. Canva Pro -->
           <article class="app-card reveal" data-app-id="canva">
             <div class="app-card__media">
               <img src="assets/img/03_Canva.png" alt="Canva Pro" class="app-card__img" loading="lazy">
@@ -413,8 +353,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 04. Amazon Prime Video -->
           <article class="app-card reveal" data-app-id="primevideo">
             <div class="app-card__media">
               <img src="assets/img/04_Prime_Video.png" alt="Amazon Prime Video" class="app-card__img" loading="lazy">
@@ -427,8 +365,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 05. Bilibili (B-Station) -->
           <article class="app-card reveal" data-app-id="bstation">
             <div class="app-card__media">
               <img src="assets/img/05_Bstation.png" alt="Bilibili B-Station" class="app-card__img" loading="lazy">
@@ -441,8 +377,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 06. Vidio Premium -->
           <article class="app-card reveal" data-app-id="vidio">
             <div class="app-card__media">
               <img src="assets/img/06_Vidio.png" alt="Vidio Premium" class="app-card__img" loading="lazy">
@@ -455,8 +389,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 07. YouTube Premium -->
           <article class="app-card reveal" data-app-id="youtube">
             <div class="app-card__media">
               <img src="assets/img/07_YouTube_Premium.png" alt="YouTube Premium" class="app-card__img" loading="lazy">
@@ -469,8 +401,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 08. Alight Motion Pro -->
           <article class="app-card reveal" data-app-id="alightmotion">
             <div class="app-card__media">
               <img src="assets/img/08_Alight_Motion.png" alt="Alight Motion Pro" class="app-card__img" loading="lazy">
@@ -483,8 +413,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 09. LokLok Premium -->
           <article class="app-card reveal" data-app-id="loklok">
             <div class="app-card__media">
               <img src="assets/img/09_LokLok.png" alt="LokLok Premium" class="app-card__img" loading="lazy">
@@ -497,8 +425,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 10. Zoom Pro -->
           <article class="app-card reveal" data-app-id="zoom">
             <div class="app-card__media">
               <img src="assets/img/10_Zoom.png" alt="Zoom Pro" class="app-card__img" loading="lazy">
@@ -511,8 +437,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 11. ChatGPT Plus -->
           <article class="app-card reveal" data-app-id="chatgpt">
             <div class="app-card__media">
               <img src="assets/img/11_ChatGPT_Plus.png" alt="ChatGPT Plus GPT-4o" class="app-card__img" loading="lazy">
@@ -525,8 +449,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 12. Netflix Premium 4K -->
           <article class="app-card reveal" data-app-id="netflix">
             <div class="app-card__media">
               <img src="assets/img/12_Netflix.png" alt="Netflix Premium 4K" class="app-card__img" loading="lazy">
@@ -539,8 +461,6 @@
               </button>
             </div>
           </article>
-
-          <!-- 13. Adobe Creative Cloud -->
           <article class="app-card reveal" data-app-id="adobe">
             <div class="app-card__media">
               <img src="assets/img/13_Adobe.png" alt="Adobe Creative Cloud" class="app-card__img" loading="lazy">
@@ -553,12 +473,9 @@
               </button>
             </div>
           </article>
-
         </div>
       </div>
     </section>
-
-    <!-- ===== CONTACT ===== -->
     <section id="contact" class="section contact">
       <div class="contact__bg" aria-hidden="true">
         <div class="contact__glow contact__glow--1"></div>
@@ -569,9 +486,7 @@
           <p class="section-eyebrow" data-i18n="contact.eyebrow">Get In Touch</p>
           <h2 class="section-title" data-i18n="contact.title">Let's work together on your next project.</h2>
         </div>
-
         <div class="contact__grid">
-          <!-- Contact Info Cards -->
           <div class="contact__info reveal">
             <div class="contact-info-card">
               <div class="contact-info-card__icon">
@@ -582,7 +497,6 @@
                 <a href="mailto:rizqi@example.com" class="contact-info-card__value">ssstackly@gmail.com</a>
               </div>
             </div>
-
             <div class="contact-info-card">
               <div class="contact-info-card__icon">
                 <i class="bi bi-geo-alt" aria-hidden="true"></i>
@@ -592,7 +506,6 @@
                 <p class="contact-info-card__value" data-i18n="contact.locationValue">Probolinggo, Indonesia</p>
               </div>
             </div>
-
             <div class="contact-info-card">
               <div class="contact-info-card__icon">
                 <i class="bi bi-clock" aria-hidden="true"></i>
@@ -605,7 +518,6 @@
                 </p>
               </div>
             </div>
-
             <div class="contact__socials">
               <h3 data-i18n="contact.socialLabel">Connect with me</h3>
               <div class="contact__socials-list">
@@ -620,8 +532,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Contact Form -->
           <form action="https://formspree.io/f/myeereoq" method="POST" class="contact-form reveal" id="contactForm"
             novalidate>
             <div class="contact-form__group">
@@ -629,26 +539,21 @@
               <input type="text" id="contactName" name="name" required autocomplete="name" placeholder="" />
               <span class="contact-form__focus-line" aria-hidden="true"></span>
             </div>
-
             <div class="contact-form__group">
               <label for="contactEmail" data-i18n="contact.emailInputLabel">Your Email</label>
               <input type="email" id="contactEmail" name="email" required autocomplete="email" placeholder="" />
               <span class="contact-form__focus-line" aria-hidden="true"></span>
             </div>
-
             <div class="contact-form__group">
               <label for="contactSubject" data-i18n="contact.subjectLabel">Subject</label>
               <input type="text" id="contactSubject" name="subject" required placeholder="" />
               <span class="contact-form__focus-line" aria-hidden="true"></span>
             </div>
-
             <div class="contact-form__group">
               <label for="contactMessage" data-i18n="contact.messageLabel">Message</label>
               <textarea id="contactMessage" name="message" rows="5" required placeholder=""></textarea>
               <span class="contact-form__focus-line" aria-hidden="true"></span>
             </div>
-
-            <!-- Print & Delivery (Jasa Cetak dan Antar) -->
             <div class="contact-form__group contact-print-delivery">
               <div class="contact-print-delivery__header">
                 <div class="contact-print-delivery__title-row">
@@ -659,30 +564,24 @@
                   Layanan ini hanya untuk pelanggan yang membutuhkan dokumen fisik (seperti makalah, laporan, skripsi). Pemesanan aplikasi premium (Canva Pro, ChatGPT, dll.) dan layanan digital lainnya tidak memerlukan jasa cetak.
                 </p>
               </div>
-
-              <!-- Pilihan Ya / Tidak (Default: Tidak) -->
               <div class="contact-print-options" role="radiogroup" aria-label="Pilihan Jasa Cetak & Antar">
                 <label class="contact-print-option is-active" id="labelPrintNo">
                   <input type="radio" name="print_delivery" id="printDeliveryNo" value="Tidak" checked>
                   <span class="contact-print-option__indicator" aria-hidden="true"></span>
                   <span class="contact-print-option__text" data-i18n="contact.printDeliveryNo">Tidak (Hanya File Digital)</span>
                 </label>
-
                 <label class="contact-print-option" id="labelPrintYes">
                   <input type="radio" name="print_delivery" id="printDeliveryYes" value="Ya">
                   <span class="contact-print-option__indicator" aria-hidden="true"></span>
                   <span class="contact-print-option__text" data-i18n="contact.printDeliveryYes">Ya (Cetak & Antar Fisik)</span>
                 </label>
               </div>
-
-              <!-- Kolom Tambahan (Alamat Pengantaran & Kebutuhan Cetak) - Tersembunyi saat 'Tidak' -->
               <div class="contact-print-fields" id="printDeliveryFields" aria-hidden="true" style="display: none;">
                 <div class="contact-form__group contact-print-fields__item">
                   <label for="deliveryAddress" data-i18n="contact.deliveryAddressLabel">Alamat Pengantaran Dokumen</label>
                   <textarea id="deliveryAddress" name="delivery_address" rows="2" placeholder="Masukkan alamat lengkap pengantaran (Nama jalan, no rumah/kos, kecamatan, kota/kabupaten)..." data-i18n-placeholder="contact.deliveryAddressPlaceholder"></textarea>
                   <span class="contact-form__focus-line" aria-hidden="true"></span>
                 </div>
-
                 <div class="contact-form__group contact-print-fields__item">
                   <label for="printSpecs" data-i18n="contact.printSpecsLabel">Kebutuhan & Spesifikasi Cetak</label>
                   <textarea id="printSpecs" name="print_specs" rows="2" placeholder="Contoh: Jumlah rangkap/eksemplar, jenis jilid (soft/hard cover/lakban), cetak warna/hitam-putih, ukuran kertas (A4/F4)..." data-i18n-placeholder="contact.printSpecsPlaceholder"></textarea>
@@ -690,21 +589,16 @@
                 </div>
               </div>
             </div>
-
             <button type="submit" class="btn btn--primary contact-form__submit">
               <span data-i18n="contact.send">Send Message</span>
               <i class="bi bi-send" aria-hidden="true"></i>
             </button>
-
             <div class="contact-form__status" id="formStatus" aria-live="polite"></div>
           </form>
         </div>
       </div>
     </section>
-
   </main>
-
-  <!-- ===== FOOTER ===== -->
   <footer class="footer" id="footer">
     <div class="footer__inner">
       <div class="footer__col footer__col--brand">
@@ -717,7 +611,6 @@
         <p class="footer__desc" data-i18n="footer.desc">Layanan joki tugas terpercaya untuk pemrograman web, pembuatan
           makalah ilmiah, jurnal terakreditasi, dan tugas kuliah lainnya. Cepat, berkualitas, dan bergaransi.</p>
       </div>
-
       <div class="footer__col">
         <h4 class="footer__heading" data-i18n="footer.nav">Navigation</h4>
         <ul class="footer__list">
@@ -731,13 +624,11 @@
           <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
       </div>
-
       <div class="footer__col">
         <h4 class="footer__heading" data-i18n="footer.location">Location</h4>
         <p class="footer__location"><i class="bi bi-geo-alt" aria-hidden="true"></i> <span
             data-i18n="footer.locationValue">Indonesia</span></p>
       </div>
-
       <div class="footer__col">
         <h4 class="footer__heading" data-i18n="footer.social">Social Media</h4>
         <div class="footer__socials">
@@ -750,25 +641,18 @@
         </div>
       </div>
     </div>
-
     <div class="footer__bottom">
       <p data-i18n="footer.copyright">© 2026 Rizqi. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- ===== SERVICE DETAIL MODAL ===== -->
   <div class="service-modal-backdrop" id="serviceModalBackdrop" role="dialog" aria-modal="true"
     aria-labelledby="serviceModalTitle" aria-hidden="true">
     <div class="service-modal" id="serviceModalDialog">
       <div class="service-modal__glow" aria-hidden="true"></div>
-
-      <!-- Close button -->
       <button type="button" class="service-modal__close" id="serviceModalCloseBtn" aria-label="Tutup modal detail">
         <i class="bi bi-x-lg" aria-hidden="true"></i>
       </button>
-
       <div class="service-modal__inner">
-        <!-- Modal Head -->
         <div class="service-modal__head">
           <div class="service-modal__meta">
             <span class="service-modal__num" id="serviceModalNum">01</span>
@@ -779,32 +663,23 @@
           <h3 class="service-modal__title" id="serviceModalTitle">Jasa Pembuatan Website</h3>
           <p class="service-modal__desc" id="serviceModalDesc">Deskripsi layanan</p>
         </div>
-
-        <!-- Modal Body Content -->
         <div class="service-modal__body">
-          <!-- Section 1: Cakupan Layanan -->
           <div class="service-modal__block">
             <h4 class="service-modal__subtitle">
               <i class="bi bi-check2-circle" aria-hidden="true"></i>
               <span data-i18n="modal.scopeTitle">Cakupan Layanan</span>
             </h4>
             <ul class="service-modal__list" id="serviceModalScopeList">
-              <!-- populated dynamically by JS -->
             </ul>
           </div>
-
-          <!-- Section 2: Informasi / Kebutuhan Pemesan -->
           <div class="service-modal__block">
             <h4 class="service-modal__subtitle">
               <i class="bi bi-card-checklist" aria-hidden="true"></i>
               <span data-i18n="modal.requirementsTitle">Informasi & Kebutuhan Pemesan</span>
             </h4>
             <div class="service-modal__req-grid" id="serviceModalReqGrid">
-              <!-- populated dynamically by JS -->
             </div>
           </div>
-
-          <!-- Section 3: Info Harga & Estimasi Pengerjaan -->
           <div class="service-modal__advisory-grid">
             <div class="service-modal__advisory-card">
               <div class="service-modal__advisory-icon">
@@ -816,7 +691,6 @@
                   dan estimasi</p>
               </div>
             </div>
-
             <div class="service-modal__advisory-card">
               <div class="service-modal__advisory-icon">
                 <i class="bi bi-stopwatch" aria-hidden="true"></i>
@@ -829,8 +703,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Modal Footer / Order CTA -->
         <div class="service-modal__footer">
           <div class="service-modal__footer-info">
             <i class="bi bi-shield-check" aria-hidden="true"></i>
@@ -844,20 +716,14 @@
       </div>
     </div>
   </div>
-
-  <!-- ===== APLIKASI PREMIUM DETAIL MODAL ===== -->
   <div class="app-modal-backdrop" id="appModalBackdrop" role="dialog" aria-modal="true"
     aria-labelledby="appModalTitle" aria-hidden="true">
     <div class="app-modal" id="appModalDialog">
       <div class="app-modal__glow" aria-hidden="true"></div>
-
-      <!-- Close button -->
       <button type="button" class="app-modal__close" id="appModalCloseBtn" aria-label="Tutup modal detail aplikasi">
         <i class="bi bi-x-lg" aria-hidden="true"></i>
       </button>
-
       <div class="app-modal__inner">
-        <!-- Modal Media / Preview Banner -->
         <div class="app-modal__media">
           <img src="" alt="" class="app-modal__img" id="appModalImg">
           <div class="app-modal__badge-row">
@@ -868,31 +734,22 @@
             <span class="app-card__type" id="appModalType">Desain</span>
           </div>
         </div>
-
-        <!-- Modal Body Content -->
         <div class="app-modal__body">
           <div class="app-modal__head">
             <span class="app-modal__cat" id="appModalCat">Desain & PPT</span>
             <h3 class="app-modal__title" id="appModalTitle">Canva Pro</h3>
           </div>
-
-          <!-- Section: Deskripsi & Informasi Aplikasi -->
           <div class="app-modal__block">
             <p class="app-modal__desc" id="appModalDesc">Akses Canva Pro...</p>
           </div>
-
-          <!-- Section: Fitur & Keunggulan Layanan -->
           <div class="app-modal__block">
             <h4 class="app-modal__subtitle">
               <i class="bi bi-stars" aria-hidden="true"></i>
               <span data-i18n="apps.modalFeaturesTitle">Fitur & Keunggulan Layanan</span>
             </h4>
             <div class="app-modal__tags" id="appModalTags">
-              <!-- populated dynamically by JS -->
             </div>
           </div>
-
-          <!-- Section: Harga & Tombol Order -->
           <div class="app-modal__footer">
             <div class="app-modal__price-box">
               <span class="app-modal__price-label" data-i18n="apps.priceFrom">Mulai dari</span>
@@ -910,8 +767,6 @@
       </div>
     </div>
   </div>
-
   <script src="js/script.js"></script>
 </body>
-
 </html>
