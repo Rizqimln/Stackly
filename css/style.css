@@ -2477,6 +2477,119 @@ a.contact-info-card__value:hover {
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
 }
 
+/* Contact Order Guide */
+.contact__order-guide {
+  margin-top: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface-glass);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color var(--duration-fast) var(--ease),
+              box-shadow var(--duration-fast) var(--ease);
+}
+
+.contact__order-guide:hover {
+  border-color: var(--border-strong);
+}
+
+.contact__order-guide-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact__order-guide-header i {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.contact__order-guide-header h3 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin: 0;
+}
+
+.contact__order-guide-text {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.contact__order-guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin: 0.2rem 0;
+}
+
+.contact__order-guide-step {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.contact__order-guide-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-strong);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.contact__order-guide-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all var(--duration-fast) var(--ease);
+  margin-top: 0.25rem;
+}
+
+.contact__order-guide-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-strong);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.contact__order-guide-btn i {
+  font-size: 0.85rem;
+  transition: transform var(--duration-fast) var(--ease);
+}
+
+.contact__order-guide-btn:hover i {
+  transform: translate(2px, -2px);
+}
+
 /* Contact Form */
 .contact-form {
   background: var(--surface-glass);
@@ -3318,7 +3431,7 @@ a.contact-info-card__value:hover {
 }
 
 /* ----- Small phones ----- */
-@media (max-width: 380px) {
+@media (max-width: 360px) {
   .hero__title {
     font-size: clamp(1.6rem, 8vw, 2.2rem);
   }

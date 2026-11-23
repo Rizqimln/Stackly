@@ -20,8 +20,8 @@
       'nav.contact': 'Start Order',
 
       'apps.eyebrow': 'PREMIUM APPS & ACCOUNTS',
-      'apps.title': 'Tools That Make Your Academic Life Easier.',
-      'apps.desc': 'Get verified, private-access premium accounts for design, writing, AI assistance, and office productivity — all at prices students can actually afford.',
+      'apps.title': 'Discover Your Premium Apps.',
+      'apps.desc': 'Enjoy premium apps for design, productivity, AI, entertainment, streaming, and work essentials at affordable prices.',
       'apps.priceFrom': 'Starting from',
       'apps.orderBtn': 'Order Now',
       'apps.detailBtn': 'Detail',
@@ -30,7 +30,7 @@
       'hero.label': 'ACADEMIC ASSISTANCE & PREMIUM APPS',
       'hero.title1': 'Stackly_',
       'hero.title2': 'Your Web Tasks & Papers.',
-      'hero.desc': 'From web apps and backend systems to research papers, accredited journals, and thesis documents — Stackly delivers polished, on-time results with a zero-plagiarism guarantee.',
+      'hero.desc': 'From web application and information system development to premium application services, academic papers, and accredited journals — Stackly delivers practical, high-quality digital and academic solutions, on time, with a plagiarism-free guarantee.',
       'hero.cta1': 'Order a Task',
       'hero.cta2': 'Free Consultation',
       'hero.status': 'Open for Orders · Fast Response',
@@ -108,7 +108,7 @@
       'exp4.desc': 'Lecturer requested changes? We revise for free. We also walk you through the code or content so you are confident presenting it.',
 
       'contact.eyebrow': 'Get in Touch',
-      'contact.title': 'Got a task due soon? Let\'s talk — no commitment needed.',
+      'contact.title': 'Let\'s talk — no commitment needed.',
       'contact.emailLabel': 'Order Email',
       'contact.locationLabel': 'Service Coverage',
       'contact.locationValue': 'Indonesia (Online 24/7)',
@@ -131,6 +131,13 @@
       'contact.printSpecsLabel': 'Print Specifications',
       'contact.printSpecsPlaceholder': 'e.g. Number of copies, binding type (soft/hard cover/tape), color or B&W, paper size (A4/F4)...',
       'contact.printError': 'Please complete your delivery address and print specifications.',
+      'contact.orderGuideTitle': 'Auto-Fill Order Guide',
+      'contact.orderGuideDesc': 'Want to order a premium app faster? Check the Detail button first, then click Order Now — the form beside will be filled automatically.',
+      'contact.orderStep1': 'Pick an app above & click Detail',
+      'contact.orderStep2': 'Click Order Now in the popup',
+      'contact.orderStep3': 'The form beside is auto-filled!',
+      'contact.orderServiceBtn': 'Browse Services',
+      'contact.orderGuideBtn': 'Browse Premium Apps',
 
       'nav.preview': 'Live Preview',
       'preview.eyebrow': 'Interactive Task Demo',
@@ -168,8 +175,8 @@
       'nav.contact': 'Order Sekarang',
 
       'apps.eyebrow': 'APLIKASI & AKUN PREMIUM',
-      'apps.title': 'Tools yang Bikin Kuliah Jadi Lebih Produktif.',
-      'apps.desc': 'Akses akun premium berlisensi resmi untuk desain, penulisan, AI, hingga office suite — dengan harga yang masih masuk budget mahasiswa.',
+      'apps.title': 'Temukan Aplikasi Premium Pilihanmu.',
+      'apps.desc': 'Nikmati akses aplikasi premium untuk desain, produktivitas, AI, hiburan, streaming, hingga kebutuhan kerja dengan harga bersahabat.',
       'apps.priceFrom': 'Mulai dari',
       'apps.orderBtn': 'Pesan Sekarang',
       'apps.detailBtn': 'Detail',
@@ -178,7 +185,7 @@
       'hero.label': 'JASA JOKI TUGAS & APLIKASI PREMIUM',
       'hero.title1': 'Stackly_',
       'hero.title2': 'Tugas Web & Makalah Beres.',
-      'hero.desc': 'Dari aplikasi web, sistem informasi, hingga makalah ilmiah dan jurnal terakreditasi — Stackly mengerjakan semuanya dengan rapi, tepat waktu, dan bergaransi bebas plagiasi.',
+      'hero.desc': 'Dari pengembangan aplikasi web dan sistem informasi, layanan aplikasi premium, hingga penyusunan makalah ilmiah dan jurnal terakreditasi — Stackly hadir memberikan solusi digital dan akademik yang praktis, berkualitas, tepat waktu, serta bergaransi bebas plagiasi.',
       'hero.cta1': 'Pesan Tugas',
       'hero.cta2': 'Konsultasi Gratis',
       'hero.status': 'Buka Order · Respons Cepat',
@@ -206,12 +213,12 @@
 
       'services.eyebrow': 'DAFTAR LAYANAN',
       'services.title': 'Semua Jenis Tugas.',
-      'services.desc': 'Baik itu proyek coding, makalah ilmiah, atau presentasi kelompok — kami tangani secara menyeluruh, tepat waktu, dan sesuai kriteria dosen.',
+      'services.desc': 'BBaik itu proyek coding, makalah ilmiah, atau presentasi kelompok — kami tangani secara menyeluruh, tepat waktu, dan sesuai kebutuhan Anda.',
       'services.featuredBadge': '',
       'services.detailCta': 'Lihat Detail',
 
       'service1.title': 'Jasa Pembuatan Website',
-      'service1.tagline': 'Aplikasi web fullstack, landing page, sistem informasi, dan UI responsif — sesuai kriteria tugas kuliah.',
+      'service1.tagline': 'Aplikasi web fullstack, landing page, sistem informasi, dan UI responsif — sesuai kriteria.',
       'service2.title': 'Makalah Ilmiah',
       'service2.tagline': 'Karya tulis terstruktur dengan referensi jurnal kredibel dan konten bebas plagiasi.',
       'service3.title': 'Presentasi & Slide PPT',
@@ -256,7 +263,7 @@
       'exp4.desc': 'Ada revisi dari dosen? Kami bantu tanpa biaya tambahan. Kami juga jelaskan isi kode atau tugas agar kamu percaya diri saat presentasi.',
 
       'contact.eyebrow': 'Konsultasi & Order',
-      'contact.title': 'Deadline sudah mepet? Hubungi kami sekarang — gratis konsultasi.',
+      'contact.title': 'Hubungi kami sekarang — gratis konsultasi.',
       'contact.emailLabel': 'Email Order',
       'contact.locationLabel': 'Jangkauan Layanan',
       'contact.locationValue': 'Seluruh Indonesia (Online 24/7)',
@@ -279,20 +286,13 @@
       'contact.printSpecsLabel': 'Kebutuhan & Spesifikasi Cetak',
       'contact.printSpecsPlaceholder': 'Contoh: Jumlah rangkap/eksemplar, jenis jilid (soft/hard cover/lakban), cetak warna/hitam-putih, ukuran kertas (A4/F4)...',
       'contact.printError': 'Mohon lengkapi alamat pengantaran dan spesifikasi cetak.',
-
-      'nav.preview': 'Live Preview',
-      'preview.eyebrow': 'Demo Interaktif Hasil Tugas',
-      'preview.title': 'Lihat Hasilnya — Live di dalam Frame Perangkat Nyata.',
-      'preview.desc': 'Scroll, klik tombol, dan uji interaksi langsung dalam frame desktop dan smartphone. Persis seperti yang akan kamu kumpulkan ke dosen.',
-      'preview.desktop': 'Desktop',
-      'preview.mobile': 'Mobile',
-      'preview.autoscroll': 'Auto Scroll',
-      'preview.autoscroll_active': 'Jeda Scroll',
-      'preview.resetscroll': 'Reset',
-      'preview.reload': 'Muat Ulang',
-      'preview.openNewTab': 'Buka di Tab Baru',
-      'preview.hint': 'Interaktif penuh — klik, scroll, dan eksplor di dalam frame.',
-      'preview.loading': 'Memuat preview...',
+      'contact.orderGuideTitle': 'Cara Pemesanan Otomatis',
+      'contact.orderGuideDesc': 'Mau order Layanan dan Aplikasi Premium Cek tombol Detail terlebih dahulu lalu klik Pesan Sekarang, maka formulir di samping akan terisi otomatis.',
+      'contact.orderStep1': 'Pilih Layanan/aplikasi di atas & klik Detail',
+      'contact.orderStep2': 'Klik tombol Pesan / Order Sekarang',
+      'contact.orderStep3': 'Formulir di samping otomatis terisi!',
+      'contact.orderServiceBtn': 'Pilih Layanan Sekarang',
+      'contact.orderGuideBtn': 'Pilih Aplikasi Sekarang',
 
       'footer.desc': 'Stackly — Layanan jasa tugas terpercaya untuk pemrograman web, makalah ilmiah, jurnal terakreditasi, dan tugas kuliah lainnya. Cepat, berkualitas, bergaransi.',
       'footer.nav': 'Navigasi',
@@ -986,7 +986,7 @@
         desc: 'Layanan rancang bangun website profesional dan tugas pemrograman web dari frontend interaktif hingga backend & database terintegrasi.',
         scope: [
           'Pengembangan Website Responsif (Desktop, Tablet, Mobile)',
-          'Arsitektur Frontend Modern & Bersih (HTML5, CSS3, JavaScript, React)',
+          'Arsitektur Frontend Modern & Bersih (HTML5, CSS3, JavaScript, React, TaildwindCss)',
           'Pemrograman Backend & Integrasi Database (Node.js, Express, PHP, MySQL)',
           'Fitur Lengkap: CRUD, Autentikasi Pengguna, Filter Pencarian & Dashboard Admin',
           'Penyerahan Source Code Lengkap + Panduan Instalasi & Presentasi'
@@ -2150,6 +2150,20 @@
           'Konsultasi Pengerjaan Mirip: ' + projName,
           'Halo Admin Stackly, saya berminat membuat tugas dengan konsep mirip ' + projName + '. Mohon estimasi pengerjaan dan biaya. Terima kasih!'
         );
+      });
+    });
+
+    var guideAppBtns = document.querySelectorAll('.contact__order-guide-btn');
+    guideAppBtns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        var href = btn.getAttribute('href');
+        if (!href || href.charAt(0) !== '#') return;
+
+        var targetSection = document.querySelector(href);
+        if (targetSection) {
+          scrollToSection(targetSection);
+        }
       });
     });
   }
