@@ -27,7 +27,7 @@
       'apps.detailBtn': 'Detail',
       'apps.modalFeaturesTitle': 'Key Features & Perks',
 
-      'hero.label': 'ACADEMIC ASSISTANCE & PREMIUM APPS',
+      'hero.label': 'Project Development & Premium Apps Services',
       'hero.title1': 'Stackly_',
       'hero.title2': 'Your Web Tasks & Papers.',
       'hero.desc': 'From web application and information system development to premium application services, academic papers, and accredited journals — Stackly delivers practical, high-quality digital and academic solutions, on time, with a plagiarism-free guarantee.',
@@ -182,7 +182,7 @@
       'apps.detailBtn': 'Detail',
       'apps.modalFeaturesTitle': 'Fitur & Keunggulan Layanan',
 
-      'hero.label': 'JASA JOKI TUGAS & APLIKASI PREMIUM',
+      'hero.label': 'Jasa Pengembangan Proyek & Aplikasi Premium',
       'hero.title1': 'Stackly_',
       'hero.title2': 'Tugas Web & Makalah Beres.',
       'hero.desc': 'Dari pengembangan aplikasi web dan sistem informasi, layanan aplikasi premium, hingga penyusunan makalah ilmiah dan jurnal terakreditasi — Stackly hadir memberikan solusi digital dan akademik yang praktis, berkualitas, tepat waktu, serta bergaransi bebas plagiasi.',
